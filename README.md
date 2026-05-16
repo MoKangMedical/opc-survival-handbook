@@ -20,6 +20,12 @@
 ## 🚀 快速开始
 
 ```bash
+# 安装本地视觉资产生成依赖
+npm install
+
+# 生成封面、章节插图、信息图和在线HTML
+npm run build
+
 # 预览在线版
 浏览器打开 docs/index.html
 
@@ -28,12 +34,24 @@ pip install beautifulsoup4 reportlab
 python3 scripts/kdp_builder.py
 ```
 
+## 🧰 本地工具链
+
+- `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/index.html`
+- `scripts/generate_visuals.mjs`：生成封面、10张章节题图、4张信息图（SVG + PNG）
+- `scripts/kdp_builder.py`：把在线书稿转成 6×9 英寸 KDP PDF，支持封面、插图和表格
+- 视觉资产输出目录：`docs/assets/`
+- KDP PDF 输出目录：`output/opc-handbook.pdf`
+
 ## 📂 项目结构
 
 ```
+├── package.json           # Node构建脚本与sharp依赖
 ├── docs/                  # GitHub Pages 站点
-│   └── index.html         # 完整手册（10章+目录+封面）
+│   ├── index.html         # 完整手册（10章+目录+封面）
+│   └── assets/            # 封面、章节插图、信息图
 ├── scripts/
+│   ├── build_handbook_html.mjs
+│   ├── generate_visuals.mjs
 │   └── kdp_builder.py     # KDP自动排版脚本
 ├── infographic/           # 信息图生成Prompt
 │   └── prompts/           # 4组完整AI生成提示词

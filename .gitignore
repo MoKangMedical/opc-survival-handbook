@@ -5,8 +5,13 @@ __pycache__/
 .venv/
 venv/
 
+# Node
+node_modules/
+
 # Output
 output/*.pdf
+output/*.png
+output/screenshots/
 
 # OS
 .DS_Store

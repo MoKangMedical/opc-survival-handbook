@@ -33,7 +33,8 @@ try:
     from reportlab.lib.colors import HexColor, black, white
     from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_JUSTIFY
     from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer,
-                                     PageBreak, Table, TableStyle, KeepTogether)
+                                     PageBreak, Table, TableStyle, KeepTogether,
+                                     Image as RLImage)
     from reportlab.platypus.doctemplate import PageTemplate, BaseDocTemplate, Frame
     from reportlab.platypus.frames import Frame
     from reportlab.pdfbase import pdfmetrics
@@ -136,12 +137,77 @@ def register_fonts():
 # CONTENT EXTRACTION
 # ═══════════════════════════════════════════════════════════════
 
+def resolve_asset_path(html_dir, src):
+    """Resolve a local image path referenced from the HTML file."""
+    if not src:
+        return None
+    if src.startswith(("http://", "https://", "data:")):
+        return None
+    path = Path(src)
+    if not path.is_absolute():
+        path = html_dir / path
+    return str(path.resolve()) if path.exists() else None
+
+
+def extract_table(table):
+    rows = []
+    for tr in table.find_all('tr'):
+        cells = []
+        for cell in tr.find_all(['th', 'td']):
+            cells.append(cell.get_text(" ", strip=True))
+        if cells:
+            rows.append(cells)
+    return rows
+
+
+def extract_content_parts(parent, html_dir):
+    """Collect supported block-level content in document order."""
+    content_parts = []
+    for elem in parent.children:
+        if not getattr(elem, "name", None) or elem.name in ("h2", "h3"):
+            continue
+        if elem.name == 'p':
+            content_parts.append(('p', elem.get_text(" ", strip=True)))
+        elif elem.name in ('ul', 'ol'):
+            items = [li.get_text(" ", strip=True) for li in elem.find_all('li')]
+            content_parts.append((elem.name, items))
+        elif elem.name == 'blockquote':
+            content_parts.append(('quote', elem.get_text(" ", strip=True)))
+        elif elem.name == 'figure':
+            img = elem.find('img')
+            image_path = resolve_asset_path(html_dir, img.get('src') if img else None)
+            if image_path:
+                content_parts.append(('image', {
+                    'path': image_path,
+                    'alt': img.get('alt', '') if img else ''
+                }))
+        elif elem.name == 'div' and (
+            'highlight-box' in elem.get('class', []) or
+            'action-box' in elem.get('class', [])
+        ):
+            label = elem.find('div', class_='label')
+            label_text = label.get_text(" ", strip=True) if label else ""
+            box_parts = [p.get_text(" ", strip=True) for p in elem.find_all('p')]
+            if not box_parts:
+                box_parts = [elem.get_text(" ", strip=True)]
+            content_parts.append(('box', {'label': label_text, 'content': box_parts}))
+        elif elem.name == 'div' and 'table-wrap' in elem.get('class', []):
+            table = elem.find('table')
+            rows = extract_table(table) if table else []
+            if rows:
+                content_parts.append(('table', rows))
+    return content_parts
+
+
 def extract_chapters(html_path):
     """Parse HTML and extract structured chapter content."""
+    html_dir = Path(html_path).parent.resolve()
     with open(html_path, 'r', encoding='utf-8') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
     
     title = soup.title.string if soup.title else "OPC生存手册"
+    cover_img = soup.select_one('.cover-img img')
+    cover_image = resolve_asset_path(html_dir, cover_img.get('src') if cover_img else None)
     
     chapters = []
     for article in soup.find_all('article', class_='chapter'):
@@ -161,6 +227,10 @@ def extract_chapters(html_path):
         # Tagline
         tagline = article.find('p', class_='tagline')
         ch['tagline'] = tagline.get_text(strip=True) if tagline else ""
+
+        # Chapter illustration
+        chapter_img = article.select_one('figure.chapter-art img')
+        ch['image'] = resolve_asset_path(html_dir, chapter_img.get('src') if chapter_img else None)
         
         # Sections
         sections = []
@@ -168,30 +238,7 @@ def extract_chapters(html_path):
             sec = {}
             h3 = section.find('h3')
             sec['heading'] = h3.get_text(strip=True) if h3 else ""
-            
-            # Collect all text content in order
-            content_parts = []
-            for elem in section.children:
-                if elem.name == 'p':
-                    content_parts.append(('p', elem.get_text(strip=True)))
-                elif elem.name in ('ul', 'ol'):
-                    items = []
-                    for li in elem.find_all('li'):
-                        items.append(li.get_text(strip=True))
-                    content_parts.append((elem.name, items))
-                elif elem.name == 'blockquote':
-                    content_parts.append(('quote', elem.get_text(strip=True)))
-                elif elem.name == 'div' and 'highlight-box' in elem.get('class', []):
-                    label = elem.find('div', class_='label')
-                    label_text = label.get_text(strip=True) if label else ""
-                    box_parts = []
-                    for p in elem.find_all('p'):
-                        box_parts.append(p.get_text(strip=True))
-                    content_parts.append(('box', {'label': label_text, 'content': box_parts}))
-                elif elem.name == 'div' and 'table-wrap' in elem.get('class', []):
-                    content_parts.append(('table_skip', None))  # Skip tables for now
-            
-            sec['content'] = content_parts
+            sec['content'] = extract_content_parts(section, html_dir)
             sections.append(sec)
         
         ch['sections'] = sections
@@ -219,18 +266,87 @@ def extract_chapters(html_path):
         ch['phase_cards'] = phase_cards
         
         chapters.append(ch)
+
+    # Include non-chapter front matter and appendices in the print PDF.
+    front_matter = []
+    back_matter = []
+    for appendix in soup.find_all('section', class_='appendix'):
+        h2 = appendix.find('h2')
+        if not h2:
+            continue
+        app_id = appendix.get('id', '')
+        number = "前言" if app_id == "preface" else ("附录A" if app_id == "appendix-kdp" else ("附录B" if app_id == "appendix-30day" else "附录"))
+        appendix_chapter = {
+            'number': number,
+            'emoji': '',
+            'title': h2.get_text(" ", strip=True),
+            'tagline': '',
+            'image': None,
+            'sections': [{
+                'heading': '',
+                'content': extract_content_parts(appendix.find('div', class_='container') or appendix, html_dir)
+            }],
+            'data_cards': [],
+            'phase_cards': [],
+        }
+        if app_id == "preface":
+            front_matter.append(appendix_chapter)
+        else:
+            back_matter.append(appendix_chapter)
+
+    chapters = front_matter + chapters + back_matter
     
-    return title, chapters
+    return title, chapters, cover_image
 
 
 # ═══════════════════════════════════════════════════════════════
 # PDF GENERATION
 # ═══════════════════════════════════════════════════════════════
 
-def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_title="OPC生存手册", subtitle="AI时代一人创作者的生存实战指南"):
+def image_flowable(image_path, max_width, max_height):
+    """Create a scaled ReportLab image flowable."""
+    try:
+        img = RLImage(image_path)
+        ratio = min(max_width / img.imageWidth, max_height / img.imageHeight)
+        ratio = min(ratio, 1.0)
+        img.drawWidth = img.imageWidth * ratio
+        img.drawHeight = img.imageHeight * ratio
+        img.hAlign = 'CENTER'
+        return img
+    except Exception as exc:
+        print(f"  ⚠ Could not load image {image_path}: {exc}")
+        return None
+
+
+def table_flowable(rows, styles, max_width):
+    """Render extracted HTML table rows as a print-friendly table."""
+    if not rows:
+        return None
+    col_count = max(len(row) for row in rows)
+    normalized = [row + [""] * (col_count - len(row)) for row in rows]
+    data = []
+    for r_idx, row in enumerate(normalized):
+        style_name = 'TableHeader' if r_idx == 0 else 'TableCell'
+        data.append([Paragraph(cell, styles[style_name]) for cell in row])
+    table = Table(data, colWidths=[max_width / col_count] * col_count, repeatRows=1)
+    table.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), COLORS['divider']),
+        ('TEXTCOLOR', (0, 0), (-1, 0), COLORS['text']),
+        ('GRID', (0, 0), (-1, -1), 0.35, COLORS['divider']),
+        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+        ('LEFTPADDING', (0, 0), (-1, -1), 5),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 5),
+        ('TOPPADDING', (0, 0), (-1, -1), 5),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+    ]))
+    return table
+
+
+def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_title="OPC生存手册", subtitle="AI时代一人创作者的生存实战指南", cover_image=None):
     """Generate the KDP-ready PDF."""
     
     pw, ph = page_size
+    content_width = pw - 1.7 * inch
     
     # Build styles
     styles = getSampleStyleSheet()
@@ -299,17 +415,34 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
         'FooterStyle', fontName=font_name, fontSize=9, leading=12,
         textColor=COLORS['text2'], alignment=TA_CENTER
     ))
+    styles.add(ParagraphStyle(
+        'TableHeader', fontName=font_bold_name, fontSize=7.5, leading=10,
+        textColor=COLORS['text'], alignment=TA_LEFT
+    ))
+    styles.add(ParagraphStyle(
+        'TableCell', fontName=font_name, fontSize=7.2, leading=9.5,
+        textColor=COLORS['text'], alignment=TA_LEFT
+    ))
     
     # Build story (content flow)
     story = []
     
     # ── COVER PAGE ──
-    story.append(Spacer(1, 2 * inch))
-    story.append(Paragraph(book_title, styles['CoverTitle']))
-    story.append(Paragraph(subtitle, styles['CoverSubtitle']))
-    story.append(Spacer(1, 0.5 * inch))
-    story.append(Paragraph("第一版 · 2026", styles['CoverSubtitle']))
-    story.append(Paragraph("由人类创作者与AI工具协作完成", styles['FooterStyle']))
+    if cover_image:
+        cover = image_flowable(cover_image, content_width, ph - 1.5 * inch)
+        if cover:
+            story.append(cover)
+        else:
+            story.append(Spacer(1, 2 * inch))
+            story.append(Paragraph(book_title, styles['CoverTitle']))
+            story.append(Paragraph(subtitle, styles['CoverSubtitle']))
+    else:
+        story.append(Spacer(1, 2 * inch))
+        story.append(Paragraph(book_title, styles['CoverTitle']))
+        story.append(Paragraph(subtitle, styles['CoverSubtitle']))
+        story.append(Spacer(1, 0.5 * inch))
+        story.append(Paragraph("第一版 · 2026", styles['CoverSubtitle']))
+        story.append(Paragraph("由人类创作者与AI工具协作完成", styles['FooterStyle']))
     story.append(PageBreak())
     
     # ── TABLE OF CONTENTS ──
@@ -334,10 +467,16 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
         tagline = ch.get('tagline', '')
         
         story.append(Paragraph(f"{num}", styles['ChapterNum']))
-        story.append(Paragraph(f"{emoji} {title}", styles['ChapterTitle']))
+        story.append(Paragraph(f"{title}", styles['ChapterTitle']))
         if tagline:
             story.append(Paragraph(tagline, styles['ChapterTagline']))
         story.append(Spacer(1, 8))
+
+        if ch.get('image'):
+            img = image_flowable(ch['image'], content_width, 4.25 * inch)
+            if img:
+                story.append(img)
+                story.append(Spacer(1, 12))
         
         # Divider line
         story.append(Spacer(1, 4))
@@ -376,8 +515,16 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
                         story.append(Paragraph(box_data['label'], styles['BoxLabel']))
                     for line in box_data.get('content', []):
                         story.append(Paragraph(line, styles['BoxText']))
-                elif content_type == 'table_skip':
-                    story.append(Paragraph("[数据表格 — 请在正式排版中插入]", styles['FooterStyle']))
+                elif content_type == 'table':
+                    rendered_table = table_flowable(content_data, styles, content_width)
+                    if rendered_table:
+                        story.append(rendered_table)
+                        story.append(Spacer(1, 10))
+                elif content_type == 'image':
+                    img = image_flowable(content_data['path'], content_width, 4.8 * inch)
+                    if img:
+                        story.append(img)
+                        story.append(Spacer(1, 10))
         
         # Phase cards (if any) - render inline
         if ch.get('phase_cards'):
@@ -492,7 +639,7 @@ Examples:
     
     # Extract content
     print(f"  Extracting chapters from HTML...")
-    book_title, chapters = extract_chapters(str(input_path))
+    book_title, chapters, cover_image = extract_chapters(str(input_path))
     print(f"  Found {len(chapters)} chapters")
     for ch in chapters:
         section_count = len(ch.get('sections', []))
@@ -504,7 +651,8 @@ Examples:
         chapters, str(output_path), page_size,
         font_name, font_bold_name,
         book_title=args.title or book_title,
-        subtitle=args.subtitle
+        subtitle=args.subtitle,
+        cover_image=cover_image
     )
     
     # Report

@@ -1,0 +1,28 @@
+{
+  "name": "opc-survival-handbook",
+  "version": "1.0.0",
+  "description": "> **One Person Creator — AI时代一人创作者的生存实战指南**",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "assets": "node scripts/generate_visuals.mjs",
+    "html": "node scripts/build_handbook_html.mjs",
+    "build": "npm run assets && npm run html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoKangMedical/opc-survival-handbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoKangMedical/opc-survival-handbook/issues"
+  },
+  "homepage": "https://github.com/MoKangMedical/opc-survival-handbook#readme",
+  "devDependencies": {
+    "sharp": "^0.34.5"
+  }
+}
