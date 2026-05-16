@@ -1,0 +1,60 @@
+# OPC 生存手册
+
+> **One Person Creator — AI时代一人创作者的生存实战指南**
+
+一个人 + AI = 一个团队。本书从心态、选赛道、AI工具、内容工厂、流量分发、变现模式、财务法务、健康管理到终极进化，系统讲解如何在AI时代以一当十。
+
+## 📖 在线阅读
+
+👉 **[https://MoKangMedical.github.io/opc-survival-handbook/](https://MoKangMedical.github.io/opc-survival-handbook/)**
+
+## 📘 关于本书
+
+| 项目 | 说明 |
+|------|------|
+| 章节 | 10章 / 37节 |
+| 配图 | 10张章节题图 + 4张信息图（附AI生成Prompt） |
+| 格式 | HTML在线版 + KDP PDF印刷版 |
+| 工具链 | KDP自动排版脚本（HTML→PDF，516行Python） |
+
+## 🚀 快速开始
+
+```bash
+# 预览在线版
+浏览器打开 docs/index.html
+
+# 生成KDP就绪PDF
+pip install beautifulsoup4 reportlab
+python3 scripts/kdp_builder.py --input docs/index.html
+```
+
+## 📂 项目结构
+
+```
+├── docs/                  # GitHub Pages 站点
+│   └── index.html         # 完整手册（10章+目录+封面）
+├── scripts/
+│   └── kdp_builder.py     # KDP自动排版脚本
+├── infographic/           # 信息图生成Prompt
+│   └── prompts/           # 4组完整AI生成提示词
+├── illustration-plan.md   # 10张章节题图MJ Prompt
+├── publishing-strategy.md # 三线发布策略
+└── outline.md             # 完整大纲
+```
+
+## 📊 内容覆盖
+
+- 🌍 为什么OPC是未来的工作方式
+- 🧗 独立创作者的心态建设
+- 🎯 选赛道与快速验证
+- 🧰 50+ AI工具实战配置
+- 🏭 内容工厂化生产体系
+- 📡 零预算流量获取策略
+- 💰 6种变现模式 + $0→$10K路线图
+- 🛡️ 财务法务风险控制
+- 🧘 健康与精力管理
+- 🚀 从OPC到OPC+的进化路径
+
+---
+
+*本书由人类创作者与AI工具协作完成 · 2026*
