@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 找到你的一人帝国 — OPC 生存手册</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07070a; --bg2: #0d0d14; --bg3: #12121a;
+  --card: #111118; --card2: #18181f;
+  --gold: #F5A623; --gold2: #e2b64f;
+  --blue: #6C9BCF; --text: #e8e6e0; --text2: #b5b5c2; --text3: #7a7a88;
+  --border: #1e1e28; --divider: #22222d;
+  --accent-bg: rgba(245,166,35,0.08);
+  --font-serif: 'Noto Serif SC', 'Source Han Serif SC', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  line-height:1.8;overflow-x:hidden}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+.top-nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(7,7,10,0.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);padding:12px 24px;
+  display:flex;justify-content:space-between;align-items:center}
+.top-nav .logo{font-family:var(--font-serif);font-weight:700;
+  font-size:1rem;color:var(--gold2);text-decoration:none;letter-spacing:.02em}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.85rem;
+  padding:5px 12px;border-radius:16px;transition:all .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);
+  background:var(--accent-bg)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  padding:100px 24px 80px;position:relative;overflow:hidden}
+#particles{position:absolute;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0}
+.hero-content{position:relative;z-index:1}
+.hero-emoji{font-size:72px;margin-bottom:20px;
+  animation:float 3s ease-in-out infinite}
+.hero h1{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3rem);
+  font-weight:900;color:var(--gold2);letter-spacing:-.02em;margin-bottom:12px}
+.hero .subtitle{font-size:1.15rem;color:var(--text2);margin-bottom:8px}
+.hero .tag{display:inline-block;background:var(--accent-bg);
+  color:var(--gold);padding:4px 16px;border-radius:20px;
+  font-size:.8rem;font-weight:600;margin:16px 0 32px}
+.hero .stats{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+.hero .stat{text-align:center}
+.hero .stat .num{font-family:var(--font-serif);font-size:2rem;
+  font-weight:900;color:var(--gold)}
+.hero .stat .lbl{font-size:.8rem;color:var(--text3)}
+
+/* Chapter Grid */
+.section-title{font-family:var(--font-serif);font-size:1.5rem;
+  color:var(--gold2);text-align:center;margin:60px 0 32px}
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;margin-bottom:60px}
+.ch-card{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:24px;transition:all .25s;
+  text-decoration:none;display:block;cursor:pointer}
+.ch-card:hover{border-color:var(--gold);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(245,166,35,0.08)}
+.ch-card .ch-num{font-size:.75rem;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.ch-card .ch-emoji{font-size:2rem;margin-bottom:8px}
+.ch-card .ch-title{font-family:var(--font-serif);font-size:1.1rem;
+  font-weight:700;color:var(--text);margin-bottom:6px}
+.ch-card .ch-desc{font-size:.85rem;color:var(--text2);line-height:1.5}
+
+/* Chapter page */
+.chapter-body{padding-top:80px}
+.chapter-header{text-align:center;padding:40px 0 32px;
+  border-bottom:1px solid var(--divider);margin-bottom:40px}
+.chapter-header .ch-num-lg{font-size:.85rem;font-weight:700;
+  color:var(--gold);letter-spacing:.05em;margin-bottom:8px}
+.chapter-header .ch-emoji-lg{font-size:3rem;margin-bottom:12px}
+.chapter-header h2{font-family:var(--font-serif);font-size:2rem;
+  font-weight:900;color:var(--text);margin-bottom:8px}
+.chapter-header .tagline{font-size:1rem;color:var(--text2);font-style:italic}
+
+/* Content sections */
+.sec{margin:32px 0}
+.sec h3{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;
+  color:var(--blue);margin-bottom:12px;padding-left:12px;
+  border-left:3px solid var(--gold)}
+.sec p{margin-bottom:16px;color:var(--text);font-size:.97rem;
+  letter-spacing:.005em;line-height:1.9}
+.sec ul,.sec ol{margin:12px 0 20px 24px}
+.sec li{margin-bottom:6px;color:var(--text);font-size:.97rem}
+.sec li::marker{color:var(--gold)}
+.sec strong{color:var(--gold2);font-weight:700}
+
+/* Highlight box */
+.hl-box{background:var(--accent-bg);border:1px solid var(--border);
+  border-radius:12px;padding:20px 24px;margin:20px 0}
+.hl-box .hl-label{font-size:.75rem;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.hl-box p{font-size:.93rem;color:var(--text);margin-bottom:8px}
+.hl-box p:last-child{margin-bottom:0}
+
+/* Blockquote */
+blockquote{border-left:4px solid var(--gold);padding:12px 20px;
+  margin:20px 0;background:var(--bg2);border-radius:0 8px 8px 0;
+  font-style:italic;color:var(--text2);font-size:.95rem}
+
+/* Data grid */
+.data-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:12px;margin:20px 0}
+.data-card{background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:20px;text-align:center}
+.data-card .d-num{font-family:var(--font-serif);font-size:1.6rem;
+  font-weight:900;color:var(--gold)}
+.data-card .d-lbl{font-size:.8rem;color:var(--text3);margin-top:4px}
+
+/* Tables */
+.tbl{overflow-x:auto;margin:20px 0}
+.tbl table{width:100%;border-collapse:collapse;font-size:.9rem}
+.tbl th{background:var(--bg3);color:var(--gold2);font-weight:700;
+  padding:12px;text-align:left;border-bottom:2px solid var(--gold)}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--divider)}
+.tbl tr:hover td{background:var(--bg2)}
+
+/* Phase cards */
+.phase-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;margin:20px 0}
+.phase-card{background:var(--card);border:1px solid var(--border);
+  border-top:4px solid var(--gold);border-radius:10px;padding:20px}
+.phase-card .p-title{font-weight:700;font-size:.95rem;color:var(--text);
+  margin-bottom:6px}
+.phase-card .p-meta{font-size:.78rem;color:var(--text3)}
+
+/* Bottom nav */
+.bottom-nav{display:flex;justify-content:space-between;align-items:center;
+  padding:32px 0 48px;border-top:1px solid var(--divider);margin-top:60px}
+.bottom-nav a{color:var(--text2);text-decoration:none;font-size:.9rem;
+  padding:8px 16px;border-radius:8px;transition:all .2s;
+  border:1px solid var(--border)}
+.bottom-nav a:hover{color:var(--gold);border-color:var(--gold);
+  background:var(--accent-bg)}
+.bottom-nav .bn-center{color:var(--text3);font-size:.85rem}
+
+/* Footer */
+.footer{text-align:center;padding:40px 24px;border-top:1px solid var(--divider);
+  color:var(--text3);font-size:.8rem}
+.footer a{color:var(--blue);text-decoration:none}
+
+/* Img placeholder */
+.img-placeholder{background:var(--bg2);border:2px dashed var(--border);
+  border-radius:12px;padding:32px 20px;text-align:center;margin:20px 0;
+  color:var(--text3);font-size:.85rem}
+.img-placeholder .icon{font-size:2rem;margin-bottom:6px}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+@media(max-width:600px){
+  .top-nav{flex-direction:column;gap:8px}
+  .nav-links{justify-content:center}
+  .hero .stats{gap:20px}
+  .ch-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="logo">📘 OPC 生存手册</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 首页</a>
+    <a href="ch1.html">1</a>
+    <a href="ch2.html">2</a>
+    <a href="ch3.html" class="active">3</a>
+    <a href="ch4.html">4</a>
+    <a href="ch5.html">5</a>
+    <a href="ch6.html">6</a>
+    <a href="ch7.html">7</a>
+    <a href="ch8.html">8</a>
+    <a href="ch9.html">9</a>
+    <a href="ch10.html">10</a>
+
+  </div>
+</nav>
+
+<div class="container chapter-body">
+  <div class="chapter-header">
+    <div class="ch-num-lg">第 3 章</div>
+    <div class="ch-emoji-lg">🎯</div>
+    <h2>找到你的一人帝国</h2>
+    <p class="tagline">选对赛道赢80%</p>
+  </div>
+
+<div class="chapter-header"><span class="chapter-num">第3章</span><span class="chapter-emoji">🎯</span></div>
+  <h2>找到你的一人帝国</h2>
+  <p class="tagline">选对赛道，你已经赢了80%。选错赛道，再努力也是白费</p>
+  配图：Ikigai四圈交叠图+AI放大区 → illustration-plan.md</div>
+
+  <div class="sec"><h3>3.1 如何发现你的「不公平优势」</h3>
+  <p>每个人都有某些事情比别人更容易做到。不一定是天赋——可能是你恰好有某个领域的经验、某个圈层的人脉、某种独特的视角。关键问题是：<strong>你会什么 + AI能放大什么？</strong></p>
+  <p>举个例子：普通会计会记账（普通），但会计+AI能做100家公司的自动化财务报表（不公平优势）。英语老师会教书（普通），但英语老师+AI能做个性化英语学习App（不公平优势）。</p>
+  <p>使用<strong>Ikigai模型</strong>定位方向——找到四圈交集：你热爱的、你擅长的、世界需要的、有人付钱的。AI把交集<strong>放大10倍</strong>。</p></div>
+
+  <div class="sec"><h3>3.2 用AI挖掘niche</h3>
+  <p>把这个提示词输入ChatGPT或Claude：</p>
+  <blockquote>「我擅长[技能A]和[技能B]，对[领域]有深入了解。请分析目前市场上竞争低但需求稳定的10个细分方向。对每个方向，请说明：目标用户、用户痛点、为什么竞争低、AI在其中的杠杆作用。优先推荐需要AI深度参与的品类。」</blockquote>
+  <p>还可以让AI分析Reddit某板块最近100个热帖的共性需求，或分析即刻/V2EX上「求推荐」「有人做过吗」类帖子的关键词频率。</p></div>
+
+  <div class="sec"><h3>3.3 快速验证三步法</h3>
+  <div class="hl-box">
+    <p><strong>Step 1：做一页Landing Page</strong> — Carrd/Notion，30分钟。写清：解决什么问题？为什么是你？什么价格？加「加入等待列表」按钮。</p>
+    <p><strong>Step 2：投$50广告测试</strong> — Facebook Ads或小红书薯条。如果CPA低于预期客单价的20%，就有戏。</p>
+    <p><strong>Step 3：收集10个付费意向</strong> — 在社群/朋友圈发「我正在做XX，第一批用户半价，感兴趣的朋友私信我」。收到10人说「要」，再开始。</p></div></div>
+
+  <div class="sec"><h3>3.4 20个已验证的OPC方向</h3>
+  <div class="tbl"><table>
+    <tr><th>方向</th><th>AI工具</th><th>难度</th><th>月入潜力</th></tr>
+    <tr><td>AI写作服务</td><td>Claude+ChatGPT</td><td>★</td><td>$500-3K</td></tr>
+    <tr><td>AI绘画素材包</td><td>Midjourney</td><td>★</td><td>$300-2K</td></tr>
+    <tr><td>KDP低内容书</td><td>ChatGPT+Canva</td><td>★</td><td>$200-2K</td></tr>
+    <tr><td>Notion模板</td><td>Notion+AI</td><td>★</td><td>$500-5K</td></tr>
+    <tr><td>ChatGPT插件</td><td>Cursor+API</td><td>★★</td><td>$1K-10K</td></tr>
+    <tr><td>AI课程制作</td><td>Claude+Synthesia</td><td>★★</td><td>$1K-20K</td></tr>
+    <tr><td>视频脚本代写</td><td>Claude+Descript</td><td>★</td><td>$500-3K</td></tr>
+    <tr><td>社媒代运营</td><td>ChatGPT+Canva</td><td>★</td><td>$1K-5K</td></tr>
+    <tr><td>AI翻译本地化</td><td>DeepL+ChatGPT</td><td>★</td><td>$500-3K</td></tr>
+    <tr><td>数据分析咨询</td><td>ChatGPT Code Interp.</td><td>★★</td><td>$2K-8K</td></tr>
+    <tr><td>AI应用定制</td><td>Cursor+Replit</td><td>★★★</td><td>$3K-15K</td></tr>
+    <tr><td>提示词工程</td><td>ChatGPT+Claude</td><td>★★</td><td>$1K-5K</td></tr>
+    <tr><td>AI音乐/音效</td><td>Suno+ElevenLabs</td><td>★</td><td>$300-2K</td></tr>
+    <tr><td>数字人视频</td><td>HeyGen+Synthesia</td><td>★</td><td>$500-3K</td></tr>
+    <tr><td>微SaaS产品</td><td>Cursor+Supabase</td><td>★★★</td><td>$1K-20K</td></tr>
+  </table></div></div>
+
+  <nav class="bottom-nav">
+  <a href="ch2.html">← 第2章</a>
+  <span class="bn-center">📘 OPC 生存手册</span>
+  <a href="ch4.html">第4章 →</a>
+</nav>
+</div>
+
+<footer class="footer">
+  <p>📘 <strong>OPC 生存手册</strong> · 第一版 · 2026</p>
+  <p>One Person Creator — 一人 + AI = 一个团队</p>
+  <p style="margin-top:6px">
+    <a href="https://github.com/MoKangMedical/opc-survival-handbook">GitHub</a> · 
+    <a href="index.html">首页</a> · 
+    <a href="DESIGN.md">设计系统</a>
+  </p>
+</footer>
+
+</body>
+</html>
