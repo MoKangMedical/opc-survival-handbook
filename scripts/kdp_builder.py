@@ -2,14 +2,14 @@
 """
 KDP Book Builder — OPC生存手册 HTML → KDP-ready PDF
 =====================================================
-Converts handbook.html to a print-ready PDF formatted for
+Converts docs/index.html to a print-ready PDF formatted for
 Amazon KDP 6×9 inch paperback with bleed settings.
 
 Requirements: pip install beautifulsoup4 reportlab
 
 Usage:
     python kdp_builder.py
-    python kdp_builder.py --input handbook.html --output opc-handbook.pdf
+    python kdp_builder.py --input docs/index.html --output output/opc-handbook.pdf
     python kdp_builder.py --format a5        # A5 format
     python kdp_builder.py --no-bleed          # without bleed
 """
@@ -428,13 +428,13 @@ def main():
         epilog="""
 Examples:
   python kdp_builder.py
-  python kdp_builder.py --input handbook.html --output opc.pdf
+  python kdp_builder.py --input docs/index.html --output output/opc.pdf
   python kdp_builder.py --format 5x8 --no-bleed
   python kdp_builder.py --format a5
         """
     )
-    parser.add_argument('--input', default='handbook.html',
-                        help='Input HTML file (default: handbook.html)')
+    parser.add_argument('--input', default='docs/index.html',
+                        help='Input HTML file (default: docs/index.html)')
     parser.add_argument('--output', default='output/opc-handbook.pdf',
                         help='Output PDF path (default: output/opc-handbook.pdf)')
     parser.add_argument('--format', default='6x9', choices=list(PAGE_SIZES.keys()),
@@ -448,19 +448,28 @@ Examples:
     
     args = parser.parse_args()
     
-    # Resolve paths relative to script location
+    # Resolve paths from both the current working directory and repo root, so
+    # `python3 scripts/kdp_builder.py` works from the repository root.
     script_dir = Path(__file__).parent.resolve()
-    input_path = script_dir / args.input
-    output_path = script_dir / args.output
+    repo_root = script_dir.parent
+
+    raw_input = Path(args.input)
+    if raw_input.is_absolute():
+        input_path = raw_input
+    else:
+        input_candidates = [
+            Path.cwd() / raw_input,
+            repo_root / raw_input,
+            script_dir / raw_input,
+        ]
+        input_path = next((path for path in input_candidates if path.exists()), input_candidates[0])
+
+    raw_output = Path(args.output)
+    output_path = raw_output if raw_output.is_absolute() else repo_root / raw_output
     
     if not input_path.exists():
-        # Try looking in parent directory for handbook.html
-        alt_path = script_dir.parent / 'handbook.html'
-        if alt_path.exists():
-            input_path = alt_path
-        else:
-            print(f"Error: Input file not found: {input_path}")
-            sys.exit(1)
+        print(f"Error: Input file not found: {input_path}")
+        sys.exit(1)
     
     # Ensure output directory exists
     output_path.parent.mkdir(parents=True, exist_ok=True)

@@ -25,7 +25,7 @@
 
 # 生成KDP就绪PDF
 pip install beautifulsoup4 reportlab
-python3 scripts/kdp_builder.py --input docs/index.html
+python3 scripts/kdp_builder.py
 ```
 
 ## 📂 项目结构
