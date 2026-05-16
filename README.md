@@ -39,6 +39,8 @@ python3 scripts/kdp_builder.py
 - `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/index.html`
 - `scripts/generate_visuals.mjs`：生成封面、10张章节题图、4张信息图（SVG + PNG）
 - `scripts/kdp_builder.py`：把在线书稿转成 6×9 英寸 KDP PDF，支持封面、插图和表格
+- `course-platform-strategy.md`：OPC研究院微信课程平台方案
+- `docs/course.html`：OPC课程平台原型页
 - 视觉资产输出目录：`docs/assets/`
 - KDP PDF 输出目录：`output/opc-handbook.pdf`
 
@@ -48,6 +50,7 @@ python3 scripts/kdp_builder.py
 ├── package.json           # Node构建脚本与sharp依赖
 ├── docs/                  # GitHub Pages 站点
 │   ├── index.html         # 完整手册（10章+目录+封面）
+│   ├── course.html        # OPC研究院课程平台原型
 │   └── assets/            # 封面、章节插图、信息图
 ├── scripts/
 │   ├── build_handbook_html.mjs
@@ -57,6 +60,7 @@ python3 scripts/kdp_builder.py
 │   └── prompts/           # 4组完整AI生成提示词
 ├── illustration-plan.md   # 10张章节题图MJ Prompt
 ├── publishing-strategy.md # 三线发布策略
+├── course-platform-strategy.md # 微信课程平台策略
 └── outline.md             # 完整大纲
 ```
 

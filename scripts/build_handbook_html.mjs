@@ -616,7 +616,9 @@ html,body{max-width:100%;overflow-x:hidden}
 body{font-family:'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.82;transition:background .25s,color .25s}
 .container{max-width:880px;margin:0 auto;padding:0 26px}
 .top-nav{position:fixed;top:0;left:0;right:0;background:color-mix(in srgb,var(--bg) 88%,transparent);z-index:100;border-bottom:1px solid var(--divider);padding:12px 24px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(10px)}
-.top-nav .logo{font-weight:850;color:var(--accent);font-size:.95rem}
+.top-nav .logo{font-weight:850;color:var(--accent);font-size:.95rem;text-decoration:none}
+.top-nav .nav-link{color:var(--text);text-decoration:none;font-size:.86rem;font-weight:780;margin-right:10px}
+.top-nav .nav-link:hover{color:var(--gold)}
 .top-nav button{background:var(--tag-bg);border:none;color:var(--text);padding:7px 14px;border-radius:18px;cursor:pointer;font-size:.85rem;margin-left:8px}
 .top-nav button:hover{background:var(--gold);color:#fff}
 .cover{min-height:100vh;display:grid;grid-template-columns:minmax(280px,440px) minmax(280px,1fr);gap:52px;align-items:center;padding:96px 7vw 64px;background:radial-gradient(circle at 70% 45%,rgba(108,155,207,.18),transparent 38%),linear-gradient(180deg,var(--bg),var(--highlight))}
@@ -685,8 +687,9 @@ function render() {
 </head>
 <body>
 <nav class="top-nav">
-  <span class="logo">OPC生存手册</span>
+  <a class="logo" href="index.html">OPC生存手册</a>
   <div>
+    <a class="nav-link" href="course.html">课程平台</a>
     <button onclick="document.documentElement.classList.toggle('dark')">模式</button>
     <button onclick="window.print()">打印</button>
   </div>
