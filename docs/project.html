@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC项目看板</title>
+<style>
+:root{
+  --bg:#f4f0e8;
+  --surface:#fffdf8;
+  --surface-2:#f8f4ec;
+  --text:#1f2433;
+  --text-2:#4d5467;
+  --muted:#8b92a3;
+  --line:#ddd3c4;
+  --gold:#d08a14;
+  --green:#207a51;
+  --green-bg:#e7f5ec;
+  --shadow:0 16px 36px rgba(31,36,51,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  max-width:100%;
+  overflow-x:hidden;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(208,138,20,.12), transparent 30%),
+    radial-gradient(circle at left 20%, rgba(106,140,186,.12), transparent 24%),
+    linear-gradient(180deg, #fbf8f1 0%, var(--bg) 100%);
+  line-height:1.7;
+}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:20;background:rgba(244,240,232,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-inner{max-width:1240px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-weight:900;text-decoration:none;letter-spacing:.01em}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--text-2);font-size:.9rem;font-weight:700;padding:7px 12px;border-radius:999px}
+.links a:hover,.links a.active{background:#efe5d3;color:var(--text)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:26px;align-items:stretch;padding:48px 0 24px}
+.panel,.card,.stat{background:rgba(255,253,248,.86);border:1px solid rgba(221,211,196,.9);border-radius:18px;box-shadow:var(--shadow)}
+.hero-main{padding:30px}
+.hero-side{padding:26px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#fff2db;color:var(--gold);font-size:.82rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+h1{margin:18px 0 14px;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.03;font-weight:950;letter-spacing:0}
+.lead{margin:0 0 20px;color:var(--text-2);font-size:1.08rem;max-width:760px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;border-radius:12px;padding:12px 16px;border:1px solid transparent}
+.btn-primary{background:var(--text);color:#fff}
+.btn-secondary{background:#f0e5d3;color:var(--text);border-color:#ead8bc}
+.hero-side h2,.section-head h2{margin:0}
+.status-list,.audio-list,.phase-board{display:grid;gap:12px}
+.status-item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--green)}
+.status-item b{font-size:.95rem}
+.status-item span{display:block;color:var(--muted);font-size:.85rem}
+.status-tag{background:var(--green-bg);color:var(--green);padding:6px 10px;border-radius:999px;font-size:.77rem;font-weight:900}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;padding:18px 0 12px}
+.stat{padding:18px}
+.stat b{display:block;font-size:2rem;line-height:1;color:var(--gold);margin-bottom:8px}
+.stat span{display:block;font-size:.86rem;color:var(--text-2)}
+section{padding:22px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}
+.section-head p{margin:0;color:var(--text-2);font-size:.96rem}
+.grid-4,.grid-2{display:grid;gap:14px}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{padding:18px;min-width:0}
+.card h3{margin:0 0 8px;font-size:1.04rem}
+.card p{margin:0;color:var(--text-2);font-size:.92rem}
+.meta-strip,.audio-meta,.toolbar,.audio-summary{display:flex;gap:8px;flex-wrap:wrap}
+.pill,.audio-meta span{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f3ecdf;color:var(--text-2);font-size:.77rem;font-weight:800}
+.tools,.kdp{display:grid;grid-template-columns:2.2fr 1fr;gap:14px}
+.toolbar{align-items:center;margin-bottom:12px}
+.toolbar input{flex:1 1 220px;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;font:inherit;color:var(--text)}
+.toolbar button{border:1px solid var(--line);background:var(--surface);color:var(--text-2);border-radius:999px;padding:10px 12px;font:inherit;font-size:.86rem;font-weight:800;cursor:pointer}
+.toolbar button.active{background:var(--text);color:#fff;border-color:var(--text)}
+.audio-summary .mini{flex:1 1 140px;background:#f7efe2;border:1px solid #eadcc6;border-radius:14px;padding:14px}
+.audio-summary .mini b{display:block;color:var(--gold);font-size:1.4rem;margin-bottom:6px}
+.audio-summary .mini span{font-size:.82rem;color:var(--text-2)}
+.audio-row{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:14px;align-items:center}
+.audio-row .info{min-width:0}
+.audio-row small{display:block;color:var(--gold);font-size:.76rem;font-weight:900;margin-bottom:5px}
+.audio-row b{display:block;font-size:1rem;line-height:1.35;margin-bottom:4px}
+.audio-row p{margin:0;color:var(--text-2);font-size:.87rem}
+.audio-player{display:grid;gap:8px}
+.audio-player audio{width:100%}
+.duration{font-size:.8rem;color:var(--text-2);font-weight:700}
+.phase-row{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.phase-row b{font-size:.9rem}
+.phase-row p{margin:0;color:var(--text-2);font-size:.84rem}
+.bar{height:10px;background:#efe8dc;border-radius:999px;overflow:hidden}
+.bar > span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#e4b043)}
+footer{padding:34px 24px 48px;text-align:center;color:var(--muted);font-size:.86rem}
+@media(max-width:1080px){.hero,.tools,.kdp{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.top-inner{flex-direction:column;align-items:flex-start}.wrap{padding:0 20px}.hero-main,.hero-side{padding:22px}h1{font-size:clamp(2rem,11vw,3rem);line-height:1.08}.stats,.grid-4,.grid-2,.audio-row,.phase-row{grid-template-columns:1fr}.tools,.kdp{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">OPC 生存手册</a>
+    <nav class="links">
+      <a href="index.html">手册首页</a>
+      <a href="handbook.html">完整书稿</a>
+      <a href="course.html">课程方案</a>
+      <a href="course/index.html">65节课程</a>
+      <a class="active" href="project.html">项目看板</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="panel hero-main">
+      <div class="eyebrow">Project Dashboard</div>
+      <h1>OPC 项目看板</h1>
+      <p class="lead">把书稿、课程、视觉资产和音频状态集中到一个页面里。你可以直接看当前交付情况，也可以直接播放手册章节音频和 65 节课程口播音频。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="course/index.html">进入 65 节课程</a>
+        <a class="btn btn-secondary" href="handbook.html">查看完整书稿</a>
+        <a class="btn btn-secondary" href="https://github.com/MoKangMedical/opc-survival-handbook">GitHub 仓库</a>
+      </div>
+    </div>
+    <aside class="panel hero-side">
+      <h2>当前状态</h2>
+      <div class="status-list">
+        <div class="status-item"><div class="dot"></div><div><b>GitHub Pages</b><span>当前站点基于 `main /docs` 发布</span></div><div class="status-tag">Built</div></div>
+        <div class="status-item"><div class="dot"></div><div><b>手册阅读站</b><span>10 章分章页 + 完整书稿页</span></div><div class="status-tag">Ready</div></div>
+        <div class="status-item"><div class="dot"></div><div><b>课程站</b><span>65 节课程正文、JSON、口播稿</span></div><div class="status-tag">Ready</div></div>
+        <div class="status-item"><div class="dot"></div><div><b>音频资产</b><span>手册 10 条 + 课程 65 条</span></div><div class="status-tag">75 Tracks</div></div>
+      </div>
+    </aside>
+  </section>
+  <section class="stats">
+    <div class="stat"><b>10</b><span>手册章节页</span></div>
+    <div class="stat"><b>65</b><span>课程详情页</span></div>
+    <div class="stat"><b>75</b><span>总音频条目</span></div>
+    <div class="stat"><b>10</b><span>章节插图 PNG</span></div>
+    <div class="stat"><b>4</b><span>信息图 PNG</span></div>
+    <div class="stat"><b>61.6KB</b><span>完整书稿 HTML</span></div>
+  </section>
+  <section>
+    <div class="section-head">
+      <div>
+        <h2>项目入口</h2>
+        <p>先看整体，再进入书稿、课程和源码。</p>
+      </div>
+    </div>
+    <div class="grid-4">
+      <a class="card" href="index.html"><h3>分章阅读首页</h3><p>10 章入口，适合浏览章节和分章音频版内容。</p><div class="meta-strip"><span class="pill">Dark Reading</span><span class="pill">10 Chapters</span></div></a>
+      <a class="card" href="handbook.html"><h3>完整书稿</h3><p>单文件 HTML，适合整体检查、打印和 KDP 排版前审阅。</p><div class="meta-strip"><span class="pill">Full HTML</span><span class="pill">61.6KB</span></div></a>
+      <a class="card" href="course/index.html"><h3>65 节系统课</h3><p>每课正文、口播稿、交付物和音频播放器都已接好。</p><div class="meta-strip"><span class="pill">65 Lessons</span><span class="pill">Audio Ready</span></div></a>
+      <a class="card" href="course.html"><h3>课程平台方案</h3><p>课程化、微信平台、会员结构和产品形态总览。</p><div class="meta-strip"><span class="pill">Platform Plan</span><span class="pill">WeChat</span></div></a>
+    </div>
+  </section>
+  <section class="kdp">
+    <div class="card">
+      <div class="section-head"><div><h2>交付结构</h2><p>当前仓库已经具备书稿、课程、视觉、音频和发布基础设施。</p></div></div>
+      <div class="grid-2">
+        <div class="card" style="box-shadow:none;background:var(--surface-2)"><h3>手册层</h3><p>`docs/index.html`、`docs/ch1~ch10.html`、`docs/handbook.html`、`docs/audio/`。</p></div>
+        <div class="card" style="box-shadow:none;background:var(--surface-2)"><h3>课程层</h3><p>`docs/course/` 下包含 65 节 HTML、JSON、口播稿和 MP3。</p></div>
+        <div class="card" style="box-shadow:none;background:var(--surface-2)"><h3>视觉层</h3><p>10 张章节题图、4 张信息图、封面与 KDP 印刷封面都已落地。</p></div>
+        <div class="card" style="box-shadow:none;background:var(--surface-2)"><h3>工具层</h3><p>KDP 排版、课程生成、视觉生成和音频生成脚本已经可重复执行。</p></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-head"><div><h2>构建链路</h2><p>静态构建和音频生成的关键命令。</p></div></div>
+      <div class="phase-board">
+        <div class="phase-row"><b>`npm run build`</b><p>生成视觉资产、完整书稿和 65 节课程页</p><div class="status-tag">OK</div></div>
+        <div class="phase-row"><b>`scripts/gen_audio.py`</b><p>生成 10 条手册章节口播音频</p><div class="status-tag">OK</div></div>
+        <div class="phase-row"><b>`scripts/generate_course_audio.py`</b><p>生成 65 条课程口播音频</p><div class="status-tag">OK</div></div>
+        <div class="phase-row"><b>`scripts/kdp_builder.py`</b><p>导出 KDP PDF 书稿</p><div class="status-tag">Ready</div></div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-head"><div><h2>手册音频状态</h2><p>10 章分章页音频，直接可播。时长会在读取 MP3 元数据后显示。</p></div></div>
+    <div id="handbook-audio" class="audio-list"></div>
+  </section>
+  <section class="tools">
+    <div class="card">
+      <div class="section-head"><div><h2>课程音频状态</h2><p>支持按阶段筛选和按关键词搜索，直接检查课程和对应音频。</p></div></div>
+      <div class="toolbar">
+        <input id="search-input" type="search" placeholder="搜索课程标题，例如：KDP、微信、AI写作">
+        <button class="phase-filter active" data-phase="all">全部阶段</button>
+        <button class="phase-filter" data-phase="1">P1-3</button>
+        <button class="phase-filter" data-phase="4">P4-6</button>
+        <button class="phase-filter" data-phase="7">P7-10</button>
+      </div>
+      <div id="course-audio" class="audio-list"></div>
+    </div>
+    <aside class="card">
+      <div class="section-head"><div><h2>课程统计</h2><p>数据来自 `course/data/catalog.json`。</p></div></div>
+      <div class="audio-summary">
+        <div class="mini"><b id="lesson-count">65</b><span>课程总数</span></div>
+        <div class="mini"><b id="audio-count">65</b><span>课程音频</span></div>
+        <div class="mini"><b id="phase-count">10</b><span>阶段总数</span></div>
+      </div>
+      <div id="phase-board" class="phase-board" style="margin-top:12px"></div>
+      <div class="audio-summary" style="margin-top:12px">
+        <div class="mini"><b id="content-range">3277-3395</b><span>正文有效字数</span></div>
+        <div class="mini"><b id="narration-range">246-276</b><span>口播稿字数</span></div>
+        <div class="mini"><b id="visible-count">65</b><span>当前筛选结果</span></div>
+      </div>
+    </aside>
+  </section>
+</main>
+<footer>OPC 项目看板 · GitHub Pages 静态交付页 · 书稿、课程、音频与资产状态总览</footer>
+<script>
+const handbookTracks = [
+  { number: 1, title: "一个人的时代来了", desc: "为什么现在是 OPC 的最佳时机？", file: "audio/ch1.mp3", page: "ch1.html" },
+  { number: 2, title: "心态——第一道生死线", desc: "四种必死心态与生存原则。", file: "audio/ch2.mp3", page: "ch2.html" },
+  { number: 3, title: "找到你的一人帝国", desc: "Ikigai 模型、niche 与快速验证。", file: "audio/ch3.mp3", page: "ch3.html" },
+  { number: 4, title: "AI 工具箱", desc: "写作、设计、代码与自动化。", file: "audio/ch4.mp3", page: "ch4.html" },
+  { number: 5, title: "内容工厂", desc: "内容金字塔与一鱼多吃。", file: "audio/ch5.mp3", page: "ch5.html" },
+  { number: 6, title: "流量和分发", desc: "平台选择、Build in Public、AI 搜索优化。", file: "audio/ch6.mp3", page: "ch6.html" },
+  { number: 7, title: "变现", desc: "六种模式、定价与收入路线图。", file: "audio/ch7.mp3", page: "ch7.html" },
+  { number: 8, title: "生存底线", desc: "现金流、法务、版权和备份。", file: "audio/ch8.mp3", page: "ch8.html" },
+  { number: 9, title: "肉身生存", desc: "深度工作、健康管理与精力恢复。", file: "audio/ch9.mp3", page: "ch9.html" },
+  { number: 10, title: "进化——OPC→OPC+", desc: "AI Agent、品牌资产与微型企业。", file: "audio/ch10.mp3", page: "ch10.html" }
+];
+function formatDuration(seconds){if(!Number.isFinite(seconds))return "加载中";const total=Math.round(seconds);const mins=Math.floor(total/60);const secs=String(total%60).padStart(2,"0");return `${mins}:${secs}`;}
+function handbookRow(track){const wrapper=document.createElement("div");wrapper.className="audio-row";wrapper.innerHTML=`<div class="info"><small>第 ${track.number} 章</small><b>${track.title}</b><p>${track.desc}</p><div class="audio-meta"><span>分章页</span><span>MP3 已生成</span><span><a href="${track.page}">打开章节</a></span></div></div><div class="audio-player"><audio controls preload="metadata" src="${track.file}"></audio><div class="duration">时长：<span>加载中</span></div></div>`;const audio=wrapper.querySelector("audio");const duration=wrapper.querySelector(".duration span");audio.addEventListener("loadedmetadata",()=>duration.textContent=formatDuration(audio.duration));audio.addEventListener("error",()=>duration.textContent="加载失败");return wrapper;}
+function courseRow(item){const wrapper=document.createElement("div");wrapper.className="audio-row";wrapper.dataset.title=item.title;wrapper.dataset.phase=String(item.phaseId);wrapper.innerHTML=`<div class="info"><small>第 ${item.number} 课 · Phase ${item.phaseId}</small><b>${item.title}</b><p>${item.deliverable}</p><div class="audio-meta"><span>${item.phaseTitle}</span><span>正文 ${item.contentChars} 字</span><span>口播 ${item.narrationChars} 字</span><span><a href="course/${item.path}">打开课程页</a></span></div></div><div class="audio-player"><audio controls preload="metadata" src="course/${item.audio}"></audio><div class="duration">时长：<span>加载中</span></div></div>`;const audio=wrapper.querySelector("audio");const duration=wrapper.querySelector(".duration span");audio.addEventListener("loadedmetadata",()=>duration.textContent=formatDuration(audio.duration));audio.addEventListener("error",()=>duration.textContent="加载失败");return wrapper;}
+function renderPhaseBoard(catalog){const phaseBoard=document.getElementById("phase-board");const groups=new Map();catalog.lessons.forEach((item)=>{const key=`${item.phaseId}|${item.phaseTitle}`;groups.set(key,(groups.get(key)||0)+1);});phaseBoard.innerHTML="";[...groups.entries()].forEach(([key,count])=>{const [phaseId,phaseTitle]=key.split("|");const row=document.createElement("div");row.className="phase-row";row.innerHTML=`<b>Phase ${phaseId}</b><div><p>${phaseTitle}</p><div class="bar"><span style="width:${Math.min((count/8)*100,100)}%"></span></div></div><div class="status-tag">${count} 课</div>`;phaseBoard.appendChild(row);});}
+function phaseBucket(phaseId){if(phaseId<=3)return "1";if(phaseId<=6)return "4";return "7";}
+async function boot(){const handbookMount=document.getElementById("handbook-audio");handbookTracks.forEach((track)=>handbookMount.appendChild(handbookRow(track)));const response=await fetch("course/data/catalog.json");const catalog=await response.json();document.getElementById("lesson-count").textContent=String(catalog.lessons.length);document.getElementById("audio-count").textContent=String(catalog.lessons.length);document.getElementById("phase-count").textContent=String(catalog.phases.length);document.getElementById("content-range").textContent=`${catalog.minContentChars}-${catalog.maxContentChars}`;document.getElementById("narration-range").textContent=`${catalog.minNarrationChars}-${catalog.maxNarrationChars}`;renderPhaseBoard(catalog);const courseMount=document.getElementById("course-audio");const rows=catalog.lessons.map((item)=>courseRow(item));rows.forEach((row)=>courseMount.appendChild(row));const searchInput=document.getElementById("search-input");const filterButtons=[...document.querySelectorAll(".phase-filter")];function applyFilters(){const query=searchInput.value.trim().toLowerCase();const active=filterButtons.find((button)=>button.classList.contains("active"))?.dataset.phase||"all";let visible=0;rows.forEach((row)=>{const matchesText=row.dataset.title.toLowerCase().includes(query);const matchesPhase=active==="all"?true:phaseBucket(Number(row.dataset.phase))===active;const show=matchesText&&matchesPhase;row.style.display=show?"grid":"none";if(show)visible+=1;});document.getElementById("visible-count").textContent=String(visible);}searchInput.addEventListener("input",applyFilters);filterButtons.forEach((button)=>{button.addEventListener("click",()=>{filterButtons.forEach((item)=>item.classList.remove("active"));button.classList.add("active");applyFilters();});});applyFilters();}
+boot().catch((error)=>{document.getElementById("course-audio").innerHTML=`<div class="card"><h3>课程数据加载失败</h3><p>${error.message}</p></div>`;});
+</script>
+</body>
+</html>

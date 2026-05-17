@@ -370,7 +370,7 @@ const renderLessonPage = (lesson, lessons) => {
 <style>${pageStyle}</style>
 </head>
 <body>
-<header class="top"><div class="top-inner"><a class="brand" href="../course.html">OPC研究院</a><nav><a href="index.html">65节课程</a><a href="../index.html">手册首页</a><a href="../handbook.html">完整书稿</a></nav></div></header>
+<header class="top"><div class="top-inner"><a class="brand" href="../course.html">OPC研究院</a><nav><a href="index.html">65节课程</a><a href="../index.html">手册首页</a><a href="../handbook.html">完整书稿</a><a href="../project.html">项目看板</a></nav></div></header>
 <main class="wrap">
   <section class="hero">
     <div class="kicker">Phase ${lesson.phaseId} · ${escapeHtml(lesson.phaseTitle)} · 第${lesson.number}课</div>
@@ -436,7 +436,7 @@ const renderIndexPage = (lessons) => {
 <style>${pageStyle}</style>
 </head>
 <body>
-<header class="top"><div class="top-inner"><a class="brand" href="../course.html">OPC研究院</a><nav><a href="../course.html">平台方案</a><a href="../index.html">手册首页</a><a href="../handbook.html">完整书稿</a></nav></div></header>
+<header class="top"><div class="top-inner"><a class="brand" href="../course.html">OPC研究院</a><nav><a href="../course.html">平台方案</a><a href="../index.html">手册首页</a><a href="../handbook.html">完整书稿</a><a href="../project.html">项目看板</a></nav></div></header>
 <main class="wrap">
   <section class="catalog-hero">
     <div class="kicker">65节完整课程 · 每课正文3000字以上</div>
