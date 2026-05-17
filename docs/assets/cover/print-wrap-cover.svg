@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="3675" height="2775" viewBox="0 0 3675 2775" role="img">
+  <defs>
+    <linearGradient id="warmGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C9BCF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1A1C2E" flood-opacity="0.16"/>
+    </filter>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#E5E0D8" stroke-width="1" opacity="0.45"/>
+    </pattern>
+
+  </defs>
+  <rect width="3675" height="2775" fill="#F7F5F2"/>
+
+  <rect width="3675" height="2775" fill="#1A1C2E"/>
+  <rect width="3675" height="2775" fill="url(#grid)" opacity="0.12"/>
+  <rect x="80" y="80" width="3515" height="2615" rx="28" fill="none" stroke="#F5A623" stroke-width="6" opacity="0.65"/>
+  <rect x="1745" y="80" width="185" height="2615" fill="#242842" opacity="0.9"/>
+  <text x="1838" y="1110" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="90" fill="#F5A623" font-weight="900" text-anchor="middle">OPC</text>
+  <text x="1838" y="1230" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="48" fill="#F7F5F2" font-weight="800" text-anchor="middle">生存手册</text>
+  <text x="1838" y="2550" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#E8D5B7" font-weight="700" text-anchor="middle">2026</text>
+  <text x="260" y="360" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="56" fill="#F5A623" font-weight="900" >写给AI时代一人创作者的实战手册</text>
+  <text x="260" y="470" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="36" fill="#F7F5F2" font-weight="500" >这本书解决三个问题：如何选方向，如何用AI把一个人扩成一个团队，如何把内容、产品和信任变成稳定收入。</text>
+  <text x="260" y="560" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="36" fill="#F7F5F2" font-weight="500" >它不是鸡血故事，而是一套从定位、工具、生产线、分发、变现到风险控制的操作系统。</text>
+  <rect x="260" y="850" width="1140" height="620" rx="34" fill="#F7F5F2" opacity="0.96"/>
+  <text x="330" y="960" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="46" fill="#1A1C2E" font-weight="900" >适合谁阅读</text>
+  <text x="330" y="1070" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#1A1C2E" font-weight="600" >• 想用AI做副业或独立产品的人</text>
+  <text x="330" y="1150" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#1A1C2E" font-weight="600" >• 需要把专业能力产品化的自由职业者</text>
+  <text x="330" y="1230" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#1A1C2E" font-weight="600" >• 已经在创作，但缺少商业闭环的内容创作者</text>
+  <text x="330" y="1310" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#1A1C2E" font-weight="600" >• 想批量发布电子书、模板、课程和微产品的OPC</text>
+  <rect x="650" y="2200" width="420" height="420" fill="#F7F5F2"/>
+  <text x="860" y="2420" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="46" fill="#1A1C2E" font-weight="800" text-anchor="middle">BARCODE</text>
+  <text x="2070" y="370" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="168" fill="#F5A623" font-weight="900" >OPC</text>
+  <text x="2070" y="540" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="132" fill="#F7F5F2" font-weight="900" >生存手册</text>
+  <text x="2076" y="660" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="52" fill="#E8D5B7" font-weight="600" >AI时代一人创作者的生存实战指南</text>
+  <circle cx="2890" cy="1260" r="610" fill="#6C9BCF" opacity="0.08"/>
+  <path d="M2570 1840c140-80 250-82 340-10 58 45 96 110 152 142 66 38 150 15 250-65" fill="none" stroke="#F5A623" stroke-width="18" stroke-linecap="round"/>
+  <text x="2070" y="2400" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="58" fill="#F7F5F2" font-weight="800" >一个人 + AI = 一个团队</text>
+  <text x="2070" y="2490" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="34" fill="#F5A623" font-weight="700" >MoKangMedical · 2026</text>
+
+</svg>

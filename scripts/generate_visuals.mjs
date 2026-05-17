@@ -394,9 +394,10 @@ function comparisonAsset() {
 async function writeAsset(asset) {
   const svgPath = join(assetRoot, `${asset.name}.svg`);
   const pngPath = join(assetRoot, `${asset.name}.png`);
+  const svg = asset.svg.split("\n").map((line) => line.trimEnd()).join("\n") + "\n";
   await mkdir(dirname(svgPath), { recursive: true });
-  await writeFile(svgPath, asset.svg, "utf8");
-  await sharp(Buffer.from(asset.svg)).png({ compressionLevel: 9 }).toFile(pngPath);
+  await writeFile(svgPath, svg, "utf8");
+  await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(pngPath);
   console.log(`generated ${asset.name}.svg + .png`);
 }
 

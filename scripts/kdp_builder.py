@@ -2,14 +2,14 @@
 """
 KDP Book Builder — OPC生存手册 HTML → KDP-ready PDF
 =====================================================
-Converts docs/index.html to a print-ready PDF formatted for
+Converts docs/handbook.html to a print-ready PDF formatted for
 Amazon KDP 6×9 inch paperback with bleed settings.
 
 Requirements: pip install beautifulsoup4 reportlab
 
 Usage:
     python kdp_builder.py
-    python kdp_builder.py --input docs/index.html --output output/opc-handbook.pdf
+    python kdp_builder.py --input docs/handbook.html --output output/opc-handbook.pdf
     python kdp_builder.py --format a5        # A5 format
     python kdp_builder.py --no-bleed          # without bleed
 """
@@ -575,13 +575,13 @@ def main():
         epilog="""
 Examples:
   python kdp_builder.py
-  python kdp_builder.py --input docs/index.html --output output/opc.pdf
+  python kdp_builder.py --input docs/handbook.html --output output/opc.pdf
   python kdp_builder.py --format 5x8 --no-bleed
   python kdp_builder.py --format a5
         """
     )
-    parser.add_argument('--input', default='docs/index.html',
-                        help='Input HTML file (default: docs/index.html)')
+    parser.add_argument('--input', default='docs/handbook.html',
+                        help='Input HTML file (default: docs/handbook.html)')
     parser.add_argument('--output', default='output/opc-handbook.pdf',
                         help='Output PDF path (default: output/opc-handbook.pdf)')
     parser.add_argument('--format', default='6x9', choices=list(PAGE_SIZES.keys()),

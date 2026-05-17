@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img">
+  <defs>
+    <linearGradient id="warmGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5A623" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FF6B6B" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6C9BCF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0EA5E9" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1A1C2E" flood-opacity="0.16"/>
+    </filter>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#E5E0D8" stroke-width="1" opacity="0.45"/>
+    </pattern>
+
+  </defs>
+  <rect width="1200" height="1600" fill="#F7F5F2"/>
+
+  <rect width="1200" height="1600" fill="#F7F5F2"/>
+  <text x="600" y="110" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="56" fill="#1A1C2E" font-weight="900" text-anchor="middle">OPC 30天启动清单</text>
+  <text x="600" y="160" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="28" fill="#4A4D5E" font-weight="600" text-anchor="middle">从零到第一单，每天完成一个动作</text>
+
+    <rect x="75" y="230" width="1050" height="268" rx="28" fill="#0EA5E9" opacity="0.10" stroke="#0EA5E9" stroke-width="4"/>
+    <text x="110" y="284" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#0EA5E9" font-weight="900" >第1周 · 选择方向</text>
+
+      <rect x="110" y="310" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="348" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >01 列技能兴趣</text>
+
+      <rect x="358" y="310" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="348" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >02 分析niche</text>
+
+      <rect x="606" y="310" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="348" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >03 定用户画像</text>
+
+      <rect x="854" y="310" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="874" y="348" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >04 调研竞品</text>
+
+      <rect x="110" y="396" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="434" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >05 使命宣言</text>
+
+      <rect x="358" y="396" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="434" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >06 差异化</text>
+
+      <rect x="606" y="396" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="434" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >07 验证假设</text>
+
+
+    <rect x="75" y="545" width="1050" height="268" rx="28" fill="#F5A623" opacity="0.10" stroke="#F5A623" stroke-width="4"/>
+    <text x="110" y="599" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#F5A623" font-weight="900" >第2周 · 搭建工具</text>
+
+      <rect x="110" y="625" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="663" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >08 注册AI账号</text>
+
+      <rect x="358" y="625" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="663" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >09 设计工具</text>
+
+      <rect x="606" y="625" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="663" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >10 落地页</text>
+
+      <rect x="854" y="625" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="874" y="663" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >11 收款账户</text>
+
+      <rect x="110" y="711" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="749" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >12 域名邮箱</text>
+
+      <rect x="358" y="711" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="749" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >13 自动化</text>
+
+      <rect x="606" y="711" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="749" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >14 工作台</text>
+
+
+    <rect x="75" y="860" width="1050" height="268" rx="28" fill="#7C3AED" opacity="0.10" stroke="#7C3AED" stroke-width="4"/>
+    <text x="110" y="914" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#7C3AED" font-weight="900" >第3周 · 创作内容</text>
+
+      <rect x="110" y="940" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="978" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >15 产品大纲</text>
+
+      <rect x="358" y="940" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="978" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >16 完成初稿</text>
+
+      <rect x="606" y="940" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="978" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >17 社媒帖子</text>
+
+      <rect x="854" y="940" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="874" y="978" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >18 首次发布</text>
+
+      <rect x="110" y="1026" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="1064" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >19 长文</text>
+
+      <rect x="358" y="1026" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="1064" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >20 短视频</text>
+
+      <rect x="606" y="1026" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="1064" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >21 内容日历</text>
+
+
+    <rect x="75" y="1175" width="1050" height="268" rx="28" fill="#FF6B6B" opacity="0.10" stroke="#FF6B6B" stroke-width="4"/>
+    <text x="110" y="1229" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="30" fill="#FF6B6B" font-weight="900" >第4周 · 发布变现</text>
+
+      <rect x="110" y="1255" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="1293" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >22 上架产品</text>
+
+      <rect x="358" y="1255" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="1293" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >23 社群分享</text>
+
+      <rect x="606" y="1255" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="1293" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >24 发布文案</text>
+
+      <rect x="854" y="1255" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="874" y="1293" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >25 设置价格</text>
+
+      <rect x="110" y="1341" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="130" y="1379" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >26 邀请反馈</text>
+
+      <rect x="358" y="1341" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="378" y="1379" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >27 快速迭代</text>
+
+      <rect x="606" y="1341" width="220" height="58" rx="16" fill="#FFFFFF" stroke="#E5E0D8"/>
+      <text x="626" y="1379" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="19" fill="#1A1C2E" font-weight="800" >28 复盘目标</text>
+
+
+  <rect x="110" y="1500" width="980" height="28" rx="14" fill="#E5E0D8"/>
+  <rect x="110" y="1500" width="980" height="28" rx="14" fill="#F5A623"/>
+  <text x="600" y="1568" font-family="'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="25" fill="#1A1C2E" font-weight="800" text-anchor="middle">30/30 完成后，你至少拥有一个可售卖产品和一个分发闭环</text>
+
+</svg>
