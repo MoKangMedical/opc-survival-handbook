@@ -1,6 +1,6 @@
 # OPC生存手册合并状态
 
-更新时间：2026-05-17
+更新时间：2026-05-17 16:40
 
 ## 当前工作树
 
@@ -35,6 +35,12 @@
 - `docs/handbook.html`：完整单文件在线书稿
 - `scripts/build_handbook_html.mjs`、`scripts/generate_visuals.mjs`、`scripts/kdp_builder.py`：完整书稿、视觉资产和KDP PDF工具链
 
+从外层目录导入：
+
+- `docs/assets/comfyui/`：ComfyUI生成的10张章节题图、一个第9章备选版本、一个无字封面图
+- `docs/assets/illustrations/*.png`：已替换为对应ComfyUI章节题图
+- `scripts/generate_visuals.mjs`：现在会在构建时优先复制ComfyUI章节PNG，避免覆盖回程序化SVG截图
+
 ## 入口约定
 
 - `docs/index.html`：GitHub Pages首页，保留暗色分章+音频入口
@@ -44,6 +50,6 @@
 
 ## 尚未确认或缺失
 
-- ComfyUI自动化文件：当前仓库只找到Midjourney/Canva/Stable Diffusion/ComfyUI相关提示词和说明，未找到可执行的ComfyUI workflow或脚本。
+- ComfyUI自动化文件：已导入ComfyUI生成的PNG成品；当前仍未找到可执行的ComfyUI workflow JSON或节点配置文件。
 - Canva KDP排版：仓库已有KDP PDF自动排版脚本和PDF产物，但没有Canva工程文件。
 - 出版上架：尚未执行KDP后台上传、版权/定价/最终提交等人工确认步骤。

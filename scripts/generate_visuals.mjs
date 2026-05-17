@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, writeFile, copyFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
@@ -24,6 +24,19 @@ const C = {
 };
 
 const font = "'Inter','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif";
+
+const comfyRasterOverrides = new Map([
+  ["illustrations/chapter-01-one-person-era", "comfyui/chapter-01-one-person-era.png"],
+  ["illustrations/chapter-02-mindset", "comfyui/chapter-02-mindset.png"],
+  ["illustrations/chapter-03-niche", "comfyui/chapter-03-niche.png"],
+  ["illustrations/chapter-04-ai-toolbox", "comfyui/chapter-04-ai-toolbox.png"],
+  ["illustrations/chapter-05-content-factory", "comfyui/chapter-05-content-factory.png"],
+  ["illustrations/chapter-06-distribution", "comfyui/chapter-06-distribution.png"],
+  ["illustrations/chapter-07-monetization", "comfyui/chapter-07-monetization.png"],
+  ["illustrations/chapter-08-risk", "comfyui/chapter-08-risk.png"],
+  ["illustrations/chapter-09-health", "comfyui/chapter-09-health.png"],
+  ["illustrations/chapter-10-opc-plus", "comfyui/chapter-10-opc-plus.png"],
+]);
 
 const assets = [
   coverFront(),
@@ -397,7 +410,11 @@ async function writeAsset(asset) {
   const svg = asset.svg.split("\n").map((line) => line.trimEnd()).join("\n") + "\n";
   await mkdir(dirname(svgPath), { recursive: true });
   await writeFile(svgPath, svg, "utf8");
-  await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(pngPath);
+  if (comfyRasterOverrides.has(asset.name)) {
+    await copyFile(join(assetRoot, comfyRasterOverrides.get(asset.name)), pngPath);
+  } else {
+    await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(pngPath);
+  }
   console.log(`generated ${asset.name}.svg + .png`);
 }
 
