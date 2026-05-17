@@ -1,11 +1,11 @@
 import { writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 
-const caseLibrary = {
+export const caseLibrary = {
   "pieter-levels": {
     name: "Pieter Levels",
     label: "独立产品案例",
@@ -86,7 +86,7 @@ const caseLibrary = {
   }
 };
 
-const chapters = [
+export const chapters = [
   {
     number: 1,
     id: "chapter-01",
@@ -2482,7 +2482,7 @@ const chapters = [
   }
 ];
 
-const appendices = [
+export const appendices = [
   {
     title: "附录A：OPC总框架一览",
     paragraphs: [
@@ -2526,6 +2526,24 @@ const appendices = [
     )
   }
 ];
+
+export const BOOK_TITLE = "OPC 生存手册 · 20万字长版";
+export const BOOK_SUBTITLE = "AI时代一人创作者的系统生存与增长指南";
+
+export function chapterImageSrc(number) {
+  return `assets/illustrations/chapter-${String(number).padStart(2, "0")}-${[
+    "one-person-era",
+    "mindset",
+    "niche",
+    "ai-toolbox",
+    "content-factory",
+    "distribution",
+    "monetization",
+    "risk",
+    "health",
+    "opc-plus",
+  ][number - 1]}.png`;
+}
 
 function escapeHtml(text) {
   return text
@@ -2711,7 +2729,7 @@ function renderAppendices() {
     .join("");
 }
 
-function buildBookHtml() {
+export function buildBookHtml() {
   const toc = buildToc();
   const bodyHtml = chapters.map((chapter) => renderChapter(chapter)).join("");
   const appendicesHtml = renderAppendices();
@@ -3015,7 +3033,7 @@ footer{
 </html>`;
 }
 
-function buildMindmapsHtml() {
+export function buildMindmapsHtml() {
   const overview = `graph TD
   ROOT["OPC 生存手册 20万字长版"] --> C1["第1章 时代与资产思维"]
   ROOT --> C2["第2章 心态与节奏"]
@@ -3138,15 +3156,19 @@ h1{margin:16px 0 10px;font-size:clamp(2rem,5vw,3.6rem);line-height:1.08}
 </html>`;
 }
 
-const bookHtml = buildBookHtml();
-const plainTextLength = bookHtml.replace(/<[^>]+>/g, "").replace(/\s+/g, "").length;
+export async function generateLongformOutputs() {
+  const bookHtml = buildBookHtml();
+  const plainTextLength = bookHtml.replace(/<[^>]+>/g, "").replace(/\s+/g, "").length;
+  await writeFile(join(root, "docs", "book-200k.html"), bookHtml, "utf8");
+  await writeFile(
+    join(root, "docs", "book-200k-mindmaps.html"),
+    buildMindmapsHtml(),
+    "utf8"
+  );
+  console.log(`generated docs/book-200k.html (${plainTextLength} chars)`);
+  console.log("generated docs/book-200k-mindmaps.html");
+}
 
-await writeFile(join(root, "docs", "book-200k.html"), bookHtml, "utf8");
-await writeFile(
-  join(root, "docs", "book-200k-mindmaps.html"),
-  buildMindmapsHtml(),
-  "utf8"
-);
-
-console.log(`generated docs/book-200k.html (${plainTextLength} chars)`);
-console.log("generated docs/book-200k-mindmaps.html");
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  await generateLongformOutputs();
+}

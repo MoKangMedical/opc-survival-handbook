@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-05-17T15:06:39.718Z",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "一个人的时代来了",
+      "subtitle": "从岗位逻辑到资产逻辑，先看懂你站在什么时代地板上",
+      "segmentCount": 7,
+      "caseCount": 6,
+      "path": "chapter-01.html",
+      "txtName": "chapter-01.txt"
+    },
+    {
+      "number": 2,
+      "title": "心态：OPC的第一道生死线",
+      "subtitle": "没有人给你KPI的世界里，如何建立长期可持续的内在纪律",
+      "segmentCount": 7,
+      "caseCount": 6,
+      "path": "chapter-02.html",
+      "txtName": "chapter-02.txt"
+    },
+    {
+      "number": 3,
+      "title": "找到你的一人帝国",
+      "subtitle": "选赛道不是猜热门，而是识别你能长期占优势的问题区",
+      "segmentCount": 7,
+      "caseCount": 6,
+      "path": "chapter-03.html",
+      "txtName": "chapter-03.txt"
+    },
+    {
+      "number": 4,
+      "title": "AI工具箱：搭建你的虚拟团队",
+      "subtitle": "工具不是收藏品，而是岗位系统",
+      "segmentCount": 7,
+      "caseCount": 5,
+      "path": "chapter-04.html",
+      "txtName": "chapter-04.txt"
+    },
+    {
+      "number": 5,
+      "title": "内容工厂：从偶尔输出到稳定产出",
+      "subtitle": "让每一次表达都进入生产线，而不是靠临场发挥",
+      "segmentCount": 7,
+      "caseCount": 4,
+      "path": "chapter-05.html",
+      "txtName": "chapter-05.txt"
+    },
+    {
+      "number": 6,
+      "title": "流量和分发：让好东西被看见",
+      "subtitle": "没有分发，产品只是仓库里的库存",
+      "segmentCount": 7,
+      "caseCount": 6,
+      "path": "chapter-06.html",
+      "txtName": "chapter-06.txt"
+    },
+    {
+      "number": 7,
+      "title": "产品与变现：把信任变成收入",
+      "subtitle": "收入不是内容的副作用，而是设计出来的结果",
+      "segmentCount": 7,
+      "caseCount": 5,
+      "path": "chapter-07.html",
+      "txtName": "chapter-07.txt"
+    },
+    {
+      "number": 8,
+      "title": "底盘：现金流、法务、版权与系统安全",
+      "subtitle": "想自由，先别让一个意外把你打回原点",
+      "segmentCount": 7,
+      "caseCount": 4,
+      "path": "chapter-08.html",
+      "txtName": "chapter-08.txt"
+    },
+    {
+      "number": 9,
+      "title": "肉身与运营：你自己就是核心基础设施",
+      "subtitle": "高杠杆工作，不等于高强度耗损",
+      "segmentCount": 7,
+      "caseCount": 5,
+      "path": "chapter-09.html",
+      "txtName": "chapter-09.txt"
+    },
+    {
+      "number": 10,
+      "title": "从OPC到OPC+：进化、系统化与平台化",
+      "subtitle": "当一人闭环跑通之后，如何让它继续放大而不失控",
+      "segmentCount": 7,
+      "caseCount": 5,
+      "path": "chapter-10.html",
+      "txtName": "chapter-10.txt"
+    }
+  ]
+}

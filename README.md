@@ -14,7 +14,7 @@
 |------|------|
 | 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 |
 | 配图 | 10张ComfyUI章节题图 + 4张信息图（附AI生成Prompt） |
-| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + KDP PDF印刷版 + 65节课程站 |
+| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + 印刷HTML + KDP PDF印刷版 + 微信课程脚本包 + 65节课程站 |
 | 工具链 | 视觉资产生成、课程内容生成、神经TTS音频生成、KDP自动排版脚本 |
 
 ## 🚀 快速开始
@@ -23,29 +23,33 @@
 # 安装本地视觉资产生成依赖
 npm install
 
-# 生成封面、章节插图、信息图、精简书稿、20万字长版和65节课程
+# 生成封面、章节插图、信息图、精简书稿、20万字长版、印刷HTML、微信脚本和65节课程
 npm run build
 
-# 预览分章音频版、精简书稿、20万字长版和课程站
+# 预览分章音频版、精简书稿、20万字长版、微信脚本和课程站
 浏览器打开 docs/index.html
 浏览器打开 docs/handbook.html
 浏览器打开 docs/book-200k.html
 浏览器打开 docs/book-200k-mindmaps.html
+浏览器打开 docs/book-200k-print.html
+浏览器打开 docs/wechat-course/index.html
+浏览器打开 docs/book-200k-assets-cases.html
 浏览器打开 docs/course/index.html
 
 # 生成65节课程口播音频
 .venv/bin/python -m pip install edge-tts
 .venv/bin/python scripts/generate_course_audio.py --force
 
-# 生成KDP就绪PDF
-pip install beautifulsoup4 reportlab
-python3 scripts/kdp_builder.py
+# 生成长版书KDP就绪PDF
+python3 -m pip install beautifulsoup4 reportlab
+python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output/opc-handbook-200k.pdf --title "OPC生存手册·长版" --subtitle "AI时代一人创作者的系统生存与增长指南"
 ```
 
 ## 🧰 本地工具链
 
 - `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/handbook.html`
 - `scripts/build_longform_book.mjs`：生成 20 万字长版 `docs/book-200k.html` 与导图页 `docs/book-200k-mindmaps.html`
+- `scripts/build_longform_derivatives.mjs`：生成印刷版输入 `docs/book-200k-print.html`、`docs/wechat-course/` 章节脚本包和 `docs/book-200k-assets-cases.html`
 - `scripts/build_course_content.mjs`：生成65节系统课、课程JSON和每课500字以内口播稿
 - `scripts/generate_visuals.mjs`：生成封面、4张信息图和SVG兜底图；章节PNG优先使用ComfyUI输出
 - `scripts/gen_audio.py`：生成10章课程口播音频 `docs/audio/ch1~ch10.mp3`
@@ -55,7 +59,7 @@ python3 scripts/kdp_builder.py
 - `course-platform-strategy.md`：OPC研究院微信课程平台方案
 - `docs/course.html`：OPC课程平台原型页
 - 视觉资产输出目录：`docs/assets/`
-- KDP PDF 输出目录：`output/opc-handbook.pdf`
+- KDP PDF 输出目录：`output/opc-handbook.pdf`、`output/opc-handbook-200k.pdf`
 
 ## 📂 项目结构
 
@@ -67,12 +71,17 @@ python3 scripts/kdp_builder.py
 │   ├── handbook.html      # 完整手册（10章+目录+封面）
 │   ├── book-200k.html     # 20万字长版（10章/70节/案例/思考/行动清单）
 │   ├── book-200k-mindmaps.html # 长版书总导图 + 分章导图
+│   ├── book-200k-print.html # 长版书KDP印刷输入HTML
+│   ├── book-200k-assets-cases.html # 配图与案例索引页
 │   ├── course.html        # OPC研究院课程平台原型
 │   ├── course/            # 65节系统课、课程JSON、口播稿、MP3
+│   ├── wechat-course/     # 10章微信课程脚本、TXT、JSON
 │   ├── audio/             # 10章MP3课程口播
 │   └── assets/            # 封面、章节插图、信息图、ComfyUI原始输出
 ├── scripts/
 │   ├── build_handbook_html.mjs
+│   ├── build_longform_book.mjs
+│   ├── build_longform_derivatives.mjs
 │   ├── build_course_content.mjs
 │   ├── generate_visuals.mjs
 │   ├── generate_course_audio.py
@@ -99,6 +108,8 @@ python3 scripts/kdp_builder.py
 - 🛡️ 财务法务风险控制
 - 🧘 健康与精力管理
 - 🚀 从OPC到OPC+的进化路径
+- 📘 KDP长版印刷书输出
+- 💬 微信课程章节脚本与配图/案例页
 
 ---
 

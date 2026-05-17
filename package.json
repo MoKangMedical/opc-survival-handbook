@@ -10,8 +10,9 @@
     "assets": "node scripts/generate_visuals.mjs",
     "html": "node scripts/build_handbook_html.mjs",
     "longbook": "node scripts/build_longform_book.mjs",
+    "longbook:extras": "node scripts/build_longform_derivatives.mjs",
     "course": "node scripts/build_course_content.mjs",
-    "build": "npm run assets && npm run html && npm run longbook && npm run course"
+    "build": "npm run assets && npm run html && npm run longbook && npm run longbook:extras && npm run course"
   },
   "repository": {
     "type": "git",
