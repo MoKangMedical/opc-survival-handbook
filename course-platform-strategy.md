@@ -275,7 +275,8 @@
 | 优先级 | 产物 | 文件/模块 |
 |--------|------|-----------|
 | P0 | OPC课程体系文档 | `course-platform-strategy.md` |
-| P0 | 65节课程大纲数据 | `course-curriculum.json` |
+| P0 | 65节课程正文与大纲数据 | `docs/course/index.html`、`docs/course/data/catalog.json` |
+| P0 | 课程口播稿与音频流水线 | `docs/course/narration/`、`scripts/generate_course_audio.py` |
 | P1 | 课程销售页 | `docs/course.html` |
 | P1 | OPC方向诊断器 | `docs/tools/opc-diagnostic.html` |
 | P1 | 学习仪表盘原型 | `docs/learn.html` |

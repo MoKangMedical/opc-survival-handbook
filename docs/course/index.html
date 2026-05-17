@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC研究院65节系统课</title>
+<style>:root{--bg:#F7F5F2;--surface:#fff;--text:#1A1C2E;--text2:#4A4D5E;--muted:#9A9AA8;--gold:#F5A623;--blue:#6C9BCF;--sand:#E8D5B7;--line:#E5E0D8;--hi:#FFF8EB}*{box-sizing:border-box}html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}body{margin:0;max-width:100%;overflow-x:hidden;background:var(--bg);color:var(--text);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;line-height:1.85}a{color:inherit}.top{position:sticky;top:0;z-index:10;background:rgba(247,245,242,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.top-inner{max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;font-weight:900;color:var(--text)}.top nav{display:flex;gap:10px;flex-wrap:wrap}.top nav a{text-decoration:none;color:var(--text2);font-size:.88rem;font-weight:700;padding:6px 11px;border-radius:20px}.top nav a:hover{background:var(--sand);color:var(--text)}.wrap{max-width:980px;margin:0 auto;padding:0 24px}.hero{padding:64px 0 36px;border-bottom:1px solid var(--line)}.kicker{font-size:.82rem;font-weight:900;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}.hero h1{font-size:clamp(2.1rem,6vw,4.1rem);line-height:1.1;margin:0 0 16px;font-weight:950;letter-spacing:0;overflow-wrap:anywhere;word-break:break-all}.lead{font-size:1.16rem;color:var(--text2);max-width:760px;margin:0 0 22px;overflow-wrap:anywhere;word-break:break-all}.meta-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:26px}.meta{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;min-width:0}.meta b{display:block;color:var(--gold);font-size:1.12rem}.meta span{color:var(--text2);font-size:.86rem}.audio-box,.deliverable{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:8px;padding:18px;margin:24px 0}.audio-box h2,.deliverable h2{font-size:1rem;margin:0 0 10px;color:var(--blue)}.audio-box p,.deliverable p{overflow-wrap:anywhere;word-break:break-all}audio{width:100%;margin-top:8px}.lesson-section{padding:34px 0;border-top:1px solid var(--line)}.lesson-section h2{font-size:1.45rem;line-height:1.25;margin:0 0 16px;color:var(--blue);border-left:3px solid var(--gold);padding-left:12px}.lesson-section p{font-size:1rem;margin:0 0 16px;color:var(--text);overflow-wrap:anywhere;word-break:break-all}.lesson-section ul,.lesson-section ol{margin:12px 0 18px 24px;padding:0}.lesson-section li{margin:0 0 10px;overflow-wrap:anywhere;word-break:break-all}.lesson-section li::marker{color:var(--gold);font-weight:800}.nav-row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:30px 0 54px}.nav-row a,.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:var(--text);color:white;border-radius:8px;padding:10px 14px;font-weight:850}.btn.alt{background:var(--sand);color:var(--text)}.catalog-hero{padding:70px 0 30px}.phase{padding:34px 0;border-top:1px solid var(--line)}.phase h2{font-size:1.55rem;margin:0 0 8px}.phase p{color:var(--text2);margin:0 0 18px}.lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.lesson-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:17px;text-decoration:none}.lesson-card:hover{border-color:var(--gold)}.lesson-card small{display:block;color:var(--gold);font-weight:900;margin-bottom:6px}.lesson-card h3{margin:0 0 8px;font-size:1.02rem;line-height:1.38}.lesson-card p{font-size:.9rem;margin:0;color:var(--text2)}.footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;color:var(--muted);font-size:.86rem}@media(max-width:720px){.top-inner{align-items:flex-start;flex-direction:column}.meta-grid{grid-template-columns:1fr}.hero{padding-top:40px}.hero h1{font-size:clamp(1.65rem,8vw,2rem);line-height:1.18}.wrap{padding:0 20px}.audio-box,.deliverable{padding:16px}.nav-row{flex-direction:column}.nav-row a{width:100%}}</style>
+</head>
+<body>
+<header class="top"><div class="top-inner"><a class="brand" href="../course.html">OPC研究院</a><nav><a href="../course.html">平台方案</a><a href="../index.html">手册首页</a><a href="../handbook.html">完整书稿</a></nav></div></header>
+<main class="wrap">
+  <section class="catalog-hero">
+    <div class="kicker">65节完整课程 · 每课正文3000字以上</div>
+    <h1>OPC研究院系统课</h1>
+    <p class="lead">把《OPC生存手册》拆解成10大阶段、65节可执行课程。每课包含长文正文、500字以内自然导入式课程口播稿、行动作业、交付物和微信平台落地说明。</p>
+    <div class="meta-grid">
+      <div class="meta"><b>65</b><span>节系统课程</span></div>
+      <div class="meta"><b>3000+</b><span>每课正文有效字数</span></div>
+      <div class="meta"><b>&lt;500</b><span>每课口播稿字数</span></div>
+      <div class="meta"><b>10</b><span>阶段课程路径</span></div>
+    </div>
+  </section>
+  <section class="phase">
+  <h2>Phase 1 · OPC认知基础 <small>第1-6课</small></h2>
+  <p>让学员先看清OPC不是自由职业的包装，而是一套用AI放大个人产能、降低组织摩擦、持续交付结果的商业系统。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-01.html">
+      <small>第1课 · 定位力</small>
+      <h3>OPC是什么：一个人如何变成一个小团队</h3>
+      <p>把个人能力拆成策略、生产、分发和交付四个岗位，再用AI和自动化补位</p>
+    </a>
+<a class="lesson-card" href="lesson-02.html">
+      <small>第2课 · 定位力</small>
+      <h3>AI生产力革命：为什么现在是窗口期</h3>
+      <p>判断AI降低成本、缩短试错周期和改变分工边界的真实机会</p>
+    </a>
+<a class="lesson-card" href="lesson-03.html">
+      <small>第3课 · 定位力</small>
+      <h3>传统创业 vs OPC创业</h3>
+      <p>比较重资产团队创业和轻资产个人创业在速度、风险、现金流上的差异</p>
+    </a>
+<a class="lesson-card" href="lesson-04.html">
+      <small>第4课 · 定位力</small>
+      <h3>内容型、产品型、服务型OPC</h3>
+      <p>识别三类OPC的交付方式、获客方式和升级路径</p>
+    </a>
+<a class="lesson-card" href="lesson-05.html">
+      <small>第5课 · 定位力</small>
+      <h3>OPC的收入结构和风险结构</h3>
+      <p>看懂收入来源、平台依赖、交付压力和个人精力之间的关系</p>
+    </a>
+<a class="lesson-card" href="lesson-06.html">
+      <small>第6课 · 定位力</small>
+      <h3>你的第一份OPC宣言</h3>
+      <p>把目标用户、关键问题、交付方式、收入目标和底线写成一份可执行承诺</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 2 · 心态与生存系统 <small>第7-12课</small></h2>
+  <p>让学员建立能扛过低反馈期的心理结构、现金流底线和复盘节奏，避免把自由误解成随意。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-07.html">
+      <small>第7课 · 定位力</small>
+      <h3>自由的反面是孤独</h3>
+      <p>理解独立工作带来的信息孤岛、情绪波动和决策压力</p>
+    </a>
+<a class="lesson-card" href="lesson-08.html">
+      <small>第8课 · 定位力</small>
+      <h3>四种必死心态</h3>
+      <p>识别完美主义、工具崇拜、等流量和逃避销售四类常见陷阱</p>
+    </a>
+<a class="lesson-card" href="lesson-09.html">
+      <small>第9课 · 定位力</small>
+      <h3>反馈闭环与心理安全网</h3>
+      <p>用小样本反馈、同伴反馈和数据反馈减少情绪化判断</p>
+    </a>
+<a class="lesson-card" href="lesson-10.html">
+      <small>第10课 · 定位力</small>
+      <h3>副业到全职的转换条件</h3>
+      <p>用收入连续性、获客稳定性和家庭风险承受力判断是否离职</p>
+    </a>
+<a class="lesson-card" href="lesson-11.html">
+      <small>第11课 · 定位力</small>
+      <h3>6个月现金流安全垫</h3>
+      <p>把生活成本、业务成本、保险和应急资金拆成可执行预算</p>
+    </a>
+<a class="lesson-card" href="lesson-12.html">
+      <small>第12课 · 定位力</small>
+      <h3>OPC每周复盘模板</h3>
+      <p>建立每周看数据、看内容、看销售、看精力的固定节奏</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 3 · 赛道选择与验证 <small>第13-20课</small></h2>
+  <p>让学员从个人优势出发，用AI做研究加速，但用真实付费信号做最终判断。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-13.html">
+      <small>第13课 · 定位力</small>
+      <h3>不公平优势盘点</h3>
+      <p>把经验、人脉、渠道、专业背景和审美判断转成竞争优势</p>
+    </a>
+<a class="lesson-card" href="lesson-14.html">
+      <small>第14课 · 定位力</small>
+      <h3>用AI挖掘niche</h3>
+      <p>让AI辅助生成细分市场假设，再用搜索、社群和访谈排除伪需求</p>
+    </a>
+<a class="lesson-card" href="lesson-15.html">
+      <small>第15课 · 定位力</small>
+      <h3>用户画像与痛点分级</h3>
+      <p>区分好奇、焦虑、刚需和高频付费痛点</p>
+    </a>
+<a class="lesson-card" href="lesson-16.html">
+      <small>第16课 · 定位力</small>
+      <h3>一页Landing Page验证法</h3>
+      <p>用一句话承诺、三个证据和一个行动按钮快速验证需求</p>
+    </a>
+<a class="lesson-card" href="lesson-17.html">
+      <small>第17课 · 定位力</small>
+      <h3>10个付费意向测试</h3>
+      <p>用预售、定金、访谈、等待名单和定制服务测试真实购买意愿</p>
+    </a>
+<a class="lesson-card" href="lesson-18.html">
+      <small>第18课 · 定位力</small>
+      <h3>竞品拆解与差异化</h3>
+      <p>拆解竞品的目标用户、定价、渠道、承诺和交付缺口</p>
+    </a>
+<a class="lesson-card" href="lesson-19.html">
+      <small>第19课 · 定位力</small>
+      <h3>20个OPC方向案例</h3>
+      <p>理解不同赛道的门槛、收入潜力和交付复杂度</p>
+    </a>
+<a class="lesson-card" href="lesson-20.html">
+      <small>第20课 · 定位力</small>
+      <h3>30天启动计划</h3>
+      <p>把赛道验证拆成4周节奏：研究、测试、交付、复盘</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 4 · AI工具箱 <small>第21-28课</small></h2>
+  <p>让学员从零散工具清单走向稳定工作流，用AI承担可重复劳动，同时把判断权留在自己手里。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-21.html">
+      <small>第21课 · 生产力</small>
+      <h3>AI写作栈</h3>
+      <p>建立从研究、大纲、初稿、编辑到发布的写作协作流程</p>
+    </a>
+<a class="lesson-card" href="lesson-22.html">
+      <small>第22课 · 生产力</small>
+      <h3>AI设计栈</h3>
+      <p>用视觉参考、提示词、排版工具和品牌规范生成稳定视觉资产</p>
+    </a>
+<a class="lesson-card" href="lesson-23.html">
+      <small>第23课 · 生产力</small>
+      <h3>AI视频与音频栈</h3>
+      <p>把脚本、配音、剪辑、字幕和分发拆成自动化节点</p>
+    </a>
+<a class="lesson-card" href="lesson-24.html">
+      <small>第24课 · 生产力</small>
+      <h3>AI代码与低代码栈</h3>
+      <p>用Codex、低代码平台和脚本把想法快速变成工具原型</p>
+    </a>
+<a class="lesson-card" href="lesson-25.html">
+      <small>第25课 · 生产力</small>
+      <h3>自动化工具栈</h3>
+      <p>用Make、Zapier、脚本和浏览器自动化串联重复动作</p>
+    </a>
+<a class="lesson-card" href="lesson-26.html">
+      <small>第26课 · 生产力</small>
+      <h3>知识库搭建</h3>
+      <p>建立个人资料库、提示词库、案例库和决策记录</p>
+    </a>
+<a class="lesson-card" href="lesson-27.html">
+      <small>第27课 · 生产力</small>
+      <h3>Chrome/Codex浏览器自动化</h3>
+      <p>把网页填写、发布后台、KDP和资料整理交给浏览器自动化辅助</p>
+    </a>
+<a class="lesson-card" href="lesson-28.html">
+      <small>第28课 · 生产力</small>
+      <h3>个人AI工作台配置</h3>
+      <p>把模型、文件夹、命名规则、脚本和仪表盘组合成日常工作台</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 5 · 内容工厂 <small>第29-36课</small></h2>
+  <p>让学员用系统化选题、研究、改写和复用，稳定产出有观点、有证据、有转化路径的内容。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-29.html">
+      <small>第29课 · 生产力</small>
+      <h3>内容金字塔模型</h3>
+      <p>用底层曝光、中层信任和顶层产品承接组织内容资产</p>
+    </a>
+<a class="lesson-card" href="lesson-30.html">
+      <small>第30课 · 生产力</small>
+      <h3>选题系统</h3>
+      <p>用用户问题、趋势、竞品和个人经历建立选题池</p>
+    </a>
+<a class="lesson-card" href="lesson-31.html">
+      <small>第31课 · 生产力</small>
+      <h3>AI辅助研究</h3>
+      <p>用AI做资料检索、观点对照、案例整理和反方检查</p>
+    </a>
+<a class="lesson-card" href="lesson-32.html">
+      <small>第32课 · 生产力</small>
+      <h3>长文生产线</h3>
+      <p>从观点、结构、初稿、编辑、标题到发布建立固定流程</p>
+    </a>
+<a class="lesson-card" href="lesson-33.html">
+      <small>第33课 · 生产力</small>
+      <h3>短视频脚本生产线</h3>
+      <p>把一个观点拆成开场、冲突、方法、案例和行动号召</p>
+    </a>
+<a class="lesson-card" href="lesson-34.html">
+      <small>第34课 · 生产力</small>
+      <h3>一鱼多吃</h3>
+      <p>把一篇长文拆成多平台素材、课程片段和销售页模块</p>
+    </a>
+<a class="lesson-card" href="lesson-35.html">
+      <small>第35课 · 生产力</small>
+      <h3>去AI味编辑法</h3>
+      <p>通过个人经历、具体场景、节奏调整和删掉空话提高人味</p>
+    </a>
+<a class="lesson-card" href="lesson-36.html">
+      <small>第36课 · 生产力</small>
+      <h3>内容质量评分表</h3>
+      <p>用清晰度、可信度、独特性、可行动性和转化力评分</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 6 · 流量与分发 <small>第37-43课</small></h2>
+  <p>让学员把平台选择、内容节奏、社区互动和搜索发现做成可复盘的分发系统。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-37.html">
+      <small>第37课 · 分发力</small>
+      <h3>平台选择策略</h3>
+      <p>根据用户密度、内容形态、转化路径和维护成本选择平台</p>
+    </a>
+<a class="lesson-card" href="lesson-38.html">
+      <small>第38课 · 分发力</small>
+      <h3>Build in Public</h3>
+      <p>公开过程、数据、失败和迭代，让信任在项目推进中自然积累</p>
+    </a>
+<a class="lesson-card" href="lesson-39.html">
+      <small>第39课 · 分发力</small>
+      <h3>微信公众号与私域内容</h3>
+      <p>用公众号建立深度信任，再用社群和小程序承接转化</p>
+    </a>
+<a class="lesson-card" href="lesson-40.html">
+      <small>第40课 · 分发力</small>
+      <h3>小红书/即刻/知乎分发</h3>
+      <p>根据平台语境改写同一主题，提高触达和互动质量</p>
+    </a>
+<a class="lesson-card" href="lesson-41.html">
+      <small>第41课 · 分发力</small>
+      <h3>X/Reddit/Product Hunt海外分发</h3>
+      <p>用英文渠道测试全球需求、工具产品和KDP内容</p>
+    </a>
+<a class="lesson-card" href="lesson-42.html">
+      <small>第42课 · 分发力</small>
+      <h3>SEO与AI搜索优化</h3>
+      <p>让内容被搜索引擎和AI答案引用，建立长期入口</p>
+    </a>
+<a class="lesson-card" href="lesson-43.html">
+      <small>第43课 · 分发力</small>
+      <h3>社区口碑运营</h3>
+      <p>用真实帮助、案例沉淀和成员关系提高复购和推荐</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 7 · 变现系统 <small>第44-51课</small></h2>
+  <p>让学员从第一单开始建立产品梯度、定价逻辑、交付边界和可持续收入结构。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-44.html">
+      <small>第44课 · 变现力</small>
+      <h3>六种OPC变现模式</h3>
+      <p>比较信息产品、咨询、订阅、联盟、赞助和平台分成</p>
+    </a>
+<a class="lesson-card" href="lesson-45.html">
+      <small>第45课 · 变现力</small>
+      <h3>电子书与模板产品</h3>
+      <p>把经验打包成可下载、可复用、可持续销售的轻产品</p>
+    </a>
+<a class="lesson-card" href="lesson-46.html">
+      <small>第46课 · 变现力</small>
+      <h3>服务咨询产品化</h3>
+      <p>把定制服务拆成固定流程、明确边界和可复制交付物</p>
+    </a>
+<a class="lesson-card" href="lesson-47.html">
+      <small>第47课 · 变现力</small>
+      <h3>订阅与会员</h3>
+      <p>用持续内容、工具权限、社群陪跑和反馈机制提高留存</p>
+    </a>
+<a class="lesson-card" href="lesson-48.html">
+      <small>第48课 · 变现力</small>
+      <h3>联盟营销与赞助</h3>
+      <p>选择可信产品、披露利益关系并设计长期合作内容</p>
+    </a>
+<a class="lesson-card" href="lesson-49.html">
+      <small>第49课 · 变现力</small>
+      <h3>KDP自动化发布</h3>
+      <p>把选题、书稿、封面、元数据和后台发布做成自动化SOP</p>
+    </a>
+<a class="lesson-card" href="lesson-50.html">
+      <small>第50课 · 变现力</small>
+      <h3>定价心理学</h3>
+      <p>用价值锚点、结果承诺、稀缺资源和风险逆转设计价格</p>
+    </a>
+<a class="lesson-card" href="lesson-51.html">
+      <small>第51课 · 变现力</small>
+      <h3>从$0到$10K/月路线图</h3>
+      <p>把收入增长拆成第一单、稳定获客、产品矩阵和自动化运营</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 8 · 微信平台实战 <small>第52-56课</small></h2>
+  <p>让学员把公众号、小程序、微信群、支付和私域转化连接成可落地的微信生态系统。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-52.html">
+      <small>第52课 · 分发力</small>
+      <h3>公众号内容矩阵</h3>
+      <p>用栏目、专题、案例和转化入口组织长期内容</p>
+    </a>
+<a class="lesson-card" href="lesson-53.html">
+      <small>第53课 · 分发力</small>
+      <h3>微信小程序课程架构</h3>
+      <p>设计课程列表、详情、音频、作业、进度和会员权限</p>
+    </a>
+<a class="lesson-card" href="lesson-54.html">
+      <small>第54课 · 分发力</small>
+      <h3>社群分层运营</h3>
+      <p>把免费群、入门群、系统课群和圆桌群分层管理</p>
+    </a>
+<a class="lesson-card" href="lesson-55.html">
+      <small>第55课 · 分发力</small>
+      <h3>微信支付与会员权限</h3>
+      <p>理解订单、支付、回调、权益开通和退款的基本流程</p>
+    </a>
+<a class="lesson-card" href="lesson-56.html">
+      <small>第56课 · 分发力</small>
+      <h3>私域转化SOP</h3>
+      <p>从内容触达、免费工具、私聊、体验课到成交建立流程</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 9 · 风险、财务与法务 <small>第57-61课</small></h2>
+  <p>让学员把版权、合同、隐私、备份、保险和精力管理提前纳入系统，避免业务越做越危险。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-57.html">
+      <small>第57课 · 变现力</small>
+      <h3>个人财务底线</h3>
+      <p>区分生活账、业务账、税务预留和应急资金</p>
+    </a>
+<a class="lesson-card" href="lesson-58.html">
+      <small>第58课 · 变现力</small>
+      <h3>AI内容版权与披露</h3>
+      <p>理解AI辅助创作的版权边界、素材授权和透明披露</p>
+    </a>
+<a class="lesson-card" href="lesson-59.html">
+      <small>第59课 · 变现力</small>
+      <h3>合同、退款与隐私政策</h3>
+      <p>用最小合同、服务条款、退款规则和隐私政策保护交易</p>
+    </a>
+<a class="lesson-card" href="lesson-60.html">
+      <small>第60课 · 变现力</small>
+      <h3>数据备份与平台风险</h3>
+      <p>降低单平台封号、账号丢失、文件损坏和API变动带来的风险</p>
+    </a>
+<a class="lesson-card" href="lesson-61.html">
+      <small>第61课 · 变现力</small>
+      <h3>健康保险与长期精力管理</h3>
+      <p>把身体、保险、作息、运动和深度工作当成生产系统</p>
+    </a>
+  </div>
+</section>
+<section class="phase">
+  <h2>Phase 10 · OPC+进化 <small>第62-65课</small></h2>
+  <p>让学员从个人项目进化为可被AI Agent、品牌资产和微型团队支撑的长期事业。</p>
+  <div class="lesson-grid">
+    <a class="lesson-card" href="lesson-62.html">
+      <small>第62课 · 生产力</small>
+      <h3>AI Agent工作流</h3>
+      <p>让多个AI Agent承担研究、写作、客服、发布和监控等角色</p>
+    </a>
+<a class="lesson-card" href="lesson-63.html">
+      <small>第63课 · 生产力</small>
+      <h3>从创作者到微型企业家</h3>
+      <p>从作品思维升级为产品、流程、财务和团队边界思维</p>
+    </a>
+<a class="lesson-card" href="lesson-64.html">
+      <small>第64课 · 生产力</small>
+      <h3>个人品牌资产</h3>
+      <p>沉淀观点、案例、视觉、信任证明和社群关系</p>
+    </a>
+<a class="lesson-card" href="lesson-65.html">
+      <small>第65课 · 生产力</small>
+      <h3>构建你的OPC操作系统</h3>
+      <p>把定位、生产、分发、变现、风险和复盘整合成长期系统</p>
+    </a>
+  </div>
+</section>
+</main>
+<footer class="footer">OPC研究院 · 课程、工具、社群、小程序、圆桌会</footer>
+</body>
+</html>

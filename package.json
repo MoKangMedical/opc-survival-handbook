@@ -9,7 +9,8 @@
   "scripts": {
     "assets": "node scripts/generate_visuals.mjs",
     "html": "node scripts/build_handbook_html.mjs",
-    "build": "npm run assets && npm run html"
+    "course": "node scripts/build_course_content.mjs",
+    "build": "npm run assets && npm run html && npm run course"
   },
   "repository": {
     "type": "git",

@@ -12,10 +12,10 @@
 
 | 项目 | 说明 |
 |------|------|
-| 章节 | 10章 / 37节 / 10段课程口播音频 |
+| 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 |
 | 配图 | 10张ComfyUI章节题图 + 4张信息图（附AI生成Prompt） |
-| 格式 | GitHub Pages分章音频版 + 完整HTML书稿 + KDP PDF印刷版 + 课程原型 |
-| 工具链 | 视觉资产生成、音频生成、KDP自动排版脚本 |
+| 格式 | GitHub Pages分章音频版 + 完整HTML书稿 + KDP PDF印刷版 + 65节课程站 |
+| 工具链 | 视觉资产生成、课程内容生成、神经TTS音频生成、KDP自动排版脚本 |
 
 ## 🚀 快速开始
 
@@ -23,12 +23,17 @@
 # 安装本地视觉资产生成依赖
 npm install
 
-# 生成封面、章节插图、信息图和完整书稿HTML
+# 生成封面、章节插图、信息图、完整书稿HTML和65节课程
 npm run build
 
-# 预览分章音频版和完整书稿
+# 预览分章音频版、完整书稿和课程站
 浏览器打开 docs/index.html
 浏览器打开 docs/handbook.html
+浏览器打开 docs/course/index.html
+
+# 生成65节课程口播音频
+.venv/bin/python -m pip install edge-tts
+.venv/bin/python scripts/generate_course_audio.py --force
 
 # 生成KDP就绪PDF
 pip install beautifulsoup4 reportlab
@@ -38,8 +43,10 @@ python3 scripts/kdp_builder.py
 ## 🧰 本地工具链
 
 - `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/handbook.html`
+- `scripts/build_course_content.mjs`：生成65节系统课、课程JSON和每课500字以内口播稿
 - `scripts/generate_visuals.mjs`：生成封面、4张信息图和SVG兜底图；章节PNG优先使用ComfyUI输出
 - `scripts/gen_audio.py`：生成10章课程口播音频 `docs/audio/ch1~ch10.mp3`
+- `scripts/generate_course_audio.py`：生成65节系统课口播音频 `docs/course/audio/lesson-01~lesson-65.mp3`
 - `scripts/narration_scripts.py`：10章课程口播稿
 - `scripts/kdp_builder.py`：把完整书稿转成 6×9 英寸 KDP PDF，支持封面、插图和表格
 - `course-platform-strategy.md`：OPC研究院微信课程平台方案
@@ -56,11 +63,14 @@ python3 scripts/kdp_builder.py
 │   ├── ch1.html~ch10.html # 分章阅读页，内嵌课程口播音频
 │   ├── handbook.html      # 完整手册（10章+目录+封面）
 │   ├── course.html        # OPC研究院课程平台原型
+│   ├── course/            # 65节系统课、课程JSON、口播稿、MP3
 │   ├── audio/             # 10章MP3课程口播
 │   └── assets/            # 封面、章节插图、信息图、ComfyUI原始输出
 ├── scripts/
 │   ├── build_handbook_html.mjs
+│   ├── build_course_content.mjs
 │   ├── generate_visuals.mjs
+│   ├── generate_course_audio.py
 │   ├── gen_audio.py
 │   ├── narration_scripts.py
 │   └── kdp_builder.py     # KDP自动排版脚本
