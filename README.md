@@ -14,7 +14,7 @@
 |------|------|
 | 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 |
 | 配图 | 10张ComfyUI章节题图 + 4张信息图（附AI生成Prompt） |
-| 格式 | GitHub Pages分章音频版 + 完整HTML书稿 + KDP PDF印刷版 + 65节课程站 |
+| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + KDP PDF印刷版 + 65节课程站 |
 | 工具链 | 视觉资产生成、课程内容生成、神经TTS音频生成、KDP自动排版脚本 |
 
 ## 🚀 快速开始
@@ -23,12 +23,14 @@
 # 安装本地视觉资产生成依赖
 npm install
 
-# 生成封面、章节插图、信息图、完整书稿HTML和65节课程
+# 生成封面、章节插图、信息图、精简书稿、20万字长版和65节课程
 npm run build
 
-# 预览分章音频版、完整书稿和课程站
+# 预览分章音频版、精简书稿、20万字长版和课程站
 浏览器打开 docs/index.html
 浏览器打开 docs/handbook.html
+浏览器打开 docs/book-200k.html
+浏览器打开 docs/book-200k-mindmaps.html
 浏览器打开 docs/course/index.html
 
 # 生成65节课程口播音频
@@ -43,6 +45,7 @@ python3 scripts/kdp_builder.py
 ## 🧰 本地工具链
 
 - `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/handbook.html`
+- `scripts/build_longform_book.mjs`：生成 20 万字长版 `docs/book-200k.html` 与导图页 `docs/book-200k-mindmaps.html`
 - `scripts/build_course_content.mjs`：生成65节系统课、课程JSON和每课500字以内口播稿
 - `scripts/generate_visuals.mjs`：生成封面、4张信息图和SVG兜底图；章节PNG优先使用ComfyUI输出
 - `scripts/gen_audio.py`：生成10章课程口播音频 `docs/audio/ch1~ch10.mp3`
@@ -62,6 +65,8 @@ python3 scripts/kdp_builder.py
 │   ├── index.html         # 暗色分章首页（10章入口）
 │   ├── ch1.html~ch10.html # 分章阅读页，内嵌课程口播音频
 │   ├── handbook.html      # 完整手册（10章+目录+封面）
+│   ├── book-200k.html     # 20万字长版（10章/70节/案例/思考/行动清单）
+│   ├── book-200k-mindmaps.html # 长版书总导图 + 分章导图
 │   ├── course.html        # OPC研究院课程平台原型
 │   ├── course/            # 65节系统课、课程JSON、口播稿、MP3
 │   ├── audio/             # 10章MP3课程口播

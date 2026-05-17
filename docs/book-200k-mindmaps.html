@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC 生存手册 · 思维导图</title>
+<style>
+body{
+  margin:0;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#f6f1e7;
+  color:#202535;
+}
+.top{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(246,241,231,.94);
+  border-bottom:1px solid #ddcfbc;
+  backdrop-filter:blur(12px);
+}
+.top-inner{
+  max-width:1240px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.top a{text-decoration:none;color:#59627b}
+.top .brand{font-weight:900;color:#202535}
+.top nav{display:flex;flex-wrap:wrap;gap:8px}
+.top nav a{padding:8px 12px;border-radius:999px}
+.top nav a.active,.top nav a:hover{background:#efe2ca;color:#202535}
+.wrap{max-width:1240px;margin:0 auto;padding:28px 24px 70px}
+.hero,.map-card{
+  background:rgba(255,253,248,.92);
+  border:1px solid #ddcfbc;
+  border-radius:22px;
+  box-shadow:0 14px 34px rgba(31,36,51,.08);
+  padding:28px;
+}
+.hero{margin-bottom:22px}
+.eyebrow{
+  display:inline-flex;
+  padding:7px 12px;
+  border-radius:999px;
+  background:#f3e3c6;
+  color:#cb8613;
+  font-size:.8rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+h1{margin:16px 0 10px;font-size:clamp(2rem,5vw,3.6rem);line-height:1.08}
+.hero p,.map-card p{color:#5b6276}
+.grid{display:grid;gap:18px}
+.map-card h2{margin:8px 0;font-size:1.6rem}
+.map-meta{font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#cb8613}
+.mermaid{margin-top:18px;overflow:auto}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">OPC 生存手册</a>
+    <nav>
+      <a href="index.html">手册首页</a>
+      <a href="handbook.html">精简版书稿</a>
+      <a href="book-200k.html">20万字长版</a>
+      <a class="active" href="book-200k-mindmaps.html">思维导图</a>
+      <a href="project.html">项目看板</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Mindmaps</div>
+    <h1>OPC 生存手册 · 思维导图</h1>
+    <p>这页把20万字长版书的结构压缩成可扫读导图，适合在做课程设计、产品规划、章节扩写和复盘时快速定位主脉络。</p>
+    <div class="mermaid">graph TD
+  ROOT["OPC 生存手册 20万字长版"] --> C1["第1章 时代与资产思维"]
+  ROOT --> C2["第2章 心态与节奏"]
+  ROOT --> C3["第3章 赛道与验证"]
+  ROOT --> C4["第4章 工具与工作流"]
+  ROOT --> C5["第5章 内容工厂"]
+  ROOT --> C6["第6章 流量与分发"]
+  ROOT --> C7["第7章 产品与变现"]
+  ROOT --> C8["第8章 底盘与风险"]
+  ROOT --> C9["第9章 肉身与运营"]
+  ROOT --> C10["第10章 OPC+进化"]</div>
+  </section>
+  <div class="grid"><section class="map-card">
+        <div class="map-meta">Chapter 01</div>
+        <h2>一个人的时代来了</h2>
+        <p>从岗位逻辑到资产逻辑，先看懂你站在什么时代地板上</p>
+        <div class="mermaid">C1["第1章 一个人的时代来了"]
+C1["第1章 一个人的时代来了"] --> C1S1["1.1 从雇佣思维迁移到资产思维"]
+C1["第1章 一个人的时代来了"] --> C1S2["1.2 AI如何改变人效和试错成本"]
+C1["第1章 一个人的时代来了"] --> C1S3["1.3 OPC与传统创业的风险结构差异"]
+C1["第1章 一个人的时代来了"] --> C1S4["1.4 什么叫真正的一人闭环"]
+C1["第1章 一个人的时代来了"] --> C1S5["1.5 你不是在找副业，你是在搭建微型操作系统"]
+C1["第1章 一个人的时代来了"] --> C1S6["1.6 以康波研究院为参照搭建你的商业形态"]
+C1["第1章 一个人的时代来了"] --> C1S7["1.7 本书的使用方法与学习路径"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 02</div>
+        <h2>心态：OPC的第一道生死线</h2>
+        <p>没有人给你KPI的世界里，如何建立长期可持续的内在纪律</p>
+        <div class="mermaid">C2["第2章 心态：OPC的第一道生死线"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S1["2.1 自由的反面是孤独"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S2["2.2 四种最常见的致命心态"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S3["2.3 证据感：从焦虑到判断"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S4["2.4 用公开构建抵消内耗"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S5["2.5 节奏比激情更可靠"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S6["2.6 如何处理低谷、停滞和外部比较"]
+C2["第2章 心态：OPC的第一道生死线"] --> C2S7["2.7 建立长期主义，但不要纵容拖延"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 03</div>
+        <h2>找到你的一人帝国</h2>
+        <p>选赛道不是猜热门，而是识别你能长期占优势的问题区</p>
+        <div class="mermaid">C3["第3章 找到你的一人帝国"]
+C3["第3章 找到你的一人帝国"] --> C3S1["3.1 不公平优势不是天赋神话"]
+C3["第3章 找到你的一人帝国"] --> C3S2["3.2 用AI发散，但不用AI替你定位"]
+C3["第3章 找到你的一人帝国"] --> C3S3["3.3 找到高支付意愿的痛点"]
+C3["第3章 找到你的一人帝国"] --> C3S4["3.4 先做最小画像，不要先做虚构人设"]
+C3["第3章 找到你的一人帝国"] --> C3S5["3.5 用最小验证击穿想象"]
+C3["第3章 找到你的一人帝国"] --> C3S6["3.6 20个适合OPC的方向，如何为你所用"]
+C3["第3章 找到你的一人帝国"] --> C3S7["3.7 学会放弃，才算真正选了方向"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 04</div>
+        <h2>AI工具箱：搭建你的虚拟团队</h2>
+        <p>工具不是收藏品，而是岗位系统</p>
+        <div class="mermaid">C4["第4章 AI工具箱：搭建你的虚拟团队"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S1["4.1 用岗位思维管理工具，而不是用情绪挑工具"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S2["4.2 内容栈：研究、起稿、改写、审校"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S3["4.3 自动化栈：把重复工作赶出黄金时间"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S4["4.4 开发栈：无代码、AI代码与工程化边界"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S5["4.5 出版与课程栈：从手册到音频到平台"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S6["4.6 把Codex和浏览器自动化放进发布流程"]
+C4["第4章 AI工具箱：搭建你的虚拟团队"] --> C4S7["4.7 工具栈的最终目标：形成个人操作台"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 05</div>
+        <h2>内容工厂：从偶尔输出到稳定产出</h2>
+        <p>让每一次表达都进入生产线，而不是靠临场发挥</p>
+        <div class="mermaid">C5["第5章 内容工厂：从偶尔输出到稳定产出"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S1["5.1 内容母体：先做深内容，再做碎内容"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S2["5.2 素材池与案例池：没有积累，就没有稳定表达"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S3["5.3 结构模板比灵感更可靠"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S4["5.4 一鱼多吃：同一份思考，服务多个场景"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S5["5.5 用真实案例让内容带电"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S6["5.6 内容不止负责吸引，还要负责成交"]
+C5["第5章 内容工厂：从偶尔输出到稳定产出"] --> C5S7["5.7 周产能和月产能怎样规划才现实"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 06</div>
+        <h2>流量和分发：让好东西被看见</h2>
+        <p>没有分发，产品只是仓库里的库存</p>
+        <div class="mermaid">C6["第6章 流量和分发：让好东西被看见"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S1["6.1 平台选择：先选用户，不先选热度"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S2["6.2 Build in Public 不是晒单，而是建立过程信任"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S3["6.3 搜索分发正在重写，AEO也要纳入考虑"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S4["6.4 邮件名单：你最该长期经营的资产之一"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S5["6.5 私域不是喊口号，而是设计留存结构"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S6["6.6 合作分发：借别人的信任，而不是借别人的流量"]
+C6["第6章 流量和分发：让好东西被看见"] --> C6S7["6.7 用分发数据做决策，不靠体感做判断"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 07</div>
+        <h2>产品与变现：把信任变成收入</h2>
+        <p>收入不是内容的副作用，而是设计出来的结果</p>
+        <div class="mermaid">C7["第7章 产品与变现：把信任变成收入"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S1["7.1 先设计产品阶梯，不先堆产品数量"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S2["7.2 把服务经验产品化，而不是永远卖工时"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S3["7.3 课程化：把知识从内容升级为学习路径"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S4["7.4 书籍、课程、音频和社群如何互相供养"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S5["7.5 定价不是数学题，而是价值沟通题"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S6["7.6 销售文案不是夸，而是澄清"]
+C7["第7章 产品与变现：把信任变成收入"] --> C7S7["7.7 从第一单到稳定收入，路线如何设计"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 08</div>
+        <h2>底盘：现金流、法务、版权与系统安全</h2>
+        <p>想自由，先别让一个意外把你打回原点</p>
+        <div class="mermaid">C8["第8章 底盘：现金流、法务、版权与系统安全"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S1["8.1 六个月生活费不是保守，是战略空间"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S2["8.2 版权与素材：AI时代更要留下来源意识"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S3["8.3 平台依赖：不要把命运压在单一入口上"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S4["8.4 文档、文件和知识备份"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S5["8.5 客诉、信誉与边界管理"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S6["8.6 什么时候该合规升级"]
+C8["第8章 底盘：现金流、法务、版权与系统安全"] --> C8S7["8.7 让底盘建设进入月度例行"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 09</div>
+        <h2>肉身与运营：你自己就是核心基础设施</h2>
+        <p>高杠杆工作，不等于高强度耗损</p>
+        <div class="mermaid">C9["第9章 肉身与运营：你自己就是核心基础设施"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S1["9.1 深度工作是OPC最贵的资源"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S2["9.2 体能不是背景变量，而是经营变量"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S3["9.3 休息不是奖励，而是系统需求"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S4["9.4 家庭、关系和边界会反向影响业务稳定性"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S5["9.5 情绪管理：不要在最低谷做最大决策"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S6["9.6 运营自己：像运营产品一样运营人生节奏"]
+C9["第9章 肉身与运营：你自己就是核心基础设施"] --> C9S7["9.7 长期可持续，才是最高级的野心"]</div>
+      </section><section class="map-card">
+        <div class="map-meta">Chapter 10</div>
+        <h2>从OPC到OPC+：进化、系统化与平台化</h2>
+        <p>当一人闭环跑通之后，如何让它继续放大而不失控</p>
+        <div class="mermaid">C10["第10章 从OPC到OPC+：进化、系统化与平台化"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S1["10.1 什么时候该从‘我来做’升级到‘系统来做’"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S2["10.2 AI代理和自动化如何成为真正的外脑外手"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S3["10.3 品牌资产：让名字、风格和方法成为复利结构"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S4["10.4 组合业务，而不是随机开分支"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S5["10.5 以康波研究院模式思考平台化"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S6["10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发"]
+C10["第10章 从OPC到OPC+：进化、系统化与平台化"] --> C10S7["10.7 最终问题：你想成为什么样的一人公司"]</div>
+      </section></div>
+</main>
+<script>mermaid.initialize({startOnLoad:true,theme:"neutral",flowchart:{curve:"basis"}});</script>
+</body>
+</html>
