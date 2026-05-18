@@ -342,11 +342,18 @@ def table_flowable(rows, styles, max_width):
     return table
 
 
+def smart_trim(text, max_length):
+    normalized = re.sub(r"\s+", " ", str(text)).strip()
+    if len(normalized) <= max_length:
+        return normalized
+    return normalized[: max_length - 1].rstrip() + "…"
+
+
 def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_title="OPC生存手册", subtitle="AI时代一人创作者的生存实战指南", cover_image=None):
     """Generate the KDP-ready PDF."""
     
     pw, ph = page_size
-    content_width = pw - 1.7 * inch
+    content_width = pw - 1.44 * inch
     
     # Build styles
     styles = getSampleStyleSheet()
@@ -359,6 +366,10 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     styles.add(ParagraphStyle(
         'CoverSubtitle', fontName=font_name, fontSize=14, leading=20,
         alignment=TA_CENTER, textColor=COLORS['text2'], spaceAfter=24
+    ))
+    styles.add(ParagraphStyle(
+        'SmallMeta', fontName=font_name, fontSize=9.2, leading=13,
+        alignment=TA_CENTER, textColor=COLORS['text2'], spaceAfter=8
     ))
     
     # Chapter heading styles
@@ -378,17 +389,17 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     # Section styles
     styles.add(ParagraphStyle(
         'SectionHead', fontName=font_bold_name, fontSize=14, leading=20,
-        textColor=COLORS['blue'], spaceBefore=16, spaceAfter=8,
+        textColor=COLORS['blue'], spaceBefore=12, spaceAfter=7,
         borderPadding=(0, 0, 0, 8), leftIndent=8
     ))
     styles.add(ParagraphStyle(
-        'BodyText2', fontName=font_name, fontSize=10.5, leading=17,
-        textColor=COLORS['text'], spaceAfter=10, alignment=TA_JUSTIFY,
-        firstLineIndent=20
+        'BodyText2', fontName=font_name, fontSize=9.8, leading=15.3,
+        textColor=COLORS['text'], spaceAfter=7, alignment=TA_JUSTIFY,
+        firstLineIndent=15
     ))
     styles.add(ParagraphStyle(
-        'BulletItem', fontName=font_name, fontSize=10.5, leading=17,
-        textColor=COLORS['text'], spaceAfter=4, leftIndent=20, bulletIndent=8
+        'BulletItem', fontName=font_name, fontSize=9.6, leading=14.8,
+        textColor=COLORS['text'], spaceAfter=3, leftIndent=18, bulletIndent=8
     ))
     styles.add(ParagraphStyle(
         'QuoteStyle', fontName=font_name, fontSize=10, leading=16,
@@ -405,11 +416,15 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     ))
     styles.add(ParagraphStyle(
         'TOCItem', fontName=font_name, fontSize=11, leading=18,
-        textColor=COLORS['text'], spaceAfter=6, leftIndent=12
+        textColor=COLORS['text'], spaceAfter=4, leftIndent=12
     ))
     styles.add(ParagraphStyle(
-        'TOCNum', fontName=font_bold_name, fontSize=10, leading=18,
-        textColor=COLORS['gold']
+        'TOCMeta', fontName=font_name, fontSize=9.2, leading=13.5,
+        textColor=COLORS['text2'], spaceAfter=8, leftIndent=18
+    ))
+    styles.add(ParagraphStyle(
+        'TOCSection', fontName=font_bold_name, fontSize=11.5, leading=18,
+        textColor=COLORS['gold'], spaceBefore=10, spaceAfter=4
     ))
     styles.add(ParagraphStyle(
         'FooterStyle', fontName=font_name, fontSize=9, leading=12,
@@ -426,6 +441,29 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     
     # Build story (content flow)
     story = []
+
+    def draw_page_chrome(canvas, doc):
+        page_num = canvas.getPageNumber()
+        if page_num <= 3:
+            return
+        canvas.saveState()
+        canvas.setStrokeColor(COLORS['divider'])
+        canvas.setLineWidth(0.35)
+        header_y = ph - 0.48 * inch
+        footer_y = 0.54 * inch
+        canvas.line(doc.leftMargin, header_y, pw - doc.rightMargin, header_y)
+        canvas.line(doc.leftMargin, footer_y, pw - doc.rightMargin, footer_y)
+        canvas.setFillColor(COLORS['text2'])
+        canvas.setFont(font_name, 8.2)
+        canvas.drawString(doc.leftMargin, ph - 0.36 * inch, book_title)
+        canvas.drawRightString(
+            pw - doc.rightMargin,
+            ph - 0.36 * inch,
+            smart_trim(subtitle, 26)
+        )
+        canvas.setFont(font_name, 8.4)
+        canvas.drawCentredString(pw / 2, 0.34 * inch, str(page_num))
+        canvas.restoreState()
     
     # ── COVER PAGE ──
     if cover_image:
@@ -444,18 +482,47 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
         story.append(Paragraph("第一版 · 2026", styles['CoverSubtitle']))
         story.append(Paragraph("由人类创作者与AI工具协作完成", styles['FooterStyle']))
     story.append(PageBreak())
+
+    # ── COPYRIGHT PAGE ──
+    story.append(Spacer(1, 1.6 * inch))
+    story.append(Paragraph(book_title, styles['ChapterTitle']))
+    story.append(Paragraph(subtitle, styles['ChapterTagline']))
+    story.append(Spacer(1, 0.18 * inch))
+    story.append(Paragraph("版本：第一版 · 2026", styles['SmallMeta']))
+    story.append(Paragraph("用途：Amazon KDP 长版印刷整理稿", styles['SmallMeta']))
+    story.append(Paragraph("结构：前言、10章正文、附录", styles['SmallMeta']))
+    story.append(Paragraph("排版说明：已压缩页面密度，并加入页眉页脚与正文页码。", styles['SmallMeta']))
+    story.append(Spacer(1, 0.24 * inch))
+    story.append(Paragraph("本书由人类创作者与 AI 工具协作完成。", styles['FooterStyle']))
+    story.append(PageBreak())
     
     # ── TABLE OF CONTENTS ──
-    story.append(Paragraph("📑 目录", styles['ChapterTitle']))
-    story.append(Spacer(1, 16))
-    for i, ch in enumerate(chapters):
-        num = ch['number'].replace('第', '').replace('章', '')
-        emoji = ch.get('emoji', '')
-        title = ch['title']
-        if title.startswith(f'{emoji} '):
-            title = title[len(emoji)+1:]
-        toc_text = f"{num}. {title}"
-        story.append(Paragraph(toc_text, styles['TOCItem']))
+    story.append(Paragraph("目录", styles['ChapterTitle']))
+    story.append(Paragraph("按印刷阅读顺序整理。章节页码由 PDF 自动计算。", styles['TOCMeta']))
+    frontmatter = [ch for ch in chapters if str(ch.get('number', '')).startswith('前')]
+    mainmatter = [ch for ch in chapters if str(ch.get('number', '')).startswith('第')]
+    backmatter = [ch for ch in chapters if ch not in frontmatter and ch not in mainmatter]
+    toc_groups = [
+        ("前置内容", frontmatter),
+        ("正文", mainmatter),
+        ("附录", backmatter),
+    ]
+    for label, toc_chapters in toc_groups:
+        if not toc_chapters:
+            continue
+        story.append(Paragraph(label, styles['TOCSection']))
+        for ch in toc_chapters:
+            num = ch.get('number', '')
+            title = ch.get('title', '')
+            toc_text = f"{num}  {title}"
+            story.append(Paragraph(toc_text, styles['TOCItem']))
+            section_count = len(ch.get('sections', []))
+            tagline = ch.get('tagline', '')
+            meta_bits = [f"{section_count} 个内容块"] if section_count else []
+            if tagline:
+                meta_bits.append(tagline)
+            if meta_bits:
+                story.append(Paragraph(" · ".join(meta_bits), styles['TOCMeta']))
     story.append(PageBreak())
     
     # ── CHAPTERS ──
@@ -473,15 +540,15 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
         story.append(Spacer(1, 8))
 
         if ch.get('image'):
-            img = image_flowable(ch['image'], content_width, 4.25 * inch)
+            img = image_flowable(ch['image'], content_width, 3.9 * inch)
             if img:
                 story.append(img)
-                story.append(Spacer(1, 12))
+                story.append(Spacer(1, 8))
         
         # Divider line
         story.append(Spacer(1, 4))
-        story.append(Paragraph("─" * 60, styles['FooterStyle']))
-        story.append(Spacer(1, 8))
+        story.append(Paragraph("─" * 54, styles['FooterStyle']))
+        story.append(Spacer(1, 6))
         
         # Data cards (if any) - render as a simple box
         if ch.get('data_cards'):
@@ -519,12 +586,12 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
                     rendered_table = table_flowable(content_data, styles, content_width)
                     if rendered_table:
                         story.append(rendered_table)
-                        story.append(Spacer(1, 10))
+                        story.append(Spacer(1, 8))
                 elif content_type == 'image':
-                    img = image_flowable(content_data['path'], content_width, 4.8 * inch)
+                    img = image_flowable(content_data['path'], content_width, 4.25 * inch)
                     if img:
                         story.append(img)
-                        story.append(Spacer(1, 10))
+                        story.append(Spacer(1, 8))
         
         # Phase cards (if any) - render inline
         if ch.get('phase_cards'):
@@ -541,7 +608,7 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     # ── FOOTER / COLOPHON ──
     story.append(PageBreak())
     story.append(Spacer(1, 2 * inch))
-    story.append(Paragraph("📘 OPC生存手册", styles['CoverTitle']))
+    story.append(Paragraph("OPC生存手册", styles['CoverTitle']))
     story.append(Paragraph("第一版 · 2026", styles['CoverSubtitle']))
     story.append(Spacer(1, 0.5 * inch))
     story.append(Paragraph("本书由人类创作者与AI工具协作完成", styles['FooterStyle']))
@@ -551,16 +618,16 @@ def build_pdf(chapters, output_path, page_size, font_name, font_bold_name, book_
     doc = SimpleDocTemplate(
         output_path,
         pagesize=page_size,
-        leftMargin=0.85 * inch,
-        rightMargin=0.85 * inch,
-        topMargin=0.75 * inch,
-        bottomMargin=0.75 * inch,
+        leftMargin=0.72 * inch,
+        rightMargin=0.72 * inch,
+        topMargin=0.66 * inch,
+        bottomMargin=0.72 * inch,
         title=book_title,
         author="OPC Community",
         subject="One Person Creator Survival Guide",
     )
     
-    doc.build(story)
+    doc.build(story, onFirstPage=draw_page_chrome, onLaterPages=draw_page_chrome)
     return output_path
 
 

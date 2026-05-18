@@ -16,6 +16,10 @@ const docsRoot = join(root, "docs");
 const wechatRoot = join(docsRoot, "wechat-course");
 const wechatDataRoot = join(wechatRoot, "data");
 const wechatScriptsRoot = join(wechatRoot, "scripts");
+const wechatLessonsRoot = join(wechatRoot, "lessons");
+const wechatLessonDataRoot = join(wechatLessonsRoot, "data");
+const wechatLessonScriptsRoot = join(wechatLessonsRoot, "scripts");
+const wechatLessonArticlesRoot = join(wechatLessonsRoot, "articles");
 
 function escapeHtml(text) {
   return String(text)
@@ -33,6 +37,16 @@ function chapterSlug(number) {
   return `chapter-${String(number).padStart(2, "0")}`;
 }
 
+function lessonSlug(number) {
+  return `lesson-${String(number).padStart(3, "0")}`;
+}
+
+function smartTrim(text, maxLength) {
+  const normalized = plain(text);
+  if (normalized.length <= maxLength) return normalized;
+  return `${normalized.slice(0, maxLength - 1).trim()}…`;
+}
+
 function getCaseUsageMap() {
   const usage = new Map();
   for (const chapter of chapters) {
@@ -48,6 +62,110 @@ function getCaseUsageMap() {
     }
   }
   return usage;
+}
+
+function buildLessonBundle(chapter, section, lessonNumber, chapterLessonNumber) {
+  const id = lessonSlug(lessonNumber);
+  const leadCase = section.caseIds[0] ? caseLibrary[section.caseIds[0]] : null;
+  const frameworkSummary = section.frameworkSteps
+    .slice(0, 3)
+    .map((step) => `${step.label}：${plain(step.detail)}`)
+    .join("；");
+  const videoScript = smartTrim(
+    [
+      `今天这节课，我们只处理一个问题：${plain(section.question)}`,
+      `放到 OPC 项目里，这件事真正难的不是知道概念，而是你明明想推进，却总会卡在 ${plain(
+        section.friction
+      )}。`,
+      `所以这一课只记住一个框架：${section.frameworkName}。最关键的三步是 ${frameworkSummary}。`,
+      leadCase
+        ? `案例上你可以看 ${leadCase.name}，重点不是它做得多大，而是它证明了 ${plain(
+            leadCase.summary
+          )}`
+        : "",
+      `这节课听完不要继续收藏，直接去做一件事：${plain(section.actions[0])}`,
+    ]
+      .filter(Boolean)
+      .join(""),
+    460
+  );
+
+  const articleSections = [
+    {
+      title: "开场问题",
+      paragraphs: [
+        plain(section.question),
+        `如果把这节课放到微信平台，它的作用不是补充概念，而是把学员从“知道一点”推进到“愿意动手”。${plain(
+          section.premise
+        )}`,
+      ],
+    },
+    {
+      title: `核心框架：${section.frameworkName}`,
+      paragraphs: [
+        ...section.frameworkSteps.map(
+          (step, index) =>
+            `第${index + 1}步是 ${step.label}。${plain(step.detail)}`
+        ),
+      ],
+    },
+    {
+      title: "关键思考",
+      paragraphs: section.thinkingAngles.map((item) => plain(item)),
+    },
+    leadCase
+      ? {
+          title: `案例拆解：${leadCase.name}`,
+          paragraphs: [
+            plain(leadCase.summary),
+            ...leadCase.details.map((item) => plain(item)),
+            `这个案例最值得拿回自己项目里复用的，不是表面上的赛道选择，而是它如何把资产、分发和现金流接起来。`,
+          ],
+        }
+      : null,
+    {
+      title: "行动清单",
+      paragraphs: section.actions.map((item) => plain(item)),
+    },
+    {
+      title: "复盘提问",
+      paragraphs: section.reflection.map((item) => plain(item)),
+    },
+  ].filter(Boolean);
+
+  const articleIntro = smartTrim(
+    [
+      `这篇文章对应《${chapter.title}》里的《${section.title}》。`,
+      `如果你现在正在做 OPC 项目，这一节最适合解决“方向不清、动作太散、做了却没有资产沉淀”的问题。`,
+      `读完之后，你至少应该能带走一个框架、一条案例启发和一份可以立刻执行的动作清单。`,
+    ].join(""),
+    220
+  );
+
+  return {
+    id,
+    lessonNumber,
+    chapterNumber: chapter.number,
+    chapterLessonNumber,
+    chapterId: chapterSlug(chapter.number),
+    chapterTitle: chapter.title,
+    chapterSubtitle: chapter.subtitle,
+    title: section.title,
+    frameworkName: section.frameworkName,
+    videoScript,
+    articleTitle: `第${chapter.number}-${chapterLessonNumber}课｜${section.title}`,
+    articleIntro,
+    articleSections,
+    case: leadCase
+      ? {
+          name: leadCase.name,
+          summary: leadCase.summary,
+          sourceUrl: leadCase.sourceUrl,
+        }
+      : null,
+    action: section.actions[0],
+    reflection: section.reflection[0],
+  };
 }
 
 function buildPrintHtml() {
@@ -219,7 +337,7 @@ ul,ol{padding-left:20px}
 </html>`;
 }
 
-function buildWechatChapter(chapter) {
+function buildWechatChapter(chapter, lessonLookup) {
   const primaryCases = [];
   for (const section of chapter.sections) {
     for (const caseId of section.caseIds) {
@@ -236,6 +354,7 @@ function buildWechatChapter(chapter) {
 
   const segments = chapter.sections.map((section, index) => {
     const firstCase = caseLibrary[section.caseIds[0]];
+    const lesson = lessonLookup.get(`${chapter.number}:${section.title}`);
     const frameworkSentence = section.frameworkSteps
       .map((step) => `${step.label}：${plain(step.detail)}`)
       .join("；");
@@ -262,6 +381,8 @@ function buildWechatChapter(chapter) {
       frameworkName: section.frameworkName,
       interaction: section.reflection[0],
       action: section.actions[0],
+      lessonPath: lesson ? `lessons/${lesson.id}.html` : "",
+      lessonId: lesson ? lesson.id : "",
     };
   });
 
@@ -298,6 +419,266 @@ function buildWechatChapter(chapter) {
       "AI反馈与群内点评：把提交内容送到AI反馈入口，再配合微信群/企业微信点评。",
     ],
   };
+}
+
+function lessonArticleMarkdown(lesson) {
+  const lines = [
+    `# ${lesson.articleTitle}`,
+    "",
+    lesson.articleIntro,
+    "",
+    `- 章节：第${lesson.chapterNumber}章 ${lesson.chapterTitle}`,
+    `- 课次：第${lesson.chapterNumber}-${lesson.chapterLessonNumber}课`,
+    `- 核心框架：${lesson.frameworkName}`,
+    "",
+  ];
+
+  for (const section of lesson.articleSections) {
+    lines.push(`## ${section.title}`);
+    lines.push("");
+    for (const paragraph of section.paragraphs) {
+      lines.push(paragraph);
+      lines.push("");
+    }
+  }
+
+  if (lesson.case) {
+    lines.push("## 案例来源");
+    lines.push("");
+    lines.push(`- ${lesson.case.name}：${lesson.case.summary}`);
+    lines.push(`- 来源：${lesson.case.sourceUrl}`);
+    lines.push("");
+  }
+
+  lines.push("## 结尾动作");
+  lines.push("");
+  lines.push(`- 行动作业：${lesson.action}`);
+  lines.push(`- 复盘提问：${lesson.reflection}`);
+  lines.push("");
+  return `${lines.join("\n")}\n`;
+}
+
+function lessonArticleHtml(lesson) {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(lesson.articleTitle)} · 公众号文章版</title>
+<style>
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f6f0e5;color:#1f2433;line-height:1.9}
+.top{position:sticky;top:0;background:rgba(246,240,229,.94);border-bottom:1px solid #ddd0bb;backdrop-filter:blur(12px)}
+.top-inner{max-width:920px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.top a{text-decoration:none;color:#5f677b}
+.top .brand{font-weight:900;color:#1f2433}
+.wrap{max-width:920px;margin:0 auto;padding:28px 24px 60px}
+.hero,.section{background:#fffdf8;border:1px solid #ddd0bb;border-radius:22px;box-shadow:0 14px 34px rgba(31,36,51,.08);padding:24px}
+.section{margin-top:18px}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f3e2c4;color:#c98412;font-size:.78rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.12}
+h2{margin:0 0 12px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f6efe2;color:#59627b;font-size:.8rem;font-weight:700}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="../index.html">逐课内容库</a>
+    <a href="../${lesson.id}.html">返回课程页</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Article Version</div>
+    <h1>${escapeHtml(lesson.articleTitle)}</h1>
+    <p>${escapeHtml(lesson.articleIntro)}</p>
+    <div class="meta">
+      <span class="chip">第${lesson.chapterNumber}章 ${escapeHtml(lesson.chapterTitle)}</span>
+      <span class="chip">${escapeHtml(lesson.frameworkName)}</span>
+    </div>
+  </section>
+  ${lesson.articleSections
+    .map(
+      (section) => `<section class="section">
+        <div class="eyebrow">${escapeHtml(section.title)}</div>
+        <h2>${escapeHtml(section.title)}</h2>
+        ${section.paragraphs
+          .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+          .join("")}
+      </section>`
+    )
+    .join("")}
+  ${
+    lesson.case
+      ? `<section class="section">
+      <div class="eyebrow">Source Case</div>
+      <h2>案例来源</h2>
+      <p><strong>${escapeHtml(lesson.case.name)}</strong>：${escapeHtml(
+          lesson.case.summary
+        )}</p>
+      <p><a href="${lesson.case.sourceUrl}">${escapeHtml(
+          lesson.case.sourceUrl
+        )}</a></p>
+    </section>`
+      : ""
+  }
+</main>
+</body>
+</html>`;
+}
+
+function lessonHubHtml(lesson) {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(lesson.articleTitle)} · 逐课拆解</title>
+<style>
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f5efe4;color:#1f2433;line-height:1.8}
+.top{position:sticky;top:0;background:rgba(245,239,228,.94);border-bottom:1px solid #dfd0b6;backdrop-filter:blur(12px)}
+.top-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.top a{text-decoration:none;color:#5f677b}
+.top .brand{font-weight:900;color:#1f2433}
+.top nav{display:flex;gap:8px;flex-wrap:wrap}
+.top nav a{padding:8px 12px;border-radius:999px}
+.top nav a:hover{background:#efe0c6;color:#1f2433}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 24px 60px}
+.hero,.card{background:#fffdf8;border:1px solid #dfd0b6;border-radius:20px;box-shadow:0 14px 34px rgba(31,36,51,.08);padding:24px}
+.hero{margin-bottom:20px}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f4e2c4;color:#c98412;font-size:.78rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+h1{margin:14px 0 8px;font-size:2.3rem;line-height:1.08}
+.subtitle{color:#59627b;margin-bottom:12px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.actions a{text-decoration:none;color:#1f2433;padding:10px 14px;border-radius:999px;background:#f3e5ca;font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card h2{margin:0 0 10px}
+pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.top-inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="index.html">逐课内容库</a>
+    <nav>
+      <a href="../index.html">微信脚本首页</a>
+      <a href="../${lesson.chapterId}.html">所属章节</a>
+      <a href="../../book-200k.html">20万字长版</a>
+      <a href="../../project.html">项目看板</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Lesson ${String(lesson.lessonNumber).padStart(3, "0")}</div>
+    <h1>${escapeHtml(lesson.articleTitle)}</h1>
+    <p class="subtitle">第${lesson.chapterNumber}章《${escapeHtml(
+    lesson.chapterTitle
+  )}》 · 短视频口播稿 + 公众号文章版</p>
+    <p>${escapeHtml(lesson.articleIntro)}</p>
+    <div class="actions">
+      <a href="scripts/${lesson.id}-video.txt">短视频口播 TXT</a>
+      <a href="articles/${lesson.id}.html">公众号文章页</a>
+      <a href="articles/${lesson.id}.md">公众号 Markdown</a>
+    </div>
+  </section>
+  <div class="grid">
+    <section class="card">
+      <div class="eyebrow">Video Script</div>
+      <h2>逐课短视频口播稿</h2>
+      <pre>${escapeHtml(lesson.videoScript)}</pre>
+    </section>
+    <section class="card">
+      <div class="eyebrow">Article Outline</div>
+      <h2>公众号文章版结构</h2>
+      ${lesson.articleSections
+        .map(
+          (section) => `<p><strong>${escapeHtml(section.title)}：</strong>${escapeHtml(
+            section.paragraphs[0]
+          )}</p>`
+        )
+        .join("")}
+      <p><strong>行动作业：</strong>${escapeHtml(lesson.action)}</p>
+      <p><strong>复盘提问：</strong>${escapeHtml(lesson.reflection)}</p>
+    </section>
+  </div>
+</main>
+</body>
+</html>`;
+}
+
+function buildLessonIndex(lessons) {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC 微信逐课内容库</title>
+<style>
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f5efe4;color:#1f2433;line-height:1.8}
+.top{position:sticky;top:0;background:rgba(245,239,228,.94);border-bottom:1px solid #dfd0b6;backdrop-filter:blur(12px)}
+.top-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.top a{text-decoration:none;color:#5f677b}
+.top .brand{font-weight:900;color:#1f2433}
+.top nav{display:flex;gap:8px;flex-wrap:wrap}
+.top nav a{padding:8px 12px;border-radius:999px}
+.top nav a:hover,.top nav a.active{background:#efe0c6;color:#1f2433}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 24px 60px}
+.hero,.card{background:#fffdf8;border:1px solid #dfd0b6;border-radius:20px;box-shadow:0 14px 34px rgba(31,36,51,.08);padding:24px}
+.hero{margin-bottom:20px}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f4e2c4;color:#c98412;font-size:.78rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.08}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card h2{margin:10px 0 8px;font-size:1.28rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f6efe2;color:#59627b;font-size:.8rem;font-weight:700}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.top-inner{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="../index.html">OPC 生存手册</a>
+    <nav>
+      <a href="../index.html">微信脚本首页</a>
+      <a class="active" href="index.html">逐课内容库</a>
+      <a href="../../book-200k.html">20万字长版</a>
+      <a href="../../book-200k-assets-cases.html">配图/案例页</a>
+      <a href="../../project.html">项目看板</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Lesson Library</div>
+    <h1>OPC 微信逐课内容库</h1>
+    <p>这里把长版书按节拆成可直接投放到微信生态的逐课资产。每课都包含一条短视频口播稿，以及一篇可继续编辑的公众号文章版。</p>
+    <div class="meta">
+      <span class="chip">${lessons.length} 节逐课内容</span>
+      <span class="chip">短视频口播稿</span>
+      <span class="chip">公众号文章版</span>
+    </div>
+  </section>
+  <div class="grid">
+    ${lessons
+      .map(
+        (lesson) => `<a class="card" href="${lesson.id}.html" style="text-decoration:none;color:inherit">
+          <div class="eyebrow">第${lesson.chapterNumber}-${lesson.chapterLessonNumber}课</div>
+          <h2>${escapeHtml(lesson.title)}</h2>
+          <p>${escapeHtml(lesson.articleIntro)}</p>
+          <div class="meta">
+            <span class="chip">${escapeHtml(lesson.frameworkName)}</span>
+            <span class="chip">${lesson.case ? escapeHtml(lesson.case.name) : "无案例"}</span>
+          </div>
+        </a>`
+      )
+      .join("")}
+  </div>
+</main>
+</body>
+</html>`;
 }
 
 function scriptText(chapterScript) {
@@ -376,6 +757,7 @@ ul{padding-left:20px}
       <a href="../index.html">手册首页</a>
       <a href="../book-200k.html">20万字长版</a>
       <a href="index.html">脚本目录</a>
+      <a href="lessons/index.html">逐课内容库</a>
       <a href="../book-200k-assets-cases.html">配图/案例页</a>
       <a href="../project.html">项目看板</a>
     </nav>
@@ -398,6 +780,11 @@ ul{padding-left:20px}
           <p>${escapeHtml(segment.narration)}</p>
           <p><strong>互动问题：</strong>${escapeHtml(segment.interaction)}</p>
           <p><strong>行动作业：</strong>${escapeHtml(segment.action)}</p>
+          ${
+            segment.lessonPath
+              ? `<p><a href="${segment.lessonPath}">查看逐课短视频口播稿与公众号文章版</a></p>`
+              : ""
+          }
         </section>`
       )
       .join("")}
@@ -431,7 +818,7 @@ ul{padding-left:20px}
 </html>`;
 }
 
-function buildWechatIndex(catalog) {
+function buildWechatIndex(catalog, lessonCount) {
   return `<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -468,6 +855,7 @@ h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.08}
       <a href="../index.html">手册首页</a>
       <a href="../book-200k.html">20万字长版</a>
       <a class="active" href="index.html">微信脚本</a>
+      <a href="lessons/index.html">逐课内容库</a>
       <a href="../book-200k-assets-cases.html">配图/案例页</a>
       <a href="../project.html">项目看板</a>
     </nav>
@@ -478,6 +866,10 @@ h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.08}
     <div class="eyebrow">WeChat Script Pack</div>
     <h1>OPC 微信课程章节脚本</h1>
     <p class="subtitle">基于 20 万字长版书拆出的 10 章微信课程脚本包。每章包含开场口播、分节讲解、互动问题、行动作业、案例位和微信平台模块建议。</p>
+    <div class="meta">
+      <span class="chip">${lessonCount} 节逐课内容已拆分</span>
+      <span class="chip"><a href="lessons/index.html" style="color:inherit;text-decoration:none">进入逐课内容库</a></span>
+    </div>
   </section>
   <div class="grid">
     ${catalog
@@ -637,11 +1029,83 @@ async function main() {
   await mkdir(wechatRoot, { recursive: true });
   await mkdir(wechatDataRoot, { recursive: true });
   await mkdir(wechatScriptsRoot, { recursive: true });
+  await mkdir(wechatLessonsRoot, { recursive: true });
+  await mkdir(wechatLessonDataRoot, { recursive: true });
+  await mkdir(wechatLessonScriptsRoot, { recursive: true });
+  await mkdir(wechatLessonArticlesRoot, { recursive: true });
 
   const printHtml = buildPrintHtml();
   await writeFile(join(docsRoot, "book-200k-print.html"), printHtml, "utf8");
 
-  const chapterScripts = chapters.map((chapter) => buildWechatChapter(chapter));
+  const lessons = [];
+  const lessonLookup = new Map();
+  let lessonCounter = 0;
+  for (const chapter of chapters) {
+    for (const [index, section] of chapter.sections.entries()) {
+      lessonCounter += 1;
+      const lesson = buildLessonBundle(chapter, section, lessonCounter, index + 1);
+      lessons.push(lesson);
+      lessonLookup.set(`${chapter.number}:${section.title}`, lesson);
+    }
+  }
+
+  for (const lesson of lessons) {
+    await writeFile(
+      join(wechatLessonsRoot, `${lesson.id}.html`),
+      lessonHubHtml(lesson),
+      "utf8"
+    );
+    await writeFile(
+      join(wechatLessonScriptsRoot, `${lesson.id}-video.txt`),
+      `${lesson.videoScript}\n`,
+      "utf8"
+    );
+    await writeFile(
+      join(wechatLessonArticlesRoot, `${lesson.id}.html`),
+      lessonArticleHtml(lesson),
+      "utf8"
+    );
+    await writeFile(
+      join(wechatLessonArticlesRoot, `${lesson.id}.md`),
+      lessonArticleMarkdown(lesson),
+      "utf8"
+    );
+    await writeFile(
+      join(wechatLessonDataRoot, `${lesson.id}.json`),
+      JSON.stringify(lesson, null, 2),
+      "utf8"
+    );
+  }
+  await writeFile(
+    join(wechatLessonsRoot, "index.html"),
+    buildLessonIndex(lessons),
+    "utf8"
+  );
+  await writeFile(
+    join(wechatLessonDataRoot, "catalog.json"),
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        lessons: lessons.map((lesson) => ({
+          id: lesson.id,
+          lessonNumber: lesson.lessonNumber,
+          chapterNumber: lesson.chapterNumber,
+          chapterLessonNumber: lesson.chapterLessonNumber,
+          title: lesson.title,
+          chapterTitle: lesson.chapterTitle,
+          frameworkName: lesson.frameworkName,
+          articleTitle: lesson.articleTitle,
+        })),
+      },
+      null,
+      2
+    ),
+    "utf8"
+  );
+
+  const chapterScripts = chapters.map((chapter) =>
+    buildWechatChapter(chapter, lessonLookup)
+  );
   const catalog = [];
   for (const chapterScript of chapterScripts) {
     const txtName = `${chapterScript.id}.txt`;
@@ -673,7 +1137,7 @@ async function main() {
   }
   await writeFile(
     join(wechatRoot, "index.html"),
-    buildWechatIndex(catalog),
+    buildWechatIndex(catalog, lessons.length),
     "utf8"
   );
   await writeFile(
@@ -690,6 +1154,7 @@ async function main() {
 
   console.log("generated docs/book-200k-print.html");
   console.log("generated docs/wechat-course/*");
+  console.log("generated docs/wechat-course/lessons/*");
   console.log("generated docs/book-200k-assets-cases.html");
 }
 

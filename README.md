@@ -12,9 +12,9 @@
 
 | 项目 | 说明 |
 |------|------|
-| 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 |
+| 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 / 70节微信逐课内容 |
 | 配图 | 10张ComfyUI章节题图 + 4张信息图（附AI生成Prompt） |
-| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + 印刷HTML + KDP PDF印刷版 + 微信课程脚本包 + 65节课程站 |
+| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + 印刷HTML + KDP PDF印刷版 + 微信课程脚本包 + 70节逐课内容库 + 65节课程站 |
 | 工具链 | 视觉资产生成、课程内容生成、神经TTS音频生成、KDP自动排版脚本 |
 
 ## 🚀 快速开始
@@ -33,6 +33,7 @@ npm run build
 浏览器打开 docs/book-200k-mindmaps.html
 浏览器打开 docs/book-200k-print.html
 浏览器打开 docs/wechat-course/index.html
+浏览器打开 docs/wechat-course/lessons/index.html
 浏览器打开 docs/book-200k-assets-cases.html
 浏览器打开 docs/course/index.html
 
@@ -49,7 +50,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 
 - `scripts/build_handbook_html.mjs`：生成完整在线书稿 `docs/handbook.html`
 - `scripts/build_longform_book.mjs`：生成 20 万字长版 `docs/book-200k.html` 与导图页 `docs/book-200k-mindmaps.html`
-- `scripts/build_longform_derivatives.mjs`：生成印刷版输入 `docs/book-200k-print.html`、`docs/wechat-course/` 章节脚本包和 `docs/book-200k-assets-cases.html`
+- `scripts/build_longform_derivatives.mjs`：生成印刷版输入 `docs/book-200k-print.html`、`docs/wechat-course/` 章节脚本包、`docs/wechat-course/lessons/` 逐课内容库和 `docs/book-200k-assets-cases.html`
 - `scripts/build_course_content.mjs`：生成65节系统课、课程JSON和每课500字以内口播稿
 - `scripts/generate_visuals.mjs`：生成封面、4张信息图和SVG兜底图；章节PNG优先使用ComfyUI输出
 - `scripts/gen_audio.py`：生成10章课程口播音频 `docs/audio/ch1~ch10.mp3`
@@ -76,6 +77,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 │   ├── course.html        # OPC研究院课程平台原型
 │   ├── course/            # 65节系统课、课程JSON、口播稿、MP3
 │   ├── wechat-course/     # 10章微信课程脚本、TXT、JSON
+│   │   └── lessons/       # 70节逐课内容：口播稿、公众号文章版、Markdown、JSON
 │   ├── audio/             # 10章MP3课程口播
 │   └── assets/            # 封面、章节插图、信息图、ComfyUI原始输出
 ├── scripts/
@@ -109,7 +111,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 - 🧘 健康与精力管理
 - 🚀 从OPC到OPC+的进化路径
 - 📘 KDP长版印刷书输出
-- 💬 微信课程章节脚本与配图/案例页
+- 💬 微信课程章节脚本、逐课短视频口播稿、公众号文章版与配图/案例页
 
 ---
 

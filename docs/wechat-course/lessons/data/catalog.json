@@ -1,0 +1,705 @@
+{
+  "generatedAt": "2026-05-18T06:24:11.945Z",
+  "lessons": [
+    {
+      "id": "lesson-001",
+      "lessonNumber": 1,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 1,
+      "title": "1.1 从雇佣思维迁移到资产思维",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "资产迁移四步法",
+      "articleTitle": "第1-1课｜1.1 从雇佣思维迁移到资产思维"
+    },
+    {
+      "id": "lesson-002",
+      "lessonNumber": 2,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 2,
+      "title": "1.2 AI如何改变人效和试错成本",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "AI杠杆判断框架",
+      "articleTitle": "第1-2课｜1.2 AI如何改变人效和试错成本"
+    },
+    {
+      "id": "lesson-003",
+      "lessonNumber": 3,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 3,
+      "title": "1.3 OPC与传统创业的风险结构差异",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "风险三层拆解",
+      "articleTitle": "第1-3课｜1.3 OPC与传统创业的风险结构差异"
+    },
+    {
+      "id": "lesson-004",
+      "lessonNumber": 4,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 4,
+      "title": "1.4 什么叫真正的一人闭环",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "一人闭环五件套",
+      "articleTitle": "第1-4课｜1.4 什么叫真正的一人闭环"
+    },
+    {
+      "id": "lesson-005",
+      "lessonNumber": 5,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 5,
+      "title": "1.5 你不是在找副业，你是在搭建微型操作系统",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "微型操作系统框架",
+      "articleTitle": "第1-5课｜1.5 你不是在找副业，你是在搭建微型操作系统"
+    },
+    {
+      "id": "lesson-006",
+      "lessonNumber": 6,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 6,
+      "title": "1.6 以康波研究院为参照搭建你的商业形态",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "康波式产品阶梯",
+      "articleTitle": "第1-6课｜1.6 以康波研究院为参照搭建你的商业形态"
+    },
+    {
+      "id": "lesson-007",
+      "lessonNumber": 7,
+      "chapterNumber": 1,
+      "chapterLessonNumber": 7,
+      "title": "1.7 本书的使用方法与学习路径",
+      "chapterTitle": "一个人的时代来了",
+      "frameworkName": "三轮阅读法",
+      "articleTitle": "第1-7课｜1.7 本书的使用方法与学习路径"
+    },
+    {
+      "id": "lesson-008",
+      "lessonNumber": 8,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 1,
+      "title": "2.1 自由的反面是孤独",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "孤独管理三件套",
+      "articleTitle": "第2-1课｜2.1 自由的反面是孤独"
+    },
+    {
+      "id": "lesson-009",
+      "lessonNumber": 9,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 2,
+      "title": "2.2 四种最常见的致命心态",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "心态体检表",
+      "articleTitle": "第2-2课｜2.2 四种最常见的致命心态"
+    },
+    {
+      "id": "lesson-010",
+      "lessonNumber": 10,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 3,
+      "title": "2.3 证据感：从焦虑到判断",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "证据感生成器",
+      "articleTitle": "第2-3课｜2.3 证据感：从焦虑到判断"
+    },
+    {
+      "id": "lesson-011",
+      "lessonNumber": 11,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 4,
+      "title": "2.4 用公开构建抵消内耗",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "公开构建四层法",
+      "articleTitle": "第2-4课｜2.4 用公开构建抵消内耗"
+    },
+    {
+      "id": "lesson-012",
+      "lessonNumber": 12,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 5,
+      "title": "2.5 节奏比激情更可靠",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "周节奏模板",
+      "articleTitle": "第2-5课｜2.5 节奏比激情更可靠"
+    },
+    {
+      "id": "lesson-013",
+      "lessonNumber": 13,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 6,
+      "title": "2.6 如何处理低谷、停滞和外部比较",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "比较消噪法",
+      "articleTitle": "第2-6课｜2.6 如何处理低谷、停滞和外部比较"
+    },
+    {
+      "id": "lesson-014",
+      "lessonNumber": 14,
+      "chapterNumber": 2,
+      "chapterLessonNumber": 7,
+      "title": "2.7 建立长期主义，但不要纵容拖延",
+      "chapterTitle": "心态：OPC的第一道生死线",
+      "frameworkName": "长期主义校准器",
+      "articleTitle": "第2-7课｜2.7 建立长期主义，但不要纵容拖延"
+    },
+    {
+      "id": "lesson-015",
+      "lessonNumber": 15,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 1,
+      "title": "3.1 不公平优势不是天赋神话",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "优势组合盘",
+      "articleTitle": "第3-1课｜3.1 不公平优势不是天赋神话"
+    },
+    {
+      "id": "lesson-016",
+      "lessonNumber": 16,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 2,
+      "title": "3.2 用AI发散，但不用AI替你定位",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "AI发散筛选法",
+      "articleTitle": "第3-2课｜3.2 用AI发散，但不用AI替你定位"
+    },
+    {
+      "id": "lesson-017",
+      "lessonNumber": 17,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 3,
+      "title": "3.3 找到高支付意愿的痛点",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "付费痛点评估器",
+      "articleTitle": "第3-3课｜3.3 找到高支付意愿的痛点"
+    },
+    {
+      "id": "lesson-018",
+      "lessonNumber": 18,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 4,
+      "title": "3.4 先做最小画像，不要先做虚构人设",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "情境化画像",
+      "articleTitle": "第3-4课｜3.4 先做最小画像，不要先做虚构人设"
+    },
+    {
+      "id": "lesson-019",
+      "lessonNumber": 19,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 5,
+      "title": "3.5 用最小验证击穿想象",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "最小验证路径",
+      "articleTitle": "第3-5课｜3.5 用最小验证击穿想象"
+    },
+    {
+      "id": "lesson-020",
+      "lessonNumber": 20,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 6,
+      "title": "3.6 20个适合OPC的方向，如何为你所用",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "方向组合器",
+      "articleTitle": "第3-6课｜3.6 20个适合OPC的方向，如何为你所用"
+    },
+    {
+      "id": "lesson-021",
+      "lessonNumber": 21,
+      "chapterNumber": 3,
+      "chapterLessonNumber": 7,
+      "title": "3.7 学会放弃，才算真正选了方向",
+      "chapterTitle": "找到你的一人帝国",
+      "frameworkName": "放弃判定表",
+      "articleTitle": "第3-7课｜3.7 学会放弃，才算真正选了方向"
+    },
+    {
+      "id": "lesson-022",
+      "lessonNumber": 22,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 1,
+      "title": "4.1 用岗位思维管理工具，而不是用情绪挑工具",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "岗位化工具矩阵",
+      "articleTitle": "第4-1课｜4.1 用岗位思维管理工具，而不是用情绪挑工具"
+    },
+    {
+      "id": "lesson-023",
+      "lessonNumber": 23,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 2,
+      "title": "4.2 内容栈：研究、起稿、改写、审校",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "内容生产四段流",
+      "articleTitle": "第4-2课｜4.2 内容栈：研究、起稿、改写、审校"
+    },
+    {
+      "id": "lesson-024",
+      "lessonNumber": 24,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 3,
+      "title": "4.3 自动化栈：把重复工作赶出黄金时间",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "自动化优先级表",
+      "articleTitle": "第4-3课｜4.3 自动化栈：把重复工作赶出黄金时间"
+    },
+    {
+      "id": "lesson-025",
+      "lessonNumber": 25,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 4,
+      "title": "4.4 开发栈：无代码、AI代码与工程化边界",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "技术选择三阶段",
+      "articleTitle": "第4-4课｜4.4 开发栈：无代码、AI代码与工程化边界"
+    },
+    {
+      "id": "lesson-026",
+      "lessonNumber": 26,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 5,
+      "title": "4.5 出版与课程栈：从手册到音频到平台",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "内容多形态转译链",
+      "articleTitle": "第4-5课｜4.5 出版与课程栈：从手册到音频到平台"
+    },
+    {
+      "id": "lesson-027",
+      "lessonNumber": 27,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 6,
+      "title": "4.6 把Codex和浏览器自动化放进发布流程",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "半自动发布原则",
+      "articleTitle": "第4-6课｜4.6 把Codex和浏览器自动化放进发布流程"
+    },
+    {
+      "id": "lesson-028",
+      "lessonNumber": 28,
+      "chapterNumber": 4,
+      "chapterLessonNumber": 7,
+      "title": "4.7 工具栈的最终目标：形成个人操作台",
+      "chapterTitle": "AI工具箱：搭建你的虚拟团队",
+      "frameworkName": "工具栈封顶标准",
+      "articleTitle": "第4-7课｜4.7 工具栈的最终目标：形成个人操作台"
+    },
+    {
+      "id": "lesson-029",
+      "lessonNumber": 29,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 1,
+      "title": "5.1 内容母体：先做深内容，再做碎内容",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "母体优先原则",
+      "articleTitle": "第5-1课｜5.1 内容母体：先做深内容，再做碎内容"
+    },
+    {
+      "id": "lesson-030",
+      "lessonNumber": 30,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 2,
+      "title": "5.2 素材池与案例池：没有积累，就没有稳定表达",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "双池系统",
+      "articleTitle": "第5-2课｜5.2 素材池与案例池：没有积累，就没有稳定表达"
+    },
+    {
+      "id": "lesson-031",
+      "lessonNumber": 31,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 3,
+      "title": "5.3 结构模板比灵感更可靠",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "方法内容六段式",
+      "articleTitle": "第5-3课｜5.3 结构模板比灵感更可靠"
+    },
+    {
+      "id": "lesson-032",
+      "lessonNumber": 32,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 4,
+      "title": "5.4 一鱼多吃：同一份思考，服务多个场景",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "内容转译链",
+      "articleTitle": "第5-4课｜5.4 一鱼多吃：同一份思考，服务多个场景"
+    },
+    {
+      "id": "lesson-033",
+      "lessonNumber": 33,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 5,
+      "title": "5.5 用真实案例让内容带电",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "案例嵌入四问",
+      "articleTitle": "第5-5课｜5.5 用真实案例让内容带电"
+    },
+    {
+      "id": "lesson-034",
+      "lessonNumber": 34,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 6,
+      "title": "5.6 内容不止负责吸引，还要负责成交",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "温和成交路径",
+      "articleTitle": "第5-6课｜5.6 内容不止负责吸引，还要负责成交"
+    },
+    {
+      "id": "lesson-035",
+      "lessonNumber": 35,
+      "chapterNumber": 5,
+      "chapterLessonNumber": 7,
+      "title": "5.7 周产能和月产能怎样规划才现实",
+      "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
+      "frameworkName": "现实产能法",
+      "articleTitle": "第5-7课｜5.7 周产能和月产能怎样规划才现实"
+    },
+    {
+      "id": "lesson-036",
+      "lessonNumber": 36,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 1,
+      "title": "6.1 平台选择：先选用户，不先选热度",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "平台匹配四问",
+      "articleTitle": "第6-1课｜6.1 平台选择：先选用户，不先选热度"
+    },
+    {
+      "id": "lesson-037",
+      "lessonNumber": 37,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 2,
+      "title": "6.2 Build in Public 不是晒单，而是建立过程信任",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "过程信任链",
+      "articleTitle": "第6-2课｜6.2 Build in Public 不是晒单，而是建立过程信任"
+    },
+    {
+      "id": "lesson-038",
+      "lessonNumber": 38,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 3,
+      "title": "6.3 搜索分发正在重写，AEO也要纳入考虑",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "可检索内容模型",
+      "articleTitle": "第6-3课｜6.3 搜索分发正在重写，AEO也要纳入考虑"
+    },
+    {
+      "id": "lesson-039",
+      "lessonNumber": 39,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 4,
+      "title": "6.4 邮件名单：你最该长期经营的资产之一",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "名单经营四步",
+      "articleTitle": "第6-4课｜6.4 邮件名单：你最该长期经营的资产之一"
+    },
+    {
+      "id": "lesson-040",
+      "lessonNumber": 40,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 5,
+      "title": "6.5 私域不是喊口号，而是设计留存结构",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "私域最小结构",
+      "articleTitle": "第6-5课｜6.5 私域不是喊口号，而是设计留存结构"
+    },
+    {
+      "id": "lesson-041",
+      "lessonNumber": 41,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 6,
+      "title": "6.6 合作分发：借别人的信任，而不是借别人的流量",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "合作筛选器",
+      "articleTitle": "第6-6课｜6.6 合作分发：借别人的信任，而不是借别人的流量"
+    },
+    {
+      "id": "lesson-042",
+      "lessonNumber": 42,
+      "chapterNumber": 6,
+      "chapterLessonNumber": 7,
+      "title": "6.7 用分发数据做决策，不靠体感做判断",
+      "chapterTitle": "流量和分发：让好东西被看见",
+      "frameworkName": "分发看板层级",
+      "articleTitle": "第6-7课｜6.7 用分发数据做决策，不靠体感做判断"
+    },
+    {
+      "id": "lesson-043",
+      "lessonNumber": 43,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 1,
+      "title": "7.1 先设计产品阶梯，不先堆产品数量",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "四层产品阶梯",
+      "articleTitle": "第7-1课｜7.1 先设计产品阶梯，不先堆产品数量"
+    },
+    {
+      "id": "lesson-044",
+      "lessonNumber": 44,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 2,
+      "title": "7.2 把服务经验产品化，而不是永远卖工时",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "服务产品化三阶段",
+      "articleTitle": "第7-2课｜7.2 把服务经验产品化，而不是永远卖工时"
+    },
+    {
+      "id": "lesson-045",
+      "lessonNumber": 45,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 3,
+      "title": "7.3 课程化：把知识从内容升级为学习路径",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "课程路径设计",
+      "articleTitle": "第7-3课｜7.3 课程化：把知识从内容升级为学习路径"
+    },
+    {
+      "id": "lesson-046",
+      "lessonNumber": 46,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 4,
+      "title": "7.4 书籍、课程、音频和社群如何互相供养",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "同源多形态系统",
+      "articleTitle": "第7-4课｜7.4 书籍、课程、音频和社群如何互相供养"
+    },
+    {
+      "id": "lesson-047",
+      "lessonNumber": 47,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 5,
+      "title": "7.5 定价不是数学题，而是价值沟通题",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "定价四参考",
+      "articleTitle": "第7-5课｜7.5 定价不是数学题，而是价值沟通题"
+    },
+    {
+      "id": "lesson-048",
+      "lessonNumber": 48,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 6,
+      "title": "7.6 销售文案不是夸，而是澄清",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "澄清式文案",
+      "articleTitle": "第7-6课｜7.6 销售文案不是夸，而是澄清"
+    },
+    {
+      "id": "lesson-049",
+      "lessonNumber": 49,
+      "chapterNumber": 7,
+      "chapterLessonNumber": 7,
+      "title": "7.7 从第一单到稳定收入，路线如何设计",
+      "chapterTitle": "产品与变现：把信任变成收入",
+      "frameworkName": "收入四阶段路书",
+      "articleTitle": "第7-7课｜7.7 从第一单到稳定收入，路线如何设计"
+    },
+    {
+      "id": "lesson-050",
+      "lessonNumber": 50,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 1,
+      "title": "8.1 六个月生活费不是保守，是战略空间",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "现金缓冲模型",
+      "articleTitle": "第8-1课｜8.1 六个月生活费不是保守，是战略空间"
+    },
+    {
+      "id": "lesson-051",
+      "lessonNumber": 51,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 2,
+      "title": "8.2 版权与素材：AI时代更要留下来源意识",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "版权四步检查",
+      "articleTitle": "第8-2课｜8.2 版权与素材：AI时代更要留下来源意识"
+    },
+    {
+      "id": "lesson-052",
+      "lessonNumber": 52,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 3,
+      "title": "8.3 平台依赖：不要把命运压在单一入口上",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "平台风险分散法",
+      "articleTitle": "第8-3课｜8.3 平台依赖：不要把命运压在单一入口上"
+    },
+    {
+      "id": "lesson-053",
+      "lessonNumber": 53,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 4,
+      "title": "8.4 文档、文件和知识备份",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "三层备份法",
+      "articleTitle": "第8-4课｜8.4 文档、文件和知识备份"
+    },
+    {
+      "id": "lesson-054",
+      "lessonNumber": 54,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 5,
+      "title": "8.5 客诉、信誉与边界管理",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "边界三明治",
+      "articleTitle": "第8-5课｜8.5 客诉、信誉与边界管理"
+    },
+    {
+      "id": "lesson-055",
+      "lessonNumber": 55,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 6,
+      "title": "8.6 什么时候该合规升级",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "升级触发器",
+      "articleTitle": "第8-6课｜8.6 什么时候该合规升级"
+    },
+    {
+      "id": "lesson-056",
+      "lessonNumber": 56,
+      "chapterNumber": 8,
+      "chapterLessonNumber": 7,
+      "title": "8.7 让底盘建设进入月度例行",
+      "chapterTitle": "底盘：现金流、法务、版权与系统安全",
+      "frameworkName": "月度底盘日",
+      "articleTitle": "第8-7课｜8.7 让底盘建设进入月度例行"
+    },
+    {
+      "id": "lesson-057",
+      "lessonNumber": 57,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 1,
+      "title": "9.1 深度工作是OPC最贵的资源",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "深度工作护城河",
+      "articleTitle": "第9-1课｜9.1 深度工作是OPC最贵的资源"
+    },
+    {
+      "id": "lesson-058",
+      "lessonNumber": 58,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 2,
+      "title": "9.2 体能不是背景变量，而是经营变量",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "经营型健康观",
+      "articleTitle": "第9-2课｜9.2 体能不是背景变量，而是经营变量"
+    },
+    {
+      "id": "lesson-059",
+      "lessonNumber": 59,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 3,
+      "title": "9.3 休息不是奖励，而是系统需求",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "恢复四模块",
+      "articleTitle": "第9-3课｜9.3 休息不是奖励，而是系统需求"
+    },
+    {
+      "id": "lesson-060",
+      "lessonNumber": 60,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 4,
+      "title": "9.4 家庭、关系和边界会反向影响业务稳定性",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "关系边界设计",
+      "articleTitle": "第9-4课｜9.4 家庭、关系和边界会反向影响业务稳定性"
+    },
+    {
+      "id": "lesson-061",
+      "lessonNumber": 61,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 5,
+      "title": "9.5 情绪管理：不要在最低谷做最大决策",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "决策情绪阀",
+      "articleTitle": "第9-5课｜9.5 情绪管理：不要在最低谷做最大决策"
+    },
+    {
+      "id": "lesson-062",
+      "lessonNumber": 62,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 6,
+      "title": "9.6 运营自己：像运营产品一样运营人生节奏",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "个人运营面板",
+      "articleTitle": "第9-6课｜9.6 运营自己：像运营产品一样运营人生节奏"
+    },
+    {
+      "id": "lesson-063",
+      "lessonNumber": 63,
+      "chapterNumber": 9,
+      "chapterLessonNumber": 7,
+      "title": "9.7 长期可持续，才是最高级的野心",
+      "chapterTitle": "肉身与运营：你自己就是核心基础设施",
+      "frameworkName": "可持续野心观",
+      "articleTitle": "第9-7课｜9.7 长期可持续，才是最高级的野心"
+    },
+    {
+      "id": "lesson-064",
+      "lessonNumber": 64,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 1,
+      "title": "10.1 什么时候该从‘我来做’升级到‘系统来做’",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "系统优先升级法",
+      "articleTitle": "第10-1课｜10.1 什么时候该从‘我来做’升级到‘系统来做’"
+    },
+    {
+      "id": "lesson-065",
+      "lessonNumber": 65,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 2,
+      "title": "10.2 AI代理和自动化如何成为真正的外脑外手",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "代理应用四原则",
+      "articleTitle": "第10-2课｜10.2 AI代理和自动化如何成为真正的外脑外手"
+    },
+    {
+      "id": "lesson-066",
+      "lessonNumber": 66,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 3,
+      "title": "10.3 品牌资产：让名字、风格和方法成为复利结构",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "品牌资产四件套",
+      "articleTitle": "第10-3课｜10.3 品牌资产：让名字、风格和方法成为复利结构"
+    },
+    {
+      "id": "lesson-067",
+      "lessonNumber": 67,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 4,
+      "title": "10.4 组合业务，而不是随机开分支",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "组合业务画布",
+      "articleTitle": "第10-4课｜10.4 组合业务，而不是随机开分支"
+    },
+    {
+      "id": "lesson-068",
+      "lessonNumber": 68,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 5,
+      "title": "10.5 以康波研究院模式思考平台化",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "平台化五层塔",
+      "articleTitle": "第10-5课｜10.5 以康波研究院模式思考平台化"
+    },
+    {
+      "id": "lesson-069",
+      "lessonNumber": 69,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 6,
+      "title": "10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "90天升级框架",
+      "articleTitle": "第10-6课｜10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发"
+    },
+    {
+      "id": "lesson-070",
+      "lessonNumber": 70,
+      "chapterNumber": 10,
+      "chapterLessonNumber": 7,
+      "title": "10.7 最终问题：你想成为什么样的一人公司",
+      "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
+      "frameworkName": "终局校准问卷",
+      "articleTitle": "第10-7课｜10.7 最终问题：你想成为什么样的一人公司"
+    }
+  ]
+}
