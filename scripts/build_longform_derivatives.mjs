@@ -20,6 +20,16 @@ const wechatLessonsRoot = join(wechatRoot, "lessons");
 const wechatLessonDataRoot = join(wechatLessonsRoot, "data");
 const wechatLessonScriptsRoot = join(wechatLessonsRoot, "scripts");
 const wechatLessonArticlesRoot = join(wechatLessonsRoot, "articles");
+const wechatLessonArticleLeadRoot = join(wechatLessonArticlesRoot, "lead");
+const wechatLessonArticleConversionRoot = join(
+  wechatLessonArticlesRoot,
+  "conversion"
+);
+const wechatLessonArticleCommunityRoot = join(
+  wechatLessonArticlesRoot,
+  "community"
+);
+const wechatLessonAudioRoot = join(wechatLessonsRoot, "audio");
 
 function escapeHtml(text) {
   return String(text)
@@ -165,7 +175,125 @@ function buildLessonBundle(chapter, section, lessonNumber, chapterLessonNumber) 
       : null,
     action: section.actions[0],
     reflection: section.reflection[0],
+    audioPath: `audio/${id}.mp3`,
   };
+}
+
+function buildArticleVariantPayloads(lesson) {
+  const caseParagraph = lesson.case
+    ? `你可以先用 ${lesson.case.name} 做一个低成本参照，它说明了 ${plain(
+        lesson.case.summary
+      )}`
+    : `这一课没有单独依赖名人案例，重点在于你把框架落进自己的项目。`;
+
+  return [
+    {
+      slug: "lead",
+      label: "引流版",
+      title: `${lesson.articleTitle}｜引流版`,
+      intro: `这是一篇面向冷启动读者的引流文章，目标不是一次讲透，而是快速激发兴趣，让读者意识到自己正卡在这节课解决的问题上。`,
+      cta: `文末动作建议：领取清单、进入章节页，继续看第${lesson.chapterNumber}章相关内容。`,
+      sections: [
+        {
+          title: "先把问题说透",
+          paragraphs: [
+            `很多人不是不努力，而是没有先回答这节课里的核心问题：${lesson.articleSections[0].paragraphs[0]}`,
+            `一旦这个问题没想清楚，后面的内容、工具、流量和变现都会变成局部努力。`,
+          ],
+        },
+        {
+          title: "为什么多数人会卡住",
+          paragraphs: [
+            lesson.articleSections[0].paragraphs[1],
+            caseParagraph,
+          ],
+        },
+        {
+          title: `先带走一个框架：${lesson.frameworkName}`,
+          paragraphs: lesson.articleSections[1].paragraphs.slice(0, 2),
+        },
+        {
+          title: "轻量行动",
+          paragraphs: [
+            `如果你只愿意先做一步，就从这里开始：${lesson.action}`,
+            `先动起来，比继续收藏更多内容更重要。`,
+          ],
+        },
+      ],
+    },
+    {
+      slug: "conversion",
+      label: "转化版",
+      title: `${lesson.articleTitle}｜转化版`,
+      intro: `这是一篇面向已经有兴趣用户的转化文章，目标是把读者从“知道这件事重要”推进到“愿意进入系统课程或服务”。`,
+      cta: `文末动作建议：引导进入整章课程、训练营、会员或诊断服务，而不是停留在单篇阅读。`,
+      sections: [
+        {
+          title: "问题与代价",
+          paragraphs: [
+            `这节课处理的问题是：${lesson.articleSections[0].paragraphs[0]}`,
+            `如果这个问题长期不解决，你会持续出现低效试错、产出分散和资产沉淀不足的代价。`,
+          ],
+        },
+        {
+          title: "为什么碎片方法不够",
+          paragraphs: [
+            `很多人会零散看教程、换工具、追新平台，但真正缺的其实是连续框架和外部反馈。`,
+            lesson.articleSections[0].paragraphs[1],
+          ],
+        },
+        {
+          title: `课程能交付什么：${lesson.frameworkName}`,
+          paragraphs: [
+            ...lesson.articleSections[1].paragraphs,
+            `你要的不是再多一个理论名词，而是一套可连续执行、可复盘、可被辅导的动作链。`,
+          ],
+        },
+        {
+          title: "现在适合行动的人",
+          paragraphs: [
+            `如果你已经在做内容、产品、咨询或个人IP，但总觉得推进不成系统，这节课和对应章节适合直接纳入你的训练计划。`,
+            `下一步动作：${lesson.action}`,
+          ],
+        },
+      ],
+    },
+    {
+      slug: "community",
+      label: "社群作业版",
+      title: `${lesson.articleTitle}｜社群作业版`,
+      intro: `这是一篇给已付费学员或社群成员的作业文章版，重点不在说服，而在组织输出、检查提交质量和引导群内互动。`,
+      cta: `文末动作建议：提交作业、按要求回复、进入群内点评和下一步承诺。`,
+      sections: [
+        {
+          title: "本课目标",
+          paragraphs: [
+            `本课要解决的问题是：${lesson.articleSections[0].paragraphs[0]}`,
+            `学完之后，你至少要拿出一个真实项目动作，而不是只写感受。`,
+          ],
+        },
+        {
+          title: `执行框架：${lesson.frameworkName}`,
+          paragraphs: lesson.articleSections[1].paragraphs,
+        },
+        {
+          title: "提交要求",
+          paragraphs: [
+            `本课作业：${lesson.action}`,
+            `提交时请同时回答这个复盘问题：${lesson.reflection}`,
+            `如果你引用案例，请明确写出你复用了案例里的哪一个动作，而不是只写“很受启发”。`,
+          ],
+        },
+        {
+          title: "群内互动规则",
+          paragraphs: [
+            `发作业时请给出你的当前阶段、你最卡的一步、以及你承诺的下一步时间点。`,
+            `点评别人时，优先指出可执行动作，不做空泛鼓励。`,
+          ],
+        },
+      ],
+    },
+  ];
 }
 
 function buildPrintHtml() {
@@ -528,6 +656,108 @@ h2{margin:0 0 12px}
 </html>`;
 }
 
+function lessonArticleVariantMarkdown(lesson, variant) {
+  const lines = [
+    `# ${variant.title}`,
+    "",
+    variant.intro,
+    "",
+    `- 来源课次：${lesson.articleTitle}`,
+    `- 模板类型：${variant.label}`,
+    `- 核心框架：${lesson.frameworkName}`,
+    `- 建议动作：${variant.cta}`,
+    "",
+  ];
+
+  for (const section of variant.sections) {
+    lines.push(`## ${section.title}`);
+    lines.push("");
+    for (const paragraph of section.paragraphs) {
+      lines.push(paragraph);
+      lines.push("");
+    }
+  }
+
+  if (lesson.case) {
+    lines.push("## 案例锚点");
+    lines.push("");
+    lines.push(`- ${lesson.case.name}：${lesson.case.summary}`);
+    lines.push(`- 来源：${lesson.case.sourceUrl}`);
+    lines.push("");
+  }
+
+  lines.push("## 结尾指令");
+  lines.push("");
+  lines.push(`- ${variant.cta}`);
+  lines.push(`- 当前课行动作业：${lesson.action}`);
+  lines.push(`- 当前课复盘问题：${lesson.reflection}`);
+  lines.push("");
+  return `${lines.join("\n")}\n`;
+}
+
+function lessonArticleVariantHtml(lesson, variant) {
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(variant.title)}</title>
+<style>
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f6f0e5;color:#1f2433;line-height:1.9}
+.top{position:sticky;top:0;background:rgba(246,240,229,.94);border-bottom:1px solid #ddd0bb;backdrop-filter:blur(12px)}
+.top-inner{max-width:920px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.top a{text-decoration:none;color:#5f677b}
+.top .brand{font-weight:900;color:#1f2433}
+.wrap{max-width:920px;margin:0 auto;padding:28px 24px 60px}
+.hero,.section{background:#fffdf8;border:1px solid #ddd0bb;border-radius:22px;box-shadow:0 14px 34px rgba(31,36,51,.08);padding:24px}
+.section{margin-top:18px}
+.eyebrow{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f3e2c4;color:#c98412;font-size:.78rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+h1{margin:14px 0 8px;font-size:2.2rem;line-height:1.12}
+h2{margin:0 0 12px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f6efe2;color:#59627b;font-size:.8rem;font-weight:700}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="../../index.html">逐课内容库</a>
+    <a href="../${lesson.id}.html">返回课程页</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="eyebrow">${escapeHtml(variant.label)}</div>
+    <h1>${escapeHtml(variant.title)}</h1>
+    <p>${escapeHtml(variant.intro)}</p>
+    <div class="meta">
+      <span class="chip">${escapeHtml(lesson.frameworkName)}</span>
+      <span class="chip">${escapeHtml(lesson.articleTitle)}</span>
+    </div>
+  </section>
+  ${variant.sections
+    .map(
+      (section) => `<section class="section">
+        <div class="eyebrow">${escapeHtml(section.title)}</div>
+        <h2>${escapeHtml(section.title)}</h2>
+        ${section.paragraphs
+          .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+          .join("")}
+      </section>`
+    )
+    .join("")}
+  <section class="section">
+    <div class="eyebrow">Call To Action</div>
+    <h2>结尾指令</h2>
+    <p>${escapeHtml(variant.cta)}</p>
+    <p><strong>本课作业：</strong>${escapeHtml(lesson.action)}</p>
+    <p><strong>复盘问题：</strong>${escapeHtml(lesson.reflection)}</p>
+  </section>
+</main>
+</body>
+</html>`;
+}
+
 function lessonHubHtml(lesson) {
   return `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -555,6 +785,10 @@ h1{margin:14px 0 8px;font-size:2.3rem;line-height:1.08}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .card h2{margin:0 0 10px}
 pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0}
+.audio-player{margin-top:16px;display:grid;gap:8px}
+.audio-player audio{width:100%}
+.link-list{display:grid;gap:10px}
+.link-list a{text-decoration:none;color:#1f2433;padding:12px 14px;border-radius:14px;background:#f7efdf;border:1px solid #e8d7ba;font-weight:700}
 @media(max-width:820px){.grid{grid-template-columns:1fr}.top-inner{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
@@ -583,6 +817,10 @@ pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0}
       <a href="articles/${lesson.id}.html">公众号文章页</a>
       <a href="articles/${lesson.id}.md">公众号 Markdown</a>
     </div>
+    <div class="audio-player">
+      <audio controls preload="none" src="${lesson.audioPath}"></audio>
+      <div class="subtitle">音频规格：YunyangNeural / -7% / -2Hz / loudnorm / 24kHz / mono / MP3 64kbps</div>
+    </div>
   </section>
   <div class="grid">
     <section class="card">
@@ -591,8 +829,18 @@ pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0}
       <pre>${escapeHtml(lesson.videoScript)}</pre>
     </section>
     <section class="card">
+      <div class="eyebrow">Article Pack</div>
+      <h2>文章模板包</h2>
+      <div class="link-list">
+        <a href="articles/${lesson.id}.html">基础公众号文章版</a>
+        <a href="articles/lead/${lesson.id}.html">引流版</a>
+        <a href="articles/conversion/${lesson.id}.html">转化版</a>
+        <a href="articles/community/${lesson.id}.html">社群作业版</a>
+      </div>
+    </section>
+    <section class="card">
       <div class="eyebrow">Article Outline</div>
-      <h2>公众号文章版结构</h2>
+      <h2>基础文章版结构</h2>
       ${lesson.articleSections
         .map(
           (section) => `<p><strong>${escapeHtml(section.title)}：</strong>${escapeHtml(
@@ -602,6 +850,13 @@ pre{white-space:pre-wrap;word-break:break-word;font:inherit;margin:0}
         .join("")}
       <p><strong>行动作业：</strong>${escapeHtml(lesson.action)}</p>
       <p><strong>复盘提问：</strong>${escapeHtml(lesson.reflection)}</p>
+    </section>
+    <section class="card">
+      <div class="eyebrow">Template Use</div>
+      <h2>三种模板怎么用</h2>
+      <p><strong>引流版：</strong>用于朋友圈、公众号首篇、短视频配文，把陌生用户先拉进问题场景。</p>
+      <p><strong>转化版：</strong>用于课程页、报名页、私域成交，把兴趣转成系统学习或服务购买。</p>
+      <p><strong>社群作业版：</strong>用于学员群、打卡营、训练营复盘，重点是提交作业和群内点评。</p>
     </section>
   </div>
 </main>
@@ -654,11 +909,12 @@ h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.08}
   <section class="hero">
     <div class="eyebrow">Lesson Library</div>
     <h1>OPC 微信逐课内容库</h1>
-    <p>这里把长版书按节拆成可直接投放到微信生态的逐课资产。每课都包含一条短视频口播稿，以及一篇可继续编辑的公众号文章版。</p>
+    <p>这里把长版书按节拆成可直接投放到微信生态的逐课资产。每课都包含短视频口播稿、音频、基础公众号文章版，以及引流版、转化版、社群作业版三套文章模板。</p>
     <div class="meta">
       <span class="chip">${lessons.length} 节逐课内容</span>
+      <span class="chip">${lessons.length} 条逐课音频</span>
       <span class="chip">短视频口播稿</span>
-      <span class="chip">公众号文章版</span>
+      <span class="chip">4 套文章版本</span>
     </div>
   </section>
   <div class="grid">
@@ -671,6 +927,7 @@ h1{margin:14px 0 8px;font-size:2.4rem;line-height:1.08}
           <div class="meta">
             <span class="chip">${escapeHtml(lesson.frameworkName)}</span>
             <span class="chip">${lesson.case ? escapeHtml(lesson.case.name) : "无案例"}</span>
+            <span class="chip">音频</span>
           </div>
         </a>`
       )
@@ -1033,6 +1290,10 @@ async function main() {
   await mkdir(wechatLessonDataRoot, { recursive: true });
   await mkdir(wechatLessonScriptsRoot, { recursive: true });
   await mkdir(wechatLessonArticlesRoot, { recursive: true });
+  await mkdir(wechatLessonArticleLeadRoot, { recursive: true });
+  await mkdir(wechatLessonArticleConversionRoot, { recursive: true });
+  await mkdir(wechatLessonArticleCommunityRoot, { recursive: true });
+  await mkdir(wechatLessonAudioRoot, { recursive: true });
 
   const printHtml = buildPrintHtml();
   await writeFile(join(docsRoot, "book-200k-print.html"), printHtml, "utf8");
@@ -1044,6 +1305,11 @@ async function main() {
     for (const [index, section] of chapter.sections.entries()) {
       lessonCounter += 1;
       const lesson = buildLessonBundle(chapter, section, lessonCounter, index + 1);
+      lesson.articleVariants = buildArticleVariantPayloads(lesson).map((variant) => ({
+        ...variant,
+        htmlPath: `articles/${variant.slug}/${lesson.id}.html`,
+        markdownPath: `articles/${variant.slug}/${lesson.id}.md`,
+      }));
       lessons.push(lesson);
       lessonLookup.set(`${chapter.number}:${section.title}`, lesson);
     }
@@ -1070,6 +1336,24 @@ async function main() {
       lessonArticleMarkdown(lesson),
       "utf8"
     );
+    for (const variant of lesson.articleVariants) {
+      const targetRoot =
+        variant.slug === "lead"
+          ? wechatLessonArticleLeadRoot
+          : variant.slug === "conversion"
+          ? wechatLessonArticleConversionRoot
+          : wechatLessonArticleCommunityRoot;
+      await writeFile(
+        join(targetRoot, `${lesson.id}.html`),
+        lessonArticleVariantHtml(lesson, variant),
+        "utf8"
+      );
+      await writeFile(
+        join(targetRoot, `${lesson.id}.md`),
+        lessonArticleVariantMarkdown(lesson, variant),
+        "utf8"
+      );
+    }
     await writeFile(
       join(wechatLessonDataRoot, `${lesson.id}.json`),
       JSON.stringify(lesson, null, 2),
@@ -1095,6 +1379,13 @@ async function main() {
           chapterTitle: lesson.chapterTitle,
           frameworkName: lesson.frameworkName,
           articleTitle: lesson.articleTitle,
+          audioPath: lesson.audioPath,
+          articleVariants: lesson.articleVariants.map((variant) => ({
+            slug: variant.slug,
+            label: variant.label,
+            htmlPath: variant.htmlPath,
+            markdownPath: variant.markdownPath,
+          })),
         })),
       },
       null,

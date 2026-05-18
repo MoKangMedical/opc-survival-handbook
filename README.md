@@ -12,9 +12,9 @@
 
 | 项目 | 说明 |
 |------|------|
-| 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 / 70节微信逐课内容 |
+| 章节 | 10章 / 37节 / 10段手册口播音频 / 65节系统课 / 70节微信逐课内容与音频 |
 | 配图 | 10张ComfyUI章节题图 + 4张信息图（附AI生成Prompt） |
-| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + 印刷HTML + KDP PDF印刷版 + 微信课程脚本包 + 70节逐课内容库 + 65节课程站 |
+| 格式 | GitHub Pages分章音频版 + 精简HTML书稿 + 20万字长版 + 思维导图页 + 印刷HTML + KDP PDF印刷版 + 微信课程脚本包 + 70节逐课内容库 + 70节逐课音频 + 4套文章版本 + 65节课程站 |
 | 工具链 | 视觉资产生成、课程内容生成、神经TTS音频生成、KDP自动排版脚本 |
 
 ## 🚀 快速开始
@@ -41,6 +41,9 @@ npm run build
 .venv/bin/python -m pip install edge-tts
 .venv/bin/python scripts/generate_course_audio.py --force
 
+# 生成70节微信逐课口播音频
+.venv/bin/python scripts/generate_wechat_lesson_audio.py --force
+
 # 生成长版书KDP就绪PDF
 python3 -m pip install beautifulsoup4 reportlab
 python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output/opc-handbook-200k.pdf --title "OPC生存手册·长版" --subtitle "AI时代一人创作者的系统生存与增长指南"
@@ -55,6 +58,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 - `scripts/generate_visuals.mjs`：生成封面、4张信息图和SVG兜底图；章节PNG优先使用ComfyUI输出
 - `scripts/gen_audio.py`：生成10章课程口播音频 `docs/audio/ch1~ch10.mp3`
 - `scripts/generate_course_audio.py`：生成65节系统课口播音频 `docs/course/audio/lesson-01~lesson-65.mp3`
+- `scripts/generate_wechat_lesson_audio.py`：生成70节微信逐课口播音频 `docs/wechat-course/lessons/audio/lesson-001~lesson-070.mp3`
 - `scripts/narration_scripts.py`：10章课程口播稿
 - `scripts/kdp_builder.py`：把完整书稿转成 6×9 英寸 KDP PDF，支持封面、插图和表格
 - `course-platform-strategy.md`：OPC研究院微信课程平台方案
@@ -77,7 +81,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 │   ├── course.html        # OPC研究院课程平台原型
 │   ├── course/            # 65节系统课、课程JSON、口播稿、MP3
 │   ├── wechat-course/     # 10章微信课程脚本、TXT、JSON
-│   │   └── lessons/       # 70节逐课内容：口播稿、公众号文章版、Markdown、JSON
+│   │   └── lessons/       # 70节逐课内容：口播稿、MP3、基础文章版、引流版、转化版、社群作业版、Markdown、JSON
 │   ├── audio/             # 10章MP3课程口播
 │   └── assets/            # 封面、章节插图、信息图、ComfyUI原始输出
 ├── scripts/
@@ -111,7 +115,7 @@ python3 scripts/kdp_builder.py --input docs/book-200k-print.html --output output
 - 🧘 健康与精力管理
 - 🚀 从OPC到OPC+的进化路径
 - 📘 KDP长版印刷书输出
-- 💬 微信课程章节脚本、逐课短视频口播稿、公众号文章版与配图/案例页
+- 💬 微信课程章节脚本、逐课短视频口播稿、70节逐课音频、4套公众号文章版与配图/案例页
 
 ---
 

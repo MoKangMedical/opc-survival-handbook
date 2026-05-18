@@ -12,6 +12,7 @@
     "longbook": "node scripts/build_longform_book.mjs",
     "longbook:extras": "node scripts/build_longform_derivatives.mjs",
     "course": "node scripts/build_course_content.mjs",
+    "wechat-audio": "python3 scripts/generate_wechat_lesson_audio.py",
     "build": "npm run assets && npm run html && npm run longbook && npm run longbook:extras && npm run course"
   },
   "repository": {

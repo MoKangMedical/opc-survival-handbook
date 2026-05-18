@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T06:24:11.945Z",
+  "generatedAt": "2026-05-18T09:32:11.459Z",
   "lessons": [
     {
       "id": "lesson-001",
@@ -9,7 +9,28 @@
       "title": "1.1 从雇佣思维迁移到资产思维",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "资产迁移四步法",
-      "articleTitle": "第1-1课｜1.1 从雇佣思维迁移到资产思维"
+      "articleTitle": "第1-1课｜1.1 从雇佣思维迁移到资产思维",
+      "audioPath": "audio/lesson-001.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-001.html",
+          "markdownPath": "articles/lead/lesson-001.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-001.html",
+          "markdownPath": "articles/conversion/lesson-001.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-001.html",
+          "markdownPath": "articles/community/lesson-001.md"
+        }
+      ]
     },
     {
       "id": "lesson-002",
@@ -19,7 +40,28 @@
       "title": "1.2 AI如何改变人效和试错成本",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "AI杠杆判断框架",
-      "articleTitle": "第1-2课｜1.2 AI如何改变人效和试错成本"
+      "articleTitle": "第1-2课｜1.2 AI如何改变人效和试错成本",
+      "audioPath": "audio/lesson-002.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-002.html",
+          "markdownPath": "articles/lead/lesson-002.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-002.html",
+          "markdownPath": "articles/conversion/lesson-002.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-002.html",
+          "markdownPath": "articles/community/lesson-002.md"
+        }
+      ]
     },
     {
       "id": "lesson-003",
@@ -29,7 +71,28 @@
       "title": "1.3 OPC与传统创业的风险结构差异",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "风险三层拆解",
-      "articleTitle": "第1-3课｜1.3 OPC与传统创业的风险结构差异"
+      "articleTitle": "第1-3课｜1.3 OPC与传统创业的风险结构差异",
+      "audioPath": "audio/lesson-003.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-003.html",
+          "markdownPath": "articles/lead/lesson-003.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-003.html",
+          "markdownPath": "articles/conversion/lesson-003.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-003.html",
+          "markdownPath": "articles/community/lesson-003.md"
+        }
+      ]
     },
     {
       "id": "lesson-004",
@@ -39,7 +102,28 @@
       "title": "1.4 什么叫真正的一人闭环",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "一人闭环五件套",
-      "articleTitle": "第1-4课｜1.4 什么叫真正的一人闭环"
+      "articleTitle": "第1-4课｜1.4 什么叫真正的一人闭环",
+      "audioPath": "audio/lesson-004.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-004.html",
+          "markdownPath": "articles/lead/lesson-004.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-004.html",
+          "markdownPath": "articles/conversion/lesson-004.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-004.html",
+          "markdownPath": "articles/community/lesson-004.md"
+        }
+      ]
     },
     {
       "id": "lesson-005",
@@ -49,7 +133,28 @@
       "title": "1.5 你不是在找副业，你是在搭建微型操作系统",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "微型操作系统框架",
-      "articleTitle": "第1-5课｜1.5 你不是在找副业，你是在搭建微型操作系统"
+      "articleTitle": "第1-5课｜1.5 你不是在找副业，你是在搭建微型操作系统",
+      "audioPath": "audio/lesson-005.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-005.html",
+          "markdownPath": "articles/lead/lesson-005.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-005.html",
+          "markdownPath": "articles/conversion/lesson-005.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-005.html",
+          "markdownPath": "articles/community/lesson-005.md"
+        }
+      ]
     },
     {
       "id": "lesson-006",
@@ -59,7 +164,28 @@
       "title": "1.6 以康波研究院为参照搭建你的商业形态",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "康波式产品阶梯",
-      "articleTitle": "第1-6课｜1.6 以康波研究院为参照搭建你的商业形态"
+      "articleTitle": "第1-6课｜1.6 以康波研究院为参照搭建你的商业形态",
+      "audioPath": "audio/lesson-006.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-006.html",
+          "markdownPath": "articles/lead/lesson-006.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-006.html",
+          "markdownPath": "articles/conversion/lesson-006.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-006.html",
+          "markdownPath": "articles/community/lesson-006.md"
+        }
+      ]
     },
     {
       "id": "lesson-007",
@@ -69,7 +195,28 @@
       "title": "1.7 本书的使用方法与学习路径",
       "chapterTitle": "一个人的时代来了",
       "frameworkName": "三轮阅读法",
-      "articleTitle": "第1-7课｜1.7 本书的使用方法与学习路径"
+      "articleTitle": "第1-7课｜1.7 本书的使用方法与学习路径",
+      "audioPath": "audio/lesson-007.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-007.html",
+          "markdownPath": "articles/lead/lesson-007.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-007.html",
+          "markdownPath": "articles/conversion/lesson-007.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-007.html",
+          "markdownPath": "articles/community/lesson-007.md"
+        }
+      ]
     },
     {
       "id": "lesson-008",
@@ -79,7 +226,28 @@
       "title": "2.1 自由的反面是孤独",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "孤独管理三件套",
-      "articleTitle": "第2-1课｜2.1 自由的反面是孤独"
+      "articleTitle": "第2-1课｜2.1 自由的反面是孤独",
+      "audioPath": "audio/lesson-008.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-008.html",
+          "markdownPath": "articles/lead/lesson-008.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-008.html",
+          "markdownPath": "articles/conversion/lesson-008.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-008.html",
+          "markdownPath": "articles/community/lesson-008.md"
+        }
+      ]
     },
     {
       "id": "lesson-009",
@@ -89,7 +257,28 @@
       "title": "2.2 四种最常见的致命心态",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "心态体检表",
-      "articleTitle": "第2-2课｜2.2 四种最常见的致命心态"
+      "articleTitle": "第2-2课｜2.2 四种最常见的致命心态",
+      "audioPath": "audio/lesson-009.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-009.html",
+          "markdownPath": "articles/lead/lesson-009.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-009.html",
+          "markdownPath": "articles/conversion/lesson-009.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-009.html",
+          "markdownPath": "articles/community/lesson-009.md"
+        }
+      ]
     },
     {
       "id": "lesson-010",
@@ -99,7 +288,28 @@
       "title": "2.3 证据感：从焦虑到判断",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "证据感生成器",
-      "articleTitle": "第2-3课｜2.3 证据感：从焦虑到判断"
+      "articleTitle": "第2-3课｜2.3 证据感：从焦虑到判断",
+      "audioPath": "audio/lesson-010.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-010.html",
+          "markdownPath": "articles/lead/lesson-010.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-010.html",
+          "markdownPath": "articles/conversion/lesson-010.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-010.html",
+          "markdownPath": "articles/community/lesson-010.md"
+        }
+      ]
     },
     {
       "id": "lesson-011",
@@ -109,7 +319,28 @@
       "title": "2.4 用公开构建抵消内耗",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "公开构建四层法",
-      "articleTitle": "第2-4课｜2.4 用公开构建抵消内耗"
+      "articleTitle": "第2-4课｜2.4 用公开构建抵消内耗",
+      "audioPath": "audio/lesson-011.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-011.html",
+          "markdownPath": "articles/lead/lesson-011.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-011.html",
+          "markdownPath": "articles/conversion/lesson-011.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-011.html",
+          "markdownPath": "articles/community/lesson-011.md"
+        }
+      ]
     },
     {
       "id": "lesson-012",
@@ -119,7 +350,28 @@
       "title": "2.5 节奏比激情更可靠",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "周节奏模板",
-      "articleTitle": "第2-5课｜2.5 节奏比激情更可靠"
+      "articleTitle": "第2-5课｜2.5 节奏比激情更可靠",
+      "audioPath": "audio/lesson-012.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-012.html",
+          "markdownPath": "articles/lead/lesson-012.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-012.html",
+          "markdownPath": "articles/conversion/lesson-012.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-012.html",
+          "markdownPath": "articles/community/lesson-012.md"
+        }
+      ]
     },
     {
       "id": "lesson-013",
@@ -129,7 +381,28 @@
       "title": "2.6 如何处理低谷、停滞和外部比较",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "比较消噪法",
-      "articleTitle": "第2-6课｜2.6 如何处理低谷、停滞和外部比较"
+      "articleTitle": "第2-6课｜2.6 如何处理低谷、停滞和外部比较",
+      "audioPath": "audio/lesson-013.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-013.html",
+          "markdownPath": "articles/lead/lesson-013.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-013.html",
+          "markdownPath": "articles/conversion/lesson-013.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-013.html",
+          "markdownPath": "articles/community/lesson-013.md"
+        }
+      ]
     },
     {
       "id": "lesson-014",
@@ -139,7 +412,28 @@
       "title": "2.7 建立长期主义，但不要纵容拖延",
       "chapterTitle": "心态：OPC的第一道生死线",
       "frameworkName": "长期主义校准器",
-      "articleTitle": "第2-7课｜2.7 建立长期主义，但不要纵容拖延"
+      "articleTitle": "第2-7课｜2.7 建立长期主义，但不要纵容拖延",
+      "audioPath": "audio/lesson-014.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-014.html",
+          "markdownPath": "articles/lead/lesson-014.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-014.html",
+          "markdownPath": "articles/conversion/lesson-014.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-014.html",
+          "markdownPath": "articles/community/lesson-014.md"
+        }
+      ]
     },
     {
       "id": "lesson-015",
@@ -149,7 +443,28 @@
       "title": "3.1 不公平优势不是天赋神话",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "优势组合盘",
-      "articleTitle": "第3-1课｜3.1 不公平优势不是天赋神话"
+      "articleTitle": "第3-1课｜3.1 不公平优势不是天赋神话",
+      "audioPath": "audio/lesson-015.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-015.html",
+          "markdownPath": "articles/lead/lesson-015.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-015.html",
+          "markdownPath": "articles/conversion/lesson-015.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-015.html",
+          "markdownPath": "articles/community/lesson-015.md"
+        }
+      ]
     },
     {
       "id": "lesson-016",
@@ -159,7 +474,28 @@
       "title": "3.2 用AI发散，但不用AI替你定位",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "AI发散筛选法",
-      "articleTitle": "第3-2课｜3.2 用AI发散，但不用AI替你定位"
+      "articleTitle": "第3-2课｜3.2 用AI发散，但不用AI替你定位",
+      "audioPath": "audio/lesson-016.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-016.html",
+          "markdownPath": "articles/lead/lesson-016.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-016.html",
+          "markdownPath": "articles/conversion/lesson-016.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-016.html",
+          "markdownPath": "articles/community/lesson-016.md"
+        }
+      ]
     },
     {
       "id": "lesson-017",
@@ -169,7 +505,28 @@
       "title": "3.3 找到高支付意愿的痛点",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "付费痛点评估器",
-      "articleTitle": "第3-3课｜3.3 找到高支付意愿的痛点"
+      "articleTitle": "第3-3课｜3.3 找到高支付意愿的痛点",
+      "audioPath": "audio/lesson-017.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-017.html",
+          "markdownPath": "articles/lead/lesson-017.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-017.html",
+          "markdownPath": "articles/conversion/lesson-017.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-017.html",
+          "markdownPath": "articles/community/lesson-017.md"
+        }
+      ]
     },
     {
       "id": "lesson-018",
@@ -179,7 +536,28 @@
       "title": "3.4 先做最小画像，不要先做虚构人设",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "情境化画像",
-      "articleTitle": "第3-4课｜3.4 先做最小画像，不要先做虚构人设"
+      "articleTitle": "第3-4课｜3.4 先做最小画像，不要先做虚构人设",
+      "audioPath": "audio/lesson-018.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-018.html",
+          "markdownPath": "articles/lead/lesson-018.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-018.html",
+          "markdownPath": "articles/conversion/lesson-018.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-018.html",
+          "markdownPath": "articles/community/lesson-018.md"
+        }
+      ]
     },
     {
       "id": "lesson-019",
@@ -189,7 +567,28 @@
       "title": "3.5 用最小验证击穿想象",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "最小验证路径",
-      "articleTitle": "第3-5课｜3.5 用最小验证击穿想象"
+      "articleTitle": "第3-5课｜3.5 用最小验证击穿想象",
+      "audioPath": "audio/lesson-019.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-019.html",
+          "markdownPath": "articles/lead/lesson-019.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-019.html",
+          "markdownPath": "articles/conversion/lesson-019.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-019.html",
+          "markdownPath": "articles/community/lesson-019.md"
+        }
+      ]
     },
     {
       "id": "lesson-020",
@@ -199,7 +598,28 @@
       "title": "3.6 20个适合OPC的方向，如何为你所用",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "方向组合器",
-      "articleTitle": "第3-6课｜3.6 20个适合OPC的方向，如何为你所用"
+      "articleTitle": "第3-6课｜3.6 20个适合OPC的方向，如何为你所用",
+      "audioPath": "audio/lesson-020.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-020.html",
+          "markdownPath": "articles/lead/lesson-020.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-020.html",
+          "markdownPath": "articles/conversion/lesson-020.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-020.html",
+          "markdownPath": "articles/community/lesson-020.md"
+        }
+      ]
     },
     {
       "id": "lesson-021",
@@ -209,7 +629,28 @@
       "title": "3.7 学会放弃，才算真正选了方向",
       "chapterTitle": "找到你的一人帝国",
       "frameworkName": "放弃判定表",
-      "articleTitle": "第3-7课｜3.7 学会放弃，才算真正选了方向"
+      "articleTitle": "第3-7课｜3.7 学会放弃，才算真正选了方向",
+      "audioPath": "audio/lesson-021.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-021.html",
+          "markdownPath": "articles/lead/lesson-021.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-021.html",
+          "markdownPath": "articles/conversion/lesson-021.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-021.html",
+          "markdownPath": "articles/community/lesson-021.md"
+        }
+      ]
     },
     {
       "id": "lesson-022",
@@ -219,7 +660,28 @@
       "title": "4.1 用岗位思维管理工具，而不是用情绪挑工具",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "岗位化工具矩阵",
-      "articleTitle": "第4-1课｜4.1 用岗位思维管理工具，而不是用情绪挑工具"
+      "articleTitle": "第4-1课｜4.1 用岗位思维管理工具，而不是用情绪挑工具",
+      "audioPath": "audio/lesson-022.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-022.html",
+          "markdownPath": "articles/lead/lesson-022.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-022.html",
+          "markdownPath": "articles/conversion/lesson-022.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-022.html",
+          "markdownPath": "articles/community/lesson-022.md"
+        }
+      ]
     },
     {
       "id": "lesson-023",
@@ -229,7 +691,28 @@
       "title": "4.2 内容栈：研究、起稿、改写、审校",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "内容生产四段流",
-      "articleTitle": "第4-2课｜4.2 内容栈：研究、起稿、改写、审校"
+      "articleTitle": "第4-2课｜4.2 内容栈：研究、起稿、改写、审校",
+      "audioPath": "audio/lesson-023.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-023.html",
+          "markdownPath": "articles/lead/lesson-023.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-023.html",
+          "markdownPath": "articles/conversion/lesson-023.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-023.html",
+          "markdownPath": "articles/community/lesson-023.md"
+        }
+      ]
     },
     {
       "id": "lesson-024",
@@ -239,7 +722,28 @@
       "title": "4.3 自动化栈：把重复工作赶出黄金时间",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "自动化优先级表",
-      "articleTitle": "第4-3课｜4.3 自动化栈：把重复工作赶出黄金时间"
+      "articleTitle": "第4-3课｜4.3 自动化栈：把重复工作赶出黄金时间",
+      "audioPath": "audio/lesson-024.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-024.html",
+          "markdownPath": "articles/lead/lesson-024.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-024.html",
+          "markdownPath": "articles/conversion/lesson-024.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-024.html",
+          "markdownPath": "articles/community/lesson-024.md"
+        }
+      ]
     },
     {
       "id": "lesson-025",
@@ -249,7 +753,28 @@
       "title": "4.4 开发栈：无代码、AI代码与工程化边界",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "技术选择三阶段",
-      "articleTitle": "第4-4课｜4.4 开发栈：无代码、AI代码与工程化边界"
+      "articleTitle": "第4-4课｜4.4 开发栈：无代码、AI代码与工程化边界",
+      "audioPath": "audio/lesson-025.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-025.html",
+          "markdownPath": "articles/lead/lesson-025.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-025.html",
+          "markdownPath": "articles/conversion/lesson-025.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-025.html",
+          "markdownPath": "articles/community/lesson-025.md"
+        }
+      ]
     },
     {
       "id": "lesson-026",
@@ -259,7 +784,28 @@
       "title": "4.5 出版与课程栈：从手册到音频到平台",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "内容多形态转译链",
-      "articleTitle": "第4-5课｜4.5 出版与课程栈：从手册到音频到平台"
+      "articleTitle": "第4-5课｜4.5 出版与课程栈：从手册到音频到平台",
+      "audioPath": "audio/lesson-026.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-026.html",
+          "markdownPath": "articles/lead/lesson-026.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-026.html",
+          "markdownPath": "articles/conversion/lesson-026.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-026.html",
+          "markdownPath": "articles/community/lesson-026.md"
+        }
+      ]
     },
     {
       "id": "lesson-027",
@@ -269,7 +815,28 @@
       "title": "4.6 把Codex和浏览器自动化放进发布流程",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "半自动发布原则",
-      "articleTitle": "第4-6课｜4.6 把Codex和浏览器自动化放进发布流程"
+      "articleTitle": "第4-6课｜4.6 把Codex和浏览器自动化放进发布流程",
+      "audioPath": "audio/lesson-027.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-027.html",
+          "markdownPath": "articles/lead/lesson-027.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-027.html",
+          "markdownPath": "articles/conversion/lesson-027.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-027.html",
+          "markdownPath": "articles/community/lesson-027.md"
+        }
+      ]
     },
     {
       "id": "lesson-028",
@@ -279,7 +846,28 @@
       "title": "4.7 工具栈的最终目标：形成个人操作台",
       "chapterTitle": "AI工具箱：搭建你的虚拟团队",
       "frameworkName": "工具栈封顶标准",
-      "articleTitle": "第4-7课｜4.7 工具栈的最终目标：形成个人操作台"
+      "articleTitle": "第4-7课｜4.7 工具栈的最终目标：形成个人操作台",
+      "audioPath": "audio/lesson-028.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-028.html",
+          "markdownPath": "articles/lead/lesson-028.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-028.html",
+          "markdownPath": "articles/conversion/lesson-028.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-028.html",
+          "markdownPath": "articles/community/lesson-028.md"
+        }
+      ]
     },
     {
       "id": "lesson-029",
@@ -289,7 +877,28 @@
       "title": "5.1 内容母体：先做深内容，再做碎内容",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "母体优先原则",
-      "articleTitle": "第5-1课｜5.1 内容母体：先做深内容，再做碎内容"
+      "articleTitle": "第5-1课｜5.1 内容母体：先做深内容，再做碎内容",
+      "audioPath": "audio/lesson-029.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-029.html",
+          "markdownPath": "articles/lead/lesson-029.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-029.html",
+          "markdownPath": "articles/conversion/lesson-029.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-029.html",
+          "markdownPath": "articles/community/lesson-029.md"
+        }
+      ]
     },
     {
       "id": "lesson-030",
@@ -299,7 +908,28 @@
       "title": "5.2 素材池与案例池：没有积累，就没有稳定表达",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "双池系统",
-      "articleTitle": "第5-2课｜5.2 素材池与案例池：没有积累，就没有稳定表达"
+      "articleTitle": "第5-2课｜5.2 素材池与案例池：没有积累，就没有稳定表达",
+      "audioPath": "audio/lesson-030.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-030.html",
+          "markdownPath": "articles/lead/lesson-030.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-030.html",
+          "markdownPath": "articles/conversion/lesson-030.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-030.html",
+          "markdownPath": "articles/community/lesson-030.md"
+        }
+      ]
     },
     {
       "id": "lesson-031",
@@ -309,7 +939,28 @@
       "title": "5.3 结构模板比灵感更可靠",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "方法内容六段式",
-      "articleTitle": "第5-3课｜5.3 结构模板比灵感更可靠"
+      "articleTitle": "第5-3课｜5.3 结构模板比灵感更可靠",
+      "audioPath": "audio/lesson-031.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-031.html",
+          "markdownPath": "articles/lead/lesson-031.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-031.html",
+          "markdownPath": "articles/conversion/lesson-031.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-031.html",
+          "markdownPath": "articles/community/lesson-031.md"
+        }
+      ]
     },
     {
       "id": "lesson-032",
@@ -319,7 +970,28 @@
       "title": "5.4 一鱼多吃：同一份思考，服务多个场景",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "内容转译链",
-      "articleTitle": "第5-4课｜5.4 一鱼多吃：同一份思考，服务多个场景"
+      "articleTitle": "第5-4课｜5.4 一鱼多吃：同一份思考，服务多个场景",
+      "audioPath": "audio/lesson-032.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-032.html",
+          "markdownPath": "articles/lead/lesson-032.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-032.html",
+          "markdownPath": "articles/conversion/lesson-032.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-032.html",
+          "markdownPath": "articles/community/lesson-032.md"
+        }
+      ]
     },
     {
       "id": "lesson-033",
@@ -329,7 +1001,28 @@
       "title": "5.5 用真实案例让内容带电",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "案例嵌入四问",
-      "articleTitle": "第5-5课｜5.5 用真实案例让内容带电"
+      "articleTitle": "第5-5课｜5.5 用真实案例让内容带电",
+      "audioPath": "audio/lesson-033.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-033.html",
+          "markdownPath": "articles/lead/lesson-033.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-033.html",
+          "markdownPath": "articles/conversion/lesson-033.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-033.html",
+          "markdownPath": "articles/community/lesson-033.md"
+        }
+      ]
     },
     {
       "id": "lesson-034",
@@ -339,7 +1032,28 @@
       "title": "5.6 内容不止负责吸引，还要负责成交",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "温和成交路径",
-      "articleTitle": "第5-6课｜5.6 内容不止负责吸引，还要负责成交"
+      "articleTitle": "第5-6课｜5.6 内容不止负责吸引，还要负责成交",
+      "audioPath": "audio/lesson-034.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-034.html",
+          "markdownPath": "articles/lead/lesson-034.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-034.html",
+          "markdownPath": "articles/conversion/lesson-034.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-034.html",
+          "markdownPath": "articles/community/lesson-034.md"
+        }
+      ]
     },
     {
       "id": "lesson-035",
@@ -349,7 +1063,28 @@
       "title": "5.7 周产能和月产能怎样规划才现实",
       "chapterTitle": "内容工厂：从偶尔输出到稳定产出",
       "frameworkName": "现实产能法",
-      "articleTitle": "第5-7课｜5.7 周产能和月产能怎样规划才现实"
+      "articleTitle": "第5-7课｜5.7 周产能和月产能怎样规划才现实",
+      "audioPath": "audio/lesson-035.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-035.html",
+          "markdownPath": "articles/lead/lesson-035.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-035.html",
+          "markdownPath": "articles/conversion/lesson-035.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-035.html",
+          "markdownPath": "articles/community/lesson-035.md"
+        }
+      ]
     },
     {
       "id": "lesson-036",
@@ -359,7 +1094,28 @@
       "title": "6.1 平台选择：先选用户，不先选热度",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "平台匹配四问",
-      "articleTitle": "第6-1课｜6.1 平台选择：先选用户，不先选热度"
+      "articleTitle": "第6-1课｜6.1 平台选择：先选用户，不先选热度",
+      "audioPath": "audio/lesson-036.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-036.html",
+          "markdownPath": "articles/lead/lesson-036.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-036.html",
+          "markdownPath": "articles/conversion/lesson-036.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-036.html",
+          "markdownPath": "articles/community/lesson-036.md"
+        }
+      ]
     },
     {
       "id": "lesson-037",
@@ -369,7 +1125,28 @@
       "title": "6.2 Build in Public 不是晒单，而是建立过程信任",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "过程信任链",
-      "articleTitle": "第6-2课｜6.2 Build in Public 不是晒单，而是建立过程信任"
+      "articleTitle": "第6-2课｜6.2 Build in Public 不是晒单，而是建立过程信任",
+      "audioPath": "audio/lesson-037.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-037.html",
+          "markdownPath": "articles/lead/lesson-037.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-037.html",
+          "markdownPath": "articles/conversion/lesson-037.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-037.html",
+          "markdownPath": "articles/community/lesson-037.md"
+        }
+      ]
     },
     {
       "id": "lesson-038",
@@ -379,7 +1156,28 @@
       "title": "6.3 搜索分发正在重写，AEO也要纳入考虑",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "可检索内容模型",
-      "articleTitle": "第6-3课｜6.3 搜索分发正在重写，AEO也要纳入考虑"
+      "articleTitle": "第6-3课｜6.3 搜索分发正在重写，AEO也要纳入考虑",
+      "audioPath": "audio/lesson-038.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-038.html",
+          "markdownPath": "articles/lead/lesson-038.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-038.html",
+          "markdownPath": "articles/conversion/lesson-038.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-038.html",
+          "markdownPath": "articles/community/lesson-038.md"
+        }
+      ]
     },
     {
       "id": "lesson-039",
@@ -389,7 +1187,28 @@
       "title": "6.4 邮件名单：你最该长期经营的资产之一",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "名单经营四步",
-      "articleTitle": "第6-4课｜6.4 邮件名单：你最该长期经营的资产之一"
+      "articleTitle": "第6-4课｜6.4 邮件名单：你最该长期经营的资产之一",
+      "audioPath": "audio/lesson-039.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-039.html",
+          "markdownPath": "articles/lead/lesson-039.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-039.html",
+          "markdownPath": "articles/conversion/lesson-039.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-039.html",
+          "markdownPath": "articles/community/lesson-039.md"
+        }
+      ]
     },
     {
       "id": "lesson-040",
@@ -399,7 +1218,28 @@
       "title": "6.5 私域不是喊口号，而是设计留存结构",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "私域最小结构",
-      "articleTitle": "第6-5课｜6.5 私域不是喊口号，而是设计留存结构"
+      "articleTitle": "第6-5课｜6.5 私域不是喊口号，而是设计留存结构",
+      "audioPath": "audio/lesson-040.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-040.html",
+          "markdownPath": "articles/lead/lesson-040.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-040.html",
+          "markdownPath": "articles/conversion/lesson-040.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-040.html",
+          "markdownPath": "articles/community/lesson-040.md"
+        }
+      ]
     },
     {
       "id": "lesson-041",
@@ -409,7 +1249,28 @@
       "title": "6.6 合作分发：借别人的信任，而不是借别人的流量",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "合作筛选器",
-      "articleTitle": "第6-6课｜6.6 合作分发：借别人的信任，而不是借别人的流量"
+      "articleTitle": "第6-6课｜6.6 合作分发：借别人的信任，而不是借别人的流量",
+      "audioPath": "audio/lesson-041.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-041.html",
+          "markdownPath": "articles/lead/lesson-041.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-041.html",
+          "markdownPath": "articles/conversion/lesson-041.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-041.html",
+          "markdownPath": "articles/community/lesson-041.md"
+        }
+      ]
     },
     {
       "id": "lesson-042",
@@ -419,7 +1280,28 @@
       "title": "6.7 用分发数据做决策，不靠体感做判断",
       "chapterTitle": "流量和分发：让好东西被看见",
       "frameworkName": "分发看板层级",
-      "articleTitle": "第6-7课｜6.7 用分发数据做决策，不靠体感做判断"
+      "articleTitle": "第6-7课｜6.7 用分发数据做决策，不靠体感做判断",
+      "audioPath": "audio/lesson-042.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-042.html",
+          "markdownPath": "articles/lead/lesson-042.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-042.html",
+          "markdownPath": "articles/conversion/lesson-042.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-042.html",
+          "markdownPath": "articles/community/lesson-042.md"
+        }
+      ]
     },
     {
       "id": "lesson-043",
@@ -429,7 +1311,28 @@
       "title": "7.1 先设计产品阶梯，不先堆产品数量",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "四层产品阶梯",
-      "articleTitle": "第7-1课｜7.1 先设计产品阶梯，不先堆产品数量"
+      "articleTitle": "第7-1课｜7.1 先设计产品阶梯，不先堆产品数量",
+      "audioPath": "audio/lesson-043.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-043.html",
+          "markdownPath": "articles/lead/lesson-043.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-043.html",
+          "markdownPath": "articles/conversion/lesson-043.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-043.html",
+          "markdownPath": "articles/community/lesson-043.md"
+        }
+      ]
     },
     {
       "id": "lesson-044",
@@ -439,7 +1342,28 @@
       "title": "7.2 把服务经验产品化，而不是永远卖工时",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "服务产品化三阶段",
-      "articleTitle": "第7-2课｜7.2 把服务经验产品化，而不是永远卖工时"
+      "articleTitle": "第7-2课｜7.2 把服务经验产品化，而不是永远卖工时",
+      "audioPath": "audio/lesson-044.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-044.html",
+          "markdownPath": "articles/lead/lesson-044.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-044.html",
+          "markdownPath": "articles/conversion/lesson-044.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-044.html",
+          "markdownPath": "articles/community/lesson-044.md"
+        }
+      ]
     },
     {
       "id": "lesson-045",
@@ -449,7 +1373,28 @@
       "title": "7.3 课程化：把知识从内容升级为学习路径",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "课程路径设计",
-      "articleTitle": "第7-3课｜7.3 课程化：把知识从内容升级为学习路径"
+      "articleTitle": "第7-3课｜7.3 课程化：把知识从内容升级为学习路径",
+      "audioPath": "audio/lesson-045.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-045.html",
+          "markdownPath": "articles/lead/lesson-045.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-045.html",
+          "markdownPath": "articles/conversion/lesson-045.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-045.html",
+          "markdownPath": "articles/community/lesson-045.md"
+        }
+      ]
     },
     {
       "id": "lesson-046",
@@ -459,7 +1404,28 @@
       "title": "7.4 书籍、课程、音频和社群如何互相供养",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "同源多形态系统",
-      "articleTitle": "第7-4课｜7.4 书籍、课程、音频和社群如何互相供养"
+      "articleTitle": "第7-4课｜7.4 书籍、课程、音频和社群如何互相供养",
+      "audioPath": "audio/lesson-046.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-046.html",
+          "markdownPath": "articles/lead/lesson-046.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-046.html",
+          "markdownPath": "articles/conversion/lesson-046.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-046.html",
+          "markdownPath": "articles/community/lesson-046.md"
+        }
+      ]
     },
     {
       "id": "lesson-047",
@@ -469,7 +1435,28 @@
       "title": "7.5 定价不是数学题，而是价值沟通题",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "定价四参考",
-      "articleTitle": "第7-5课｜7.5 定价不是数学题，而是价值沟通题"
+      "articleTitle": "第7-5课｜7.5 定价不是数学题，而是价值沟通题",
+      "audioPath": "audio/lesson-047.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-047.html",
+          "markdownPath": "articles/lead/lesson-047.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-047.html",
+          "markdownPath": "articles/conversion/lesson-047.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-047.html",
+          "markdownPath": "articles/community/lesson-047.md"
+        }
+      ]
     },
     {
       "id": "lesson-048",
@@ -479,7 +1466,28 @@
       "title": "7.6 销售文案不是夸，而是澄清",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "澄清式文案",
-      "articleTitle": "第7-6课｜7.6 销售文案不是夸，而是澄清"
+      "articleTitle": "第7-6课｜7.6 销售文案不是夸，而是澄清",
+      "audioPath": "audio/lesson-048.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-048.html",
+          "markdownPath": "articles/lead/lesson-048.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-048.html",
+          "markdownPath": "articles/conversion/lesson-048.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-048.html",
+          "markdownPath": "articles/community/lesson-048.md"
+        }
+      ]
     },
     {
       "id": "lesson-049",
@@ -489,7 +1497,28 @@
       "title": "7.7 从第一单到稳定收入，路线如何设计",
       "chapterTitle": "产品与变现：把信任变成收入",
       "frameworkName": "收入四阶段路书",
-      "articleTitle": "第7-7课｜7.7 从第一单到稳定收入，路线如何设计"
+      "articleTitle": "第7-7课｜7.7 从第一单到稳定收入，路线如何设计",
+      "audioPath": "audio/lesson-049.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-049.html",
+          "markdownPath": "articles/lead/lesson-049.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-049.html",
+          "markdownPath": "articles/conversion/lesson-049.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-049.html",
+          "markdownPath": "articles/community/lesson-049.md"
+        }
+      ]
     },
     {
       "id": "lesson-050",
@@ -499,7 +1528,28 @@
       "title": "8.1 六个月生活费不是保守，是战略空间",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "现金缓冲模型",
-      "articleTitle": "第8-1课｜8.1 六个月生活费不是保守，是战略空间"
+      "articleTitle": "第8-1课｜8.1 六个月生活费不是保守，是战略空间",
+      "audioPath": "audio/lesson-050.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-050.html",
+          "markdownPath": "articles/lead/lesson-050.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-050.html",
+          "markdownPath": "articles/conversion/lesson-050.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-050.html",
+          "markdownPath": "articles/community/lesson-050.md"
+        }
+      ]
     },
     {
       "id": "lesson-051",
@@ -509,7 +1559,28 @@
       "title": "8.2 版权与素材：AI时代更要留下来源意识",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "版权四步检查",
-      "articleTitle": "第8-2课｜8.2 版权与素材：AI时代更要留下来源意识"
+      "articleTitle": "第8-2课｜8.2 版权与素材：AI时代更要留下来源意识",
+      "audioPath": "audio/lesson-051.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-051.html",
+          "markdownPath": "articles/lead/lesson-051.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-051.html",
+          "markdownPath": "articles/conversion/lesson-051.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-051.html",
+          "markdownPath": "articles/community/lesson-051.md"
+        }
+      ]
     },
     {
       "id": "lesson-052",
@@ -519,7 +1590,28 @@
       "title": "8.3 平台依赖：不要把命运压在单一入口上",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "平台风险分散法",
-      "articleTitle": "第8-3课｜8.3 平台依赖：不要把命运压在单一入口上"
+      "articleTitle": "第8-3课｜8.3 平台依赖：不要把命运压在单一入口上",
+      "audioPath": "audio/lesson-052.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-052.html",
+          "markdownPath": "articles/lead/lesson-052.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-052.html",
+          "markdownPath": "articles/conversion/lesson-052.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-052.html",
+          "markdownPath": "articles/community/lesson-052.md"
+        }
+      ]
     },
     {
       "id": "lesson-053",
@@ -529,7 +1621,28 @@
       "title": "8.4 文档、文件和知识备份",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "三层备份法",
-      "articleTitle": "第8-4课｜8.4 文档、文件和知识备份"
+      "articleTitle": "第8-4课｜8.4 文档、文件和知识备份",
+      "audioPath": "audio/lesson-053.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-053.html",
+          "markdownPath": "articles/lead/lesson-053.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-053.html",
+          "markdownPath": "articles/conversion/lesson-053.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-053.html",
+          "markdownPath": "articles/community/lesson-053.md"
+        }
+      ]
     },
     {
       "id": "lesson-054",
@@ -539,7 +1652,28 @@
       "title": "8.5 客诉、信誉与边界管理",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "边界三明治",
-      "articleTitle": "第8-5课｜8.5 客诉、信誉与边界管理"
+      "articleTitle": "第8-5课｜8.5 客诉、信誉与边界管理",
+      "audioPath": "audio/lesson-054.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-054.html",
+          "markdownPath": "articles/lead/lesson-054.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-054.html",
+          "markdownPath": "articles/conversion/lesson-054.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-054.html",
+          "markdownPath": "articles/community/lesson-054.md"
+        }
+      ]
     },
     {
       "id": "lesson-055",
@@ -549,7 +1683,28 @@
       "title": "8.6 什么时候该合规升级",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "升级触发器",
-      "articleTitle": "第8-6课｜8.6 什么时候该合规升级"
+      "articleTitle": "第8-6课｜8.6 什么时候该合规升级",
+      "audioPath": "audio/lesson-055.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-055.html",
+          "markdownPath": "articles/lead/lesson-055.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-055.html",
+          "markdownPath": "articles/conversion/lesson-055.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-055.html",
+          "markdownPath": "articles/community/lesson-055.md"
+        }
+      ]
     },
     {
       "id": "lesson-056",
@@ -559,7 +1714,28 @@
       "title": "8.7 让底盘建设进入月度例行",
       "chapterTitle": "底盘：现金流、法务、版权与系统安全",
       "frameworkName": "月度底盘日",
-      "articleTitle": "第8-7课｜8.7 让底盘建设进入月度例行"
+      "articleTitle": "第8-7课｜8.7 让底盘建设进入月度例行",
+      "audioPath": "audio/lesson-056.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-056.html",
+          "markdownPath": "articles/lead/lesson-056.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-056.html",
+          "markdownPath": "articles/conversion/lesson-056.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-056.html",
+          "markdownPath": "articles/community/lesson-056.md"
+        }
+      ]
     },
     {
       "id": "lesson-057",
@@ -569,7 +1745,28 @@
       "title": "9.1 深度工作是OPC最贵的资源",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "深度工作护城河",
-      "articleTitle": "第9-1课｜9.1 深度工作是OPC最贵的资源"
+      "articleTitle": "第9-1课｜9.1 深度工作是OPC最贵的资源",
+      "audioPath": "audio/lesson-057.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-057.html",
+          "markdownPath": "articles/lead/lesson-057.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-057.html",
+          "markdownPath": "articles/conversion/lesson-057.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-057.html",
+          "markdownPath": "articles/community/lesson-057.md"
+        }
+      ]
     },
     {
       "id": "lesson-058",
@@ -579,7 +1776,28 @@
       "title": "9.2 体能不是背景变量，而是经营变量",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "经营型健康观",
-      "articleTitle": "第9-2课｜9.2 体能不是背景变量，而是经营变量"
+      "articleTitle": "第9-2课｜9.2 体能不是背景变量，而是经营变量",
+      "audioPath": "audio/lesson-058.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-058.html",
+          "markdownPath": "articles/lead/lesson-058.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-058.html",
+          "markdownPath": "articles/conversion/lesson-058.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-058.html",
+          "markdownPath": "articles/community/lesson-058.md"
+        }
+      ]
     },
     {
       "id": "lesson-059",
@@ -589,7 +1807,28 @@
       "title": "9.3 休息不是奖励，而是系统需求",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "恢复四模块",
-      "articleTitle": "第9-3课｜9.3 休息不是奖励，而是系统需求"
+      "articleTitle": "第9-3课｜9.3 休息不是奖励，而是系统需求",
+      "audioPath": "audio/lesson-059.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-059.html",
+          "markdownPath": "articles/lead/lesson-059.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-059.html",
+          "markdownPath": "articles/conversion/lesson-059.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-059.html",
+          "markdownPath": "articles/community/lesson-059.md"
+        }
+      ]
     },
     {
       "id": "lesson-060",
@@ -599,7 +1838,28 @@
       "title": "9.4 家庭、关系和边界会反向影响业务稳定性",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "关系边界设计",
-      "articleTitle": "第9-4课｜9.4 家庭、关系和边界会反向影响业务稳定性"
+      "articleTitle": "第9-4课｜9.4 家庭、关系和边界会反向影响业务稳定性",
+      "audioPath": "audio/lesson-060.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-060.html",
+          "markdownPath": "articles/lead/lesson-060.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-060.html",
+          "markdownPath": "articles/conversion/lesson-060.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-060.html",
+          "markdownPath": "articles/community/lesson-060.md"
+        }
+      ]
     },
     {
       "id": "lesson-061",
@@ -609,7 +1869,28 @@
       "title": "9.5 情绪管理：不要在最低谷做最大决策",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "决策情绪阀",
-      "articleTitle": "第9-5课｜9.5 情绪管理：不要在最低谷做最大决策"
+      "articleTitle": "第9-5课｜9.5 情绪管理：不要在最低谷做最大决策",
+      "audioPath": "audio/lesson-061.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-061.html",
+          "markdownPath": "articles/lead/lesson-061.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-061.html",
+          "markdownPath": "articles/conversion/lesson-061.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-061.html",
+          "markdownPath": "articles/community/lesson-061.md"
+        }
+      ]
     },
     {
       "id": "lesson-062",
@@ -619,7 +1900,28 @@
       "title": "9.6 运营自己：像运营产品一样运营人生节奏",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "个人运营面板",
-      "articleTitle": "第9-6课｜9.6 运营自己：像运营产品一样运营人生节奏"
+      "articleTitle": "第9-6课｜9.6 运营自己：像运营产品一样运营人生节奏",
+      "audioPath": "audio/lesson-062.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-062.html",
+          "markdownPath": "articles/lead/lesson-062.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-062.html",
+          "markdownPath": "articles/conversion/lesson-062.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-062.html",
+          "markdownPath": "articles/community/lesson-062.md"
+        }
+      ]
     },
     {
       "id": "lesson-063",
@@ -629,7 +1931,28 @@
       "title": "9.7 长期可持续，才是最高级的野心",
       "chapterTitle": "肉身与运营：你自己就是核心基础设施",
       "frameworkName": "可持续野心观",
-      "articleTitle": "第9-7课｜9.7 长期可持续，才是最高级的野心"
+      "articleTitle": "第9-7课｜9.7 长期可持续，才是最高级的野心",
+      "audioPath": "audio/lesson-063.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-063.html",
+          "markdownPath": "articles/lead/lesson-063.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-063.html",
+          "markdownPath": "articles/conversion/lesson-063.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-063.html",
+          "markdownPath": "articles/community/lesson-063.md"
+        }
+      ]
     },
     {
       "id": "lesson-064",
@@ -639,7 +1962,28 @@
       "title": "10.1 什么时候该从‘我来做’升级到‘系统来做’",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "系统优先升级法",
-      "articleTitle": "第10-1课｜10.1 什么时候该从‘我来做’升级到‘系统来做’"
+      "articleTitle": "第10-1课｜10.1 什么时候该从‘我来做’升级到‘系统来做’",
+      "audioPath": "audio/lesson-064.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-064.html",
+          "markdownPath": "articles/lead/lesson-064.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-064.html",
+          "markdownPath": "articles/conversion/lesson-064.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-064.html",
+          "markdownPath": "articles/community/lesson-064.md"
+        }
+      ]
     },
     {
       "id": "lesson-065",
@@ -649,7 +1993,28 @@
       "title": "10.2 AI代理和自动化如何成为真正的外脑外手",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "代理应用四原则",
-      "articleTitle": "第10-2课｜10.2 AI代理和自动化如何成为真正的外脑外手"
+      "articleTitle": "第10-2课｜10.2 AI代理和自动化如何成为真正的外脑外手",
+      "audioPath": "audio/lesson-065.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-065.html",
+          "markdownPath": "articles/lead/lesson-065.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-065.html",
+          "markdownPath": "articles/conversion/lesson-065.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-065.html",
+          "markdownPath": "articles/community/lesson-065.md"
+        }
+      ]
     },
     {
       "id": "lesson-066",
@@ -659,7 +2024,28 @@
       "title": "10.3 品牌资产：让名字、风格和方法成为复利结构",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "品牌资产四件套",
-      "articleTitle": "第10-3课｜10.3 品牌资产：让名字、风格和方法成为复利结构"
+      "articleTitle": "第10-3课｜10.3 品牌资产：让名字、风格和方法成为复利结构",
+      "audioPath": "audio/lesson-066.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-066.html",
+          "markdownPath": "articles/lead/lesson-066.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-066.html",
+          "markdownPath": "articles/conversion/lesson-066.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-066.html",
+          "markdownPath": "articles/community/lesson-066.md"
+        }
+      ]
     },
     {
       "id": "lesson-067",
@@ -669,7 +2055,28 @@
       "title": "10.4 组合业务，而不是随机开分支",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "组合业务画布",
-      "articleTitle": "第10-4课｜10.4 组合业务，而不是随机开分支"
+      "articleTitle": "第10-4课｜10.4 组合业务，而不是随机开分支",
+      "audioPath": "audio/lesson-067.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-067.html",
+          "markdownPath": "articles/lead/lesson-067.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-067.html",
+          "markdownPath": "articles/conversion/lesson-067.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-067.html",
+          "markdownPath": "articles/community/lesson-067.md"
+        }
+      ]
     },
     {
       "id": "lesson-068",
@@ -679,7 +2086,28 @@
       "title": "10.5 以康波研究院模式思考平台化",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "平台化五层塔",
-      "articleTitle": "第10-5课｜10.5 以康波研究院模式思考平台化"
+      "articleTitle": "第10-5课｜10.5 以康波研究院模式思考平台化",
+      "audioPath": "audio/lesson-068.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-068.html",
+          "markdownPath": "articles/lead/lesson-068.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-068.html",
+          "markdownPath": "articles/conversion/lesson-068.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-068.html",
+          "markdownPath": "articles/community/lesson-068.md"
+        }
+      ]
     },
     {
       "id": "lesson-069",
@@ -689,7 +2117,28 @@
       "title": "10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "90天升级框架",
-      "articleTitle": "第10-6课｜10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发"
+      "articleTitle": "第10-6课｜10.6 90天升级路线图：从当前状态出发，而不是从理想状态出发",
+      "audioPath": "audio/lesson-069.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-069.html",
+          "markdownPath": "articles/lead/lesson-069.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-069.html",
+          "markdownPath": "articles/conversion/lesson-069.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-069.html",
+          "markdownPath": "articles/community/lesson-069.md"
+        }
+      ]
     },
     {
       "id": "lesson-070",
@@ -699,7 +2148,28 @@
       "title": "10.7 最终问题：你想成为什么样的一人公司",
       "chapterTitle": "从OPC到OPC+：进化、系统化与平台化",
       "frameworkName": "终局校准问卷",
-      "articleTitle": "第10-7课｜10.7 最终问题：你想成为什么样的一人公司"
+      "articleTitle": "第10-7课｜10.7 最终问题：你想成为什么样的一人公司",
+      "audioPath": "audio/lesson-070.mp3",
+      "articleVariants": [
+        {
+          "slug": "lead",
+          "label": "引流版",
+          "htmlPath": "articles/lead/lesson-070.html",
+          "markdownPath": "articles/lead/lesson-070.md"
+        },
+        {
+          "slug": "conversion",
+          "label": "转化版",
+          "htmlPath": "articles/conversion/lesson-070.html",
+          "markdownPath": "articles/conversion/lesson-070.md"
+        },
+        {
+          "slug": "community",
+          "label": "社群作业版",
+          "htmlPath": "articles/community/lesson-070.html",
+          "markdownPath": "articles/community/lesson-070.md"
+        }
+      ]
     }
   ]
 }
